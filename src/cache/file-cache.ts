@@ -1,4 +1,4 @@
-import { mkdir } from "fs/promises";
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join } from "node:path";
 
 import type { LLMIntelConfigOutput } from "../config";
@@ -31,8 +31,8 @@ async function readMeta(
   try {
     const filePath = join(opts.cacheDir, fileName);
     const metaPath = getMetaFilePath(filePath);
-    const file = Bun.file(metaPath);
-    return (await file.json()) as CacheMeta;
+    const metaData = await readFile(metaPath, 'utf-8');
+    return JSON.parse(metaData) as CacheMeta;
   } catch {
     return null;
   }
@@ -48,8 +48,8 @@ async function readData<T>(
 ): Promise<T[] | null> {
   try {
     const filePath = join(opts.cacheDir, fileName);
-    const file = Bun.file(filePath);
-    return (await file.json()) as T[];
+    const fileData = await readFile(filePath, 'utf-8');
+    return JSON.parse(fileData) as T[];
   } catch {
     return null;
   }
@@ -87,8 +87,8 @@ export async function writeCache<T>(
   const metaPath = getMetaFilePath(dataPath);
   const serializedData = JSON.stringify(data, null, 2);
   const serializedMeta = JSON.stringify(meta, null, 2);
-  await Bun.write(dataPath, serializedData);
-  await Bun.write(metaPath, serializedMeta);
+  await writeFile(dataPath, serializedData);
+  await writeFile(metaPath, serializedMeta);
 }
 
 /**
@@ -103,7 +103,7 @@ export async function updateMeta(
   const filePath = join(opts.cacheDir, fileName);
   const metaPath = getMetaFilePath(filePath);
   const serializedMeta = JSON.stringify(meta, null, 2);
-  await Bun.write(metaPath, serializedMeta);
+  await writeFile(metaPath, serializedMeta);
 }
 
 /**
