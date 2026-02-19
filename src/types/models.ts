@@ -1,3 +1,4 @@
+import { BigNumber } from "bignumber.js";
 import type { ModelInfoProvider } from "../config";
 
 export type FetchResult<T> =

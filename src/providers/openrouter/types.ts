@@ -12,6 +12,7 @@ export interface OpenRouterPricing {
 
 export interface OpenRouterModel {
   id: string;
+  canonical_slug: string;
   name: string;
   description?: string;
   context_length: number;

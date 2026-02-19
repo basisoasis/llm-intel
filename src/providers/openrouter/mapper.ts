@@ -1,4 +1,4 @@
-import BigNumber from "bignumber.js";
+import { BigNumber } from "bignumber.js";
 import type { OpenRouterModel } from "./types";
 import type { ModelData, ModelPricing, PricingValue } from "../../types/models";
 

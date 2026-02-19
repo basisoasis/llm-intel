@@ -61,7 +61,7 @@ export function initializeConfig(
   opts: Partial<LLMIntelConfigInput> = {},
 ): Promise<LLMIntelConfigOutput> {
   const config: LLMIntelConfigInput = {
-    provider: opts.provider || process.env.LLM_INTEL_PROVIDER,
+    provider: (opts.provider || process.env.LLM_INTEL_PROVIDER || 'openrouter') as ModelInfoProvider,
     cacheDir: opts.cacheDir || process.env.LLM_INTEL_CACHE_DIR || join(process.cwd(), ".cache"),
     cacheTtl: opts.cacheTtl || parseInt(process.env.LLM_INTEL_CACHE_TTL ?? '', 10) || 86_400_000,
     openRouterApiKey: opts.openRouterApiKey ?? process.env.LLM_INTEL_OPEN_ROUTER_API_KEY,
