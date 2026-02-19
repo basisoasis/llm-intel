@@ -1,7 +1,7 @@
-import BigNumber from "bignumber.js";
+import { BigNumber } from "bignumber.js";
 import type { ModelData, PricingValue } from "./types/models";
 
-export type CostCurrency = "USD"; 
+export type CostCurrency = "USD";
 
 export interface TokenInput {
   inputTokens?: number;
@@ -53,7 +53,7 @@ function computeLineCost(
     case "per_thousand_tokens":
       return pricing.amount.dividedBy(1_000).multipliedBy(count);
     case "per_token":
-      return pricing.amount.multipliedBy(count)
+      return pricing.amount.multipliedBy(count);
     case "per_image":
       return pricing.amount.multipliedBy(count);
     case "per_request":
@@ -77,9 +77,14 @@ export function calculateCost(
   let cacheReadCost: BigNumber | null = null;
   if (tokens.cacheReadTokens && tokens.cacheReadTokens > 0) {
     if (!model.pricing.cacheRead) {
-      warnings.push(`Model "${model.id}" does not support cache read pricing — cacheReadTokens discarded.`);
+      warnings.push(
+        `Model "${model.id}" does not support cache read pricing — cacheReadTokens discarded.`,
+      );
     } else {
-      cacheReadCost = computeLineCost(model.pricing.cacheRead, tokens.cacheReadTokens);
+      cacheReadCost = computeLineCost(
+        model.pricing.cacheRead,
+        tokens.cacheReadTokens,
+      );
     }
   }
 
@@ -87,9 +92,14 @@ export function calculateCost(
   let cacheWriteCost: BigNumber | null = null;
   if (tokens.cacheWriteTokens && tokens.cacheWriteTokens > 0) {
     if (!model.pricing.cacheWrite) {
-      warnings.push(`Model "${model.id}" does not support cache write pricing — cacheWriteTokens discarded.`);
+      warnings.push(
+        `Model "${model.id}" does not support cache write pricing — cacheWriteTokens discarded.`,
+      );
     } else {
-      cacheWriteCost = computeLineCost(model.pricing.cacheWrite, tokens.cacheWriteTokens);
+      cacheWriteCost = computeLineCost(
+        model.pricing.cacheWrite,
+        tokens.cacheWriteTokens,
+      );
     }
   }
 
@@ -103,7 +113,9 @@ export function calculateCost(
   let requestCost: BigNumber | null = null;
   if (tokens.includeRequestFee) {
     if (!model.pricing.request) {
-      warnings.push(`Model "${model.id}" does not have a per-request fee — includeRequestFee discarded.`);
+      warnings.push(
+        `Model "${model.id}" does not have a per-request fee — includeRequestFee discarded.`,
+      );
     } else {
       requestCost = computeLineCost(model.pricing.request, 1);
     }
@@ -113,7 +125,14 @@ export function calculateCost(
   const outputCost = computeLineCost(model.pricing.output, tokens.outputTokens);
 
   // Total — sum only non-null line items
-  const totalCost = [inputCost, outputCost, cacheReadCost, cacheWriteCost, imageCost, requestCost]
+  const totalCost = [
+    inputCost,
+    outputCost,
+    cacheReadCost,
+    cacheWriteCost,
+    imageCost,
+    requestCost,
+  ]
     .filter((c): c is BigNumber => c !== null)
     .reduce((acc, c) => acc.plus(c), new BigNumber(0));
 
@@ -134,9 +153,12 @@ export function calculateCost(
  * Formats a BigNumber cost as a human-readable currency string (e.g. "$5.12").
  * Uses Intl.NumberFormat — no reinventing the wheel.
  */
-export function formatCost(amount: BigNumber, currency: CostCurrency = "USD"): string {
+export function formatCost(
+  amount: BigNumber,
+  currency: CostCurrency = "USD",
+): string {
   const num = amount.toNumber();
-  
+
   const options: Intl.NumberFormatOptions = {
     style: "currency",
     currency,
@@ -155,7 +177,8 @@ export function formatCost(amount: BigNumber, currency: CostCurrency = "USD"): s
  * Formats all line items in a CostResult to human-readable currency strings.
  */
 export function formatCostResult(result: CostResult): FormattedCostResult {
-  const fmt = (v: BigNumber | null) => v !== null ? formatCost(v, result.currency) : null;
+  const fmt = (v: BigNumber | null) =>
+    v !== null ? formatCost(v, result.currency) : null;
 
   return {
     inputCost: fmt(result.inputCost),
