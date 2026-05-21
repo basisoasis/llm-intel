@@ -9,17 +9,24 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.js",
+      "types": "./dist/client.d.ts"
     }
   },
   "type": "module",
   "private": true,
   "scripts": {
     "build": "bun run generate && bun ./scripts/build.ts",
-    "generate": "bun scripts/generate/generate-model-ids.ts"
+    "generate": "bun scripts/generate/generate-model-ids.ts",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "dts-bundle-generator": "^9.5.1"
+    "dts-bundle-generator": "^9.5.1",
+    "vitest": "^4.1.7"
   },
   "peerDependencies": {
     "typescript": "^5"

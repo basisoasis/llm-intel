@@ -212,11 +212,43 @@ describe("LLMIntelClient", () => {
 
   describe("calculateCost()", () => {
     it("calculates cost for input and output tokens", async () => {
-      const client = new LLMIntelClient({ models: validModelsArray });
-      const model = await client.getModel("~openai/gpt-4o" as any);
-      const result = client.calculateCost(model!, { inputTokens: 1_000_000, outputTokens: 1_000_000 });
-      expect(BigNumber.isBigNumber(result.totalCost)).toBe(true);
-      expect(result.totalCost.isGreaterThan(0)).toBe(true);
+        const client = new LLMIntelClient({ models: validModelsArray });
+        const model = await client.getModel("~openai/gpt-4o" as any);
+        const result = client.calculateCost(model!, { inputTokens: 1_000_000, outputTokens: 1_000_000 });
+        expect(BigNumber.isBigNumber(result.totalCost)).toBe(true);
+        expect(result.totalCost.isEqualTo(new BigNumber("20"))).toBe(true);
+        expect(result.inputCost?.isEqualTo(new BigNumber("5"))).toBe(true);
+        expect(result.outputCost?.isEqualTo(new BigNumber("15"))).toBe(true);
+        expect(result.currency).toBe("USD");
+        expect(result.warnings).toHaveLength(0);
+    });
+
+    it("returns null costs for unprovided token types", async () => {
+        const client = new LLMIntelClient({ models: validModelsArray });
+        const model = await client.getModel("~openai/gpt-4o" as any);
+        const result = client.calculateCost(model!, { inputTokens: 1_000_000 });
+        expect(result.inputCost?.isEqualTo(new BigNumber("5"))).toBe(true);
+        expect(result.outputCost).toBeNull();
+        expect(result.cacheReadCost).toBeNull();
+        expect(result.cacheWriteCost).toBeNull();
+        expect(result.totalCost.isEqualTo(new BigNumber("5"))).toBe(true);
+    });
+
+    it("warns when cache tokens are passed to a model without cache pricing", async () => {
+        const client = new LLMIntelClient({ models: validModelsArray });
+        const model = await client.getModel("~openai/gpt-4o" as any); // no cacheRead/cacheWrite
+        const result = client.calculateCost(model!, { cacheReadTokens: 1_000_000 });
+        expect(result.cacheReadCost).toBeNull();
+        expect(result.warnings).toHaveLength(1);
+        expect(result.warnings[0]).toMatch(/does not support cache read pricing/);
+    });
+
+    it("calculates cache costs for models that support it", async () => {
+        const client = new LLMIntelClient({ models: validModelsArray });
+        const model = await client.getModel("~anthropic/claude-3-5-sonnet" as any);
+        const result = client.calculateCost(model!, { cacheReadTokens: 1_000_000, cacheWriteTokens: 1_000_000 });
+        expect(result.cacheReadCost?.isEqualTo(new BigNumber("0.3"))).toBe(true);
+        expect(result.cacheWriteCost?.isEqualTo(new BigNumber("3.75"))).toBe(true);
     });
   });
 
