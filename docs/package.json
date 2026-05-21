@@ -13,7 +13,8 @@
     "@tanstack/react-query": "^5.100.11",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
-    "react-syntax-highlighter": "^16.1.1"
+    "react-syntax-highlighter": "^16.1.1",
+    "llmintel": "git+ssh://git@github.com/basisoasis/llmintel.git"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
