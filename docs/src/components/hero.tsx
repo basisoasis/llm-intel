@@ -15,14 +15,13 @@ export default function Hero() {
 
       {/* Headline */}
       <h1 className="relative font-sans text-[clamp(36px,5vw,56px)] font-semibold text-text-bright leading-[1.1] tracking-tight mb-5 max-w-[720px]">
-        Real-time pricing intelligence<br />
+        Model intelligence<br />
         for <span className="text-accent">every LLM</span>.
       </h1>
 
       {/* Subheading */}
       <p className="relative font-sans text-[16px] font-light text-text-dim leading-relaxed max-w-[540px] mb-9">
-        LLM Intel fetches live token costs across all major model providers — OpenAI,
-        Anthropic, Google, Meta, Mistral, and more — so your app always bills accurately.
+        LLM Intel is a library that sources model information and rates from OpenRouter, enabling the developer to look up capabilities and calculate token spend without maintaining data tables.
       </p>
 
       {/* CTAs */}

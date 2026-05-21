@@ -84,11 +84,9 @@ function CodeBlock({ label, copyText, language, code }: CodeBlockProps) {
 // ── Feature list ─────────────────────────────────────────────────────────────
 
 const FEATURES: React.ReactNode[] = [
-  'Provider-first client — instantiate once, query any model via OpenRouter and more',
+  'One client, any model: instantiate once, query across OpenRouter and beyond',
   'Full cost breakdown: input, output, cache read/write, image, and per-request fees',
-  <>Typed <code className="text-[11px] text-accent bg-surface-3 px-1 py-px rounded-sm">FormattedCostResult</code> with currency and warnings</>,
-  'Prompt cache pricing supported — see real savings from cache hits',
-  'TypeScript-first with full type definitions, zero dependencies',
+  'TypeScript-first: full type definitions included',
 ]
 
 // ── Section ───────────────────────────────────────────────────────────────────
@@ -104,8 +102,7 @@ export default function InstallSection() {
             Drop-in pricing for your stack.
           </h2>
           <p className="font-sans text-[14px] font-light text-text-dim leading-relaxed mb-5">
-            One import. Automatic model resolution. Returns exact per-token costs
-            in real time — no hardcoded tables, no stale data.
+            One import. Pass in a model ID, get back current pricing. No hardcoded tables, no stale data.
           </p>
           <ul className="flex flex-col gap-2.5">
             {FEATURES.map((item, i) => (
