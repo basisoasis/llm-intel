@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+
+  /* ── Backgrounds ── */
+  --color-bg:        #0d0f0e;
+  --color-surface:   #141714;
+  --color-surface-2: #1c1f1c;
+  --color-surface-3: #242724;
+
+  /* ── Borders ── */
+  --color-border:    #2a2e2a;
+  --color-border-2:  #353935;
+
+  /* ── Accent ── */
+  --color-accent:      #a8ff78;
+  --color-accent-dim:  #5a8c3f;
+  --color-accent-glow: rgba(168, 255, 120, 0.12);
+  --color-accent-soft: rgba(168, 255, 120, 0.06);
+
+  /* ── Semantic ── */
+  --color-danger: #ff6b6b;
+  --color-muted:  #4a524a;
+
+  /* ── Text ── */
+  --color-text:        #d4d9d4;
+  --color-text-dim:    #7a877a;
+  --color-text-bright: #edf2ed;
+
+  /* ── Typography ── */
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Border radius ── */
+  --radius-app: 3px;
+
+  /* ── Shadows ── */
+  --shadow-glow:  0 0 20px rgba(168, 255, 120, 0.12);
+  --shadow-card:  0 2px 12px rgba(0, 0, 0, 0.25);
+  --shadow-shell: 0 8px 48px rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 2px rgba(168, 255, 120, 0.12);
+
+  /* ── Animations ── */
+  --animate-blink:      blink 2s ease-in-out infinite;
+  --animate-slide-in:   slide-in 0.2s ease;
+  --animate-fade-up:    fade-up 0.2s ease;
+  --animate-calc-flash: calc-flash 0.4s ease-out;
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateX(10px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  @keyframes calc-flash {
+    0%   { border-color: var(--color-accent-dim); }
+    100% { border-color: var(--color-border); }
+  }
+}
+
+/* ─────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Scanline overlay — pseudo-element, can't use Tailwind utilities */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.07) 2px,
+      rgba(0, 0, 0, 0.07) 4px
+    );
+    pointer-events: none;
+    z-index: 200;
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+    border-color: var(--color-accent-dim) !important;
+  }
+
+  /* Remove number input spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  /* Custom select arrow — browser default is unthemeable */
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234a524a'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    appearance: none;
+  }
+}
