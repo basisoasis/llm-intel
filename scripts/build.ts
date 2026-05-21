@@ -1,7 +1,7 @@
 import { execSync } from "node:child_process";
 
 await Bun.build({
-  entrypoints: ["./src/index.ts"],
+  entrypoints: ["./src/index.ts", "./src/client.ts"],
   outdir: "./dist",
   target: "node",
   format: "esm",
@@ -11,7 +11,7 @@ await Bun.build({
 });
 
 await Bun.build({
-  entrypoints: ["./src/index.ts"],
+  entrypoints: ["./src/index.ts", "./src/client.ts"],
   outdir: "./dist",
   target: "node",
   format: "cjs",
@@ -22,4 +22,7 @@ await Bun.build({
 
 execSync(
   "dts-bundle-generator --out-file ./dist/index.d.ts ./src/index.ts --no-check"
+);
+execSync(
+  "dts-bundle-generator --out-file ./dist/client.d.ts ./src/client.ts --no-check"
 );
