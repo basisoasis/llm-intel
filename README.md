@@ -1,3 +1,5 @@
+<img src="./docs/public/favicon.svg" width="48" />
+
 # llm-intel
 
 Model intelligence for every LLM.
