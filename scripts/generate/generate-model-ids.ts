@@ -1,13 +1,14 @@
 import { join, dirname } from "node:path";
-import { readFile, writeFile } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 import { mkdir } from "node:fs/promises";
+import { LLMIntel } from "../../src";
 
-const cacheDir = join(process.cwd(), "./.cache/openrouter-models.json");
-const modelInfo = await readFile(cacheDir, "utf-8");
 
-const models = JSON.parse(modelInfo);
-const modelIds = models
-  .map((x: { canonical_slug: string }) => x.canonical_slug)
+const client = await LLMIntel.create({ provider: "openrouter" });
+const result = await client.getModels();
+
+const modelIds = result.data
+  .map((x) => x.canonicalSlug)
   .sort();
 const output = `
 // AUTO-GENERATED: do not edit manually
