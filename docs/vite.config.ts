@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import path from "node:path";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import tailwindScrollbar from "tailwind-scrollbar";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,5 +12,5 @@ export default defineConfig({
       "react-dom": path.resolve("../node_modules/react-dom"),
     },
   },
-  plugins: [react(), tailwindcss(), tailwindScrollbar],
+  plugins: [react(), tailwindcss()],
 });

@@ -1,4 +1,3 @@
-import NumberFlow, { NumberFlowGroup } from "@number-flow/react";
 import { fmtTokens } from "../../lib/costs";
 
 interface LineItemProps {

@@ -53,7 +53,7 @@ export default function App() {
         <DemoSection
           client={client}
           models={resolved?.models}
-          providers={resolved?.providers}
+          providers={resolved?.providers ?? []}
           isLoading={isLoading}
           isError={isError}
         />

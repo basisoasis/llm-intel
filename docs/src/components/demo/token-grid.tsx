@@ -6,7 +6,7 @@ import TokenField from "./token-field";
 interface TokenGridProps {
   model: ModelData;
   tokens: TokenInput;
-  client: LLMIntelClient;
+  client: LLMIntelClient | null;
   onChange: (tokens: TokenInput) => void;
 }
 
@@ -35,10 +35,10 @@ export default function TokenGrid({
     return Object.fromEntries(
       fields.map((field) => {
         if (!tokens[field]) return [field, null];
-        const result = client.calculateCost(modelResult, {
+        const result = client?.calculateCost(modelResult, {
           [field]: tokens[field],
         });
-        return [field, client.formatCostResult(result).totalCost];
+        return [field, client?.formatCostResult(result!).totalCost];
       }),
     );
   }, [tokens, model]);
@@ -53,28 +53,28 @@ export default function TokenGrid({
         label="Input"
         value={tokens.inputTokens}
         supported={true}
-        cost={fieldCosts.inputTokens}
+        cost={fieldCosts?.inputTokens ?? '0'}
         onChange={(v) => update("inputTokens", v)}
       />
       <TokenField
         label="Output"
         value={tokens.outputTokens}
         supported={true}
-        cost={fieldCosts.outputTokens}
+        cost={fieldCosts?.outputTokens ?? '0'}
         onChange={(v) => update("outputTokens", v)}
       />
       <TokenField
         label="Cache Read"
         value={tokens.cacheReadTokens}
         supported={pricing.cacheRead !== null}
-        cost={fieldCosts.cacheReadTokens}
+        cost={fieldCosts?.cacheReadTokens ?? '0'}
         onChange={(v) => update("cacheReadTokens", v)}
       />
       <TokenField
         label="Cache Write"
         value={tokens.cacheWriteTokens}
         supported={pricing.cacheWrite !== null}
-        cost={fieldCosts.cacheWriteTokens}
+        cost={fieldCosts?.cacheWriteTokens ?? '0'}
         onChange={(v) => update("cacheWriteTokens", v)}
       />
     </div>

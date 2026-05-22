@@ -6,7 +6,7 @@ import EstimatorCard from "./estimator-card";
 import CostSummary from "./cost-summary";
 
 interface EstimatorProps {
-  client: LLMIntelClient;
+  client: LLMIntelClient | null;
   models: ModelData[];
   providers: string[];
 }

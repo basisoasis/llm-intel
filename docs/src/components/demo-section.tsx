@@ -2,7 +2,7 @@ import type { LLMIntelClient, ModelData } from "llm-intel/client";
 import Estimator from "./demo/estimator";
 
 interface DemoSectionProps {
-  client: LLMIntelClient;
+  client: LLMIntelClient | null;
   models?: ModelData[];
   providers: string[];
   isLoading: boolean;

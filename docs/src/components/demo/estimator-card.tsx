@@ -9,7 +9,7 @@ interface EstimatorCardProps {
   index: number;
   models: ModelData[];
   providers: string[];
-  client: LLMIntelClient;
+  client: LLMIntelClient | null;
   onRemove: () => void;
   onChange: (patch: Partial<Omit<Card, "id">>) => void;
 }

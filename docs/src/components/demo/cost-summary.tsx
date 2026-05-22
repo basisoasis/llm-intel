@@ -7,7 +7,7 @@ import ScaleChips from "./scale-chips";
 
 interface CostSummaryProps {
   cards: Card[];
-  client: LLMIntelClient;
+  client: LLMIntelClient | null;
   scale: ScaleMultiplier;
   onScaleChange: (scale: ScaleMultiplier) => void;
 }
@@ -32,8 +32,8 @@ export default function CostSummary({
       source: "openrouter",
       fetchedAt: new Date(),
     };
-    const cost = client.calculateCost(modelResult, card.tokens);
-    const formatted = client.formatCostResult(cost);
+    const cost = client!.calculateCost(modelResult, card.tokens);
+    const formatted = client!.formatCostResult(cost);
     const totalTokens =
       (card.tokens.inputTokens ?? 0) +
       (card.tokens.outputTokens ?? 0) +
