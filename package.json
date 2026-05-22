@@ -43,7 +43,7 @@
     ".",
     "docs"
   ],
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "bun run generate && bun ./scripts/build.ts",
     "generate": "bun scripts/generate/generate-model-ids.ts",
