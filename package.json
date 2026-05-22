@@ -1,5 +1,5 @@
 {
-  "name": "llm-intel",
+  "name": "llmintel",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,22 +11,29 @@
       "types": "./dist/index.d.ts"
     },
     "./client": {
+      "browser": "./dist/client.mjs",
       "import": "./dist/client.mjs",
       "require": "./dist/client.js",
       "types": "./dist/client.d.ts"
     }
   },
   "type": "module",
+  "workspaces": [
+    ".",
+    "docs"
+  ],
   "private": true,
   "scripts": {
     "build": "bun run generate && bun ./scripts/build.ts",
     "generate": "bun scripts/generate/generate-model-ids.ts",
+    "generate:model": "bun run scripts/generate/generate-model-serialized.ts",
     "test": "vitest run"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "dts-bundle-generator": "^9.5.1",
-    "vitest": "^4.1.7"
+    "bun-plugin-dtsx": "^0.9.26",
+    "vitest": "^4.1.7",
+    "wrangler": "^4.93.1"
   },
   "peerDependencies": {
     "typescript": "^5"

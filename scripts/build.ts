@@ -21,8 +21,8 @@ await Bun.build({
 });
 
 execSync(
-  "dts-bundle-generator --out-file ./dist/index.d.ts ./src/index.ts --no-check"
+  "dts-bundle-generator --out-file ./dist/index.d.ts ./src/index.ts --no-check --project tsconfig.build.json",
 );
 execSync(
-  "dts-bundle-generator --out-file ./dist/client.d.ts ./src/client.ts --no-check"
+  "dts-bundle-generator --out-file ./dist/client.d.ts ./src/client.ts --no-check --project tsconfig.build.json",
 );

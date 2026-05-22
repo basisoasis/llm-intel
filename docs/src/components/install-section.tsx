@@ -1,13 +1,11 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import CopyButton from './copy-button'
+import { PackageManagerBlock } from "./demo/package-manager-block";
+import { CodeBlock } from "./demo/code-block";
 
 // ── Code strings ──────────────────────────────────────────────────────────────
 
-const INSTALL_CODE = `npm install llm-intel`
+const PACKAGE_NAME = `basisoasis/llm-intel`;
 
-const USAGE_CODE =
-`import { LLMIntel } from 'llm-intel';
+const USAGE_CODE = `import { LLMIntel } from 'llm-intel';
 
 // Instantiate a provider client
 const client = await LLMIntel.create({ provider: 'openrouter' });
@@ -28,86 +26,43 @@ const cost = await model.getCost({
 
 console.log(cost.totalCost);     // "USD 1.8300"
 console.log(cost.cacheReadCost); // "USD 0.0100"
-console.log(cost.warnings);      // []`
-
-const RETURN_TYPE_CODE = 
-`interface FormattedCostResult {
-  inputCost:      string | null;
-  outputCost:     string | null;
-  cacheReadCost:  string | null;
-  cacheWriteCost: string | null;
-  imageCost:      string | null;
-  requestCost:    string | null;
-  totalCost:      string;
-  currency:       CostCurrency;
-  warnings:       string[];
-}`
-
-// ── Subcomponents ─────────────────────────────────────────────────────────────
-
-interface CodeBlockProps {
-  label: string
-  copyText: string
-  language: string
-  code: string
-}
-
-function CodeBlock({ label, copyText, language, code }: CodeBlockProps) {
-  return (
-    <div className="bg-bg border border-border-2 rounded-app overflow-hidden">
-      {/* Header */}
-      <div className="flex items-center justify-between px-3.5 py-2 bg-surface-2 border-b border-border">
-        <span className="text-[10px] tracking-[0.1em] uppercase text-muted">{label}</span>
-        <CopyButton text={copyText} />
-      </div>
-      {/* Highlighted code */}
-      <SyntaxHighlighter
-        language={language}
-        style={atomDark}
-        customStyle={{
-          margin: 0,
-          padding: '16px 18px',
-          background: 'transparent',
-          fontSize: '12.5px',
-          lineHeight: '1.7',
-        }}
-        codeTagProps={{
-          style: { fontFamily: 'var(--font-mono)' },
-        }}
-      >
-        {code}
-      </SyntaxHighlighter>
-    </div>
-  )
-}
+console.log(cost.warnings);      // []`;
 
 // ── Feature list ─────────────────────────────────────────────────────────────
 
 const FEATURES: React.ReactNode[] = [
-  'One client, any model: instantiate once, query across OpenRouter and beyond',
-  'Full cost breakdown: input, output, cache read/write, image, and per-request fees',
-  'TypeScript-first: full type definitions included',
-]
+  "One client, any model: instantiate once, query across OpenRouter",
+  "Full cost breakdown: input, output, cache read/write, image, and per-request fees",
+  "TypeScript-first: full type definitions included",
+];
 
 // ── Section ───────────────────────────────────────────────────────────────────
 
 export default function InstallSection() {
   return (
-    <section id="install" className="border-t border-b border-border bg-surface">
+    <section
+      id="install"
+      className="border-t border-b border-border bg-surface"
+    >
       <div className="max-w-[1200px] mx-auto px-12 py-14 grid grid-cols-2 gap-16 items-start">
-
         {/* Left — copy + features */}
         <div>
           <h2 className="font-sans text-[22px] font-semibold text-text-bright tracking-tight mb-2.5">
             Drop-in pricing for your stack.
           </h2>
           <p className="font-sans text-[14px] font-light text-text-dim leading-relaxed mb-5">
-            One import. Pass in a model ID, get back current pricing. No hardcoded tables, no stale data.
+            One import. Pass in a model ID, get back current pricing. No
+            hardcoded tables, no stale data.
           </p>
           <ul className="flex flex-col gap-2.5">
             {FEATURES.map((item, i) => (
-              <li key={i} className="flex items-start gap-2.5 font-sans text-[13px] text-text">
-                <span className="text-accent text-[10px] mt-[3px] shrink-0">▸</span>
+              <li
+                key={i}
+                className="flex items-start gap-2.5 font-sans text-[13px] text-text"
+              >
+                <span className="text-accent text-[10px] mt-[3px] shrink-0">
+                  ▸
+                </span>
                 <span>{item}</span>
               </li>
             ))}
@@ -116,27 +71,24 @@ export default function InstallSection() {
 
         {/* Right — code blocks */}
         <div className="flex flex-col gap-2.5">
-          <CodeBlock
+          <PackageManagerBlock
             label="Install"
-            copyText={INSTALL_CODE}
-            language="bash"
-            code={INSTALL_CODE}
+            commands={{
+              bun: `bun add ${PACKAGE_NAME}`,
+              pnpm: `pnpm add ${PACKAGE_NAME}`,
+              yarn: `yarn add ${PACKAGE_NAME}`,
+              npm: `npm install ${PACKAGE_NAME}`,
+            }}
           />
+
           <CodeBlock
             label="Usage"
             copyText={USAGE_CODE}
             language="typescript"
             code={USAGE_CODE}
           />
-          <CodeBlock
-            label="Return Type"
-            copyText={RETURN_TYPE_CODE}
-            language="typescript"
-            code={RETURN_TYPE_CODE}
-          />
         </div>
-
       </div>
     </section>
-  )
+  );
 }

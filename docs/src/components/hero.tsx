@@ -1,27 +1,37 @@
-export default function Hero() {
+import NumberFlow from "@number-flow/react";
+
+interface HeroProps {
+  modelsCount: number;
+  providersCount: number;
+}
+
+export default function Hero({ modelsCount, providersCount }: HeroProps) {
   return (
     <section className="relative max-w-[1200px] mx-auto px-12 pt-20 pb-16 overflow-hidden">
-
       {/* Grid background */}
       <div
         className="absolute inset-0 opacity-25 pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(var(--color-border) 1px, transparent 1px),
                             linear-gradient(90deg, var(--color-border) 1px, transparent 1px)`,
-          backgroundSize: '48px 48px',
-          maskImage: 'radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent)',
+          backgroundSize: "48px 48px",
+          maskImage:
+            "radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent)",
         }}
       />
 
       {/* Headline */}
       <h1 className="relative font-sans text-[clamp(36px,5vw,56px)] font-semibold text-text-bright leading-[1.1] tracking-tight mb-5 max-w-[720px]">
-        Model intelligence<br />
+        Model intelligence
+        <br />
         for <span className="text-accent">every LLM</span>.
       </h1>
 
       {/* Subheading */}
       <p className="relative font-sans text-[16px] font-light text-text-dim leading-relaxed max-w-[540px] mb-9">
-        LLM Intel is a library that sources model information and rates from OpenRouter, enabling the developer to look up capabilities and calculate token spend without maintaining data tables.
+        LLM Intel is a library that sources model information and rates from
+        OpenRouter, enabling the developer to look up capabilities and calculate
+        token spend without maintaining data tables.
       </p>
 
       {/* CTAs */}
@@ -36,7 +46,13 @@ export default function Hero() {
           href="#demo"
           className="inline-flex items-center gap-2 font-mono text-[12px] tracking-wider text-text-dim border border-border-2 px-5 py-2.5 rounded-app hover:border-text-dim hover:text-text-bright transition-colors"
         >
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3.5 h-3.5">
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            className="w-3.5 h-3.5"
+          >
             <polygon points="5,3 13,8 5,13" />
           </svg>
           Try the Demo
@@ -46,20 +62,26 @@ export default function Hero() {
       {/* Stats */}
       <div className="relative flex gap-10 mt-12 pt-7 border-t border-border">
         {[
-          { value: '18+', label: 'Models' },
-          { value: '7',   label: 'Providers' },
-          { value: '0',   label: 'Dependencies' },
-          { value: 'MIT', label: 'License' },
+          { value: modelsCount, label: "Models" },
+          { value: providersCount, label: "Providers" },
+          { value: "MIT", label: "License" },
         ].map(({ value, label }) => (
           <div key={label} className="flex flex-col gap-1">
             <span className="font-sans text-[22px] font-semibold text-text-bright tracking-tight">
-              <span className="text-accent">{value}</span>
+              <span className="text-accent">
+                {typeof value === "string" ? (
+                  value
+                ) : (
+                  <NumberFlow value={value} />
+                )}
+              </span>
             </span>
-            <span className="text-[10px] tracking-[0.1em] uppercase text-muted">{label}</span>
+            <span className="text-[10px] tracking-[0.1em] uppercase text-muted">
+              {label}
+            </span>
           </div>
         ))}
       </div>
-
     </section>
-  )
+  );
 }
