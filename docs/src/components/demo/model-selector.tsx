@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { ModelData } from "llmintel/client";
+import type { ModelData } from "llm-intel/client";
 import { getProvider, filterByProvider } from "../../lib/utils";
 
 interface ModelSelectorProps {

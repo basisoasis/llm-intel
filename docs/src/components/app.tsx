@@ -4,9 +4,9 @@ import InstallSection from "./install-section";
 import DemoSection from "./demo-section";
 import Footer from "./footer";
 import { useQuery } from "@tanstack/react-query";
-import type { ModelData } from "llmintel";
+import type { ModelData } from "llm-intel";
 import { useMemo } from "react";
-import { LLMIntelClient } from "llmintel/client";
+import { LLMIntelClient } from "llm-intel/client";
 import { getProviders } from "../lib/utils";
 
 async function fetchModels(): Promise<ModelData[]> {

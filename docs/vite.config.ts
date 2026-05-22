@@ -9,8 +9,8 @@ export default defineConfig({
   base: "/llm-intel/",
   resolve: {
     alias: {
-      react: path.resolve("./node_modules/react"),
-      "react-dom": path.resolve("./node_modules/react-dom"),
+      react: path.resolve("../node_modules/react"),
+      "react-dom": path.resolve("../node_modules/react-dom"),
     },
   },
   plugins: [react(), tailwindcss(), tailwindScrollbar],

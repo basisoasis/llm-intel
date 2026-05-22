@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { type ModelData, LLMIntelClient } from "llmintel/client";
+import { type ModelData, LLMIntelClient } from "llm-intel/client";
 import type { Card, ScaleMultiplier } from "../../types/ui";
 
 import EstimatorCard from "./estimator-card";

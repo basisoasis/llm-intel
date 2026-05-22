@@ -1,4 +1,4 @@
-import type { LLMIntelClient, ModelResult } from "llmintel/client";
+import type { LLMIntelClient, ModelResult } from "llm-intel/client";
 import NumberFlow from "@number-flow/react";
 import type { Card, ScaleMultiplier } from "../../types/ui";
 import { fmtTokens } from "../../lib/costs";

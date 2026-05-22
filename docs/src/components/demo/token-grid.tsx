@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import type { TokenInput, ModelResult, ModelData } from "llmintel";
-import type { LLMIntelClient } from "llmintel/client";
+import type { TokenInput, ModelResult, ModelData } from "llm-intel";
+import type { LLMIntelClient } from "llm-intel/client";
 import TokenField from "./token-field";
 
 interface TokenGridProps {

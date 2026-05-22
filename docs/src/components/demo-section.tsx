@@ -1,4 +1,4 @@
-import type { LLMIntelClient, ModelData } from "llmintel/client";
+import type { LLMIntelClient, ModelData } from "llm-intel/client";
 import Estimator from "./demo/estimator";
 
 interface DemoSectionProps {

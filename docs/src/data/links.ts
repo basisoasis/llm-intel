@@ -3,7 +3,7 @@ export interface NavLink {
   href: string;
 }
 
-export const GITHUB_URL = "https://github.com/basisoasis/llmintel";
+export const GITHUB_URL = "https://github.com/basisoasis/llm-intel";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Demo", href: "#demo" },
@@ -12,6 +12,6 @@ export const NAV_LINKS: NavLink[] = [
 
 export const FOOTER_LINKS: NavLink[] = [
   { label: "GitHub", href: GITHUB_URL },
-  { label: "NPM", href: "https://www.npmjs.com/org/basisoasis" },
-  { label: "Issues", href: "https://github.com/basisoasis/llmintel/issues" },
+  { label: "NPM", href: "https://www.npmjs.com/org/basisoasis/llm-intel" },
+  { label: "Issues", href: "https://github.com/basisoasis/llm-intel/issues" },
 ];

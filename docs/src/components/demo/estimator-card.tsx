@@ -1,5 +1,5 @@
-import { LLMIntelClient } from "llmintel/client";
-import type { ModelData } from "llmintel/client";
+import { LLMIntelClient } from "llm-intel/client";
+import type { ModelData } from "llm-intel/client";
 import type { Card } from "../../types/ui";
 import ModelSelector from "./model-selector";
 import TokenGrid from "./token-grid";
