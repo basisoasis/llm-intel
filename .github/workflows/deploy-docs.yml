@@ -26,6 +26,12 @@ jobs:
       - name: Check dist
         run: ls -la dist/
 
+      - name: Debug
+        run: |
+          ls -la dist/
+          ls -la docs/node_modules/llm-intel/ || echo "llm-intel not found in docs/node_modules"
+          ls -la node_modules/llm-intel/ || echo "llm-intel not found in root node_modules"
+
       - name: Build docs
         run: bun run build
         working-directory: docs
