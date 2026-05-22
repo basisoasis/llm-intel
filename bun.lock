@@ -4,7 +4,7 @@
     "": {
       "name": "@basisoasis/llm-intel",
       "dependencies": {
-        "bignumber.js": "^9.3.1",
+        "bignumber.js": "^11.1.0",
         "valibot": "^1.2.0",
       },
       "devDependencies": {
@@ -416,7 +416,7 @@
 
     "baseline-browser-mapping": ["baseline-browser-mapping@2.10.31", "", { "bin": { "baseline-browser-mapping": "dist/cli.cjs" } }, "sha512-MujYO3eP72uvmSE0i4wltsodRfIpZATP3jvzRNRGGxgzId7aVocVJJV3nf01qnzzKFGxQVC9bpWxl5cjxTr/7Q=="],
 
-    "bignumber.js": ["bignumber.js@9.3.1", "", {}, "sha512-Ko0uX15oIUS7wJ3Rb30Fs6SkVbLmPBAKdlm7q9+ak9bbIeFf0MwuBsQV6z7+X768/cHsfg+WlysDWJcmthjsjQ=="],
+    "bignumber.js": ["bignumber.js@11.1.1", "", {}, "sha512-LNkCYMieJqAts/Sj5094B92c5q+yRPlXWpABJnHMbUjB/F8AUjELmSmYX5mxbNiY/QnGnJvJIrnRuW5gUqbW5Q=="],
 
     "blake3-wasm": ["blake3-wasm@2.1.5", "", {}, "sha512-F1+K8EbfOZE49dtoPtmxUQrpXaBIl3ICvasLh+nJta0xkz+9kF/7uet9fLnwKqhDrmj6g+6K3Tw9yQPUg2ka5g=="],
 
@@ -821,5 +821,7 @@
     "docs/llm-intel": ["@basisoasis/llm-intel@file:", { "dependencies": { "bignumber.js": "^9.3.1", "valibot": "^1.2.0" }, "devDependencies": { "@types/bun": "latest", "bun-plugin-dtsx": "^0.9.26", "dts-bundle-generator": "^9.5.1", "vitest": "^4.1.7", "wrangler": "^4.93.1" }, "peerDependencies": { "typescript": "^5" }, "optionalPeers": ["typescript"] }],
 
     "sharp/semver": ["semver@7.8.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg=="],
+
+    "docs/llm-intel/bignumber.js": ["bignumber.js@9.3.1", "", {}, "sha512-Ko0uX15oIUS7wJ3Rb30Fs6SkVbLmPBAKdlm7q9+ak9bbIeFf0MwuBsQV6z7+X768/cHsfg+WlysDWJcmthjsjQ=="],
   }
 }
