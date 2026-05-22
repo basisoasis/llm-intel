@@ -73,7 +73,7 @@ console.log(client.formatCostResult(cost));
 For one-off lookups without instantiating a client:
 
 ```typescript
-import { getModelInfo } from "llm-intel";
+import { getModelInfo } from "@basisoasis/llm-intel";
 
 const result = await getModelInfo("anthropic/claude-3-5-sonnet", {
   provider: "openrouter",
