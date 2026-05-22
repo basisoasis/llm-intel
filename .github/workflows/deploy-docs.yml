@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -37,9 +37,11 @@ jobs:
       - name: Build docs
         run: bun run build
         working-directory: docs
+        env:
+          VITE_MODEL_URL: ${{ vars.VITE_MODEL_URL }}
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: docs/dist
 
