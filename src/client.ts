@@ -1,3 +1,4 @@
+import type BigNumber from "bignumber.js";
 import { parse, array, isValiError, flatten } from "valibot";
 import { ModelDataSchema } from "./types/models";
 import type { ModelData, ModelResult } from "./types/models";
