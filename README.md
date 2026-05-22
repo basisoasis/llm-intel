@@ -39,27 +39,33 @@ Use this in Node.js / server-side environments. It fetches model data from OpenR
 ```typescript
 import { LLMIntel } from "@basisoasis/llm-intel";
 
-const client = await LLMIntel.create({
-  provider: "openrouter",
-  apiKey: process.env.OPENROUTER_API_KEY,
+// Instantiate a provider client
+const client = await LLMIntel.create({ provider: 'openrouter' });
+
+// Resolve a model by ID
+const model = await client.getModel(
+  'anthropic/claude-4.6-sonnet-20260217'
+);
+
+if (!model) throw new Error('Model not found!');
+
+const cost = client.calculateCost(model, {
+  inputTokens: 20_000,
+  outputTokens: 1700,
 });
 
-// Get all models
-const { data: models } = await client.getModels();
-
-// Get a single model
-const result = await client.getModel("openai/gpt-4o");
-if (result) {
-  console.log(result.data.contextLength);
-}
-
-// Calculate cost
-const cost = client.calculateCost(result, {
-  promptTokens: 1000,
-  completionTokens: 500,
-});
 console.log(client.formatCostResult(cost));
-// { prompt: "$0.0025", completion: "$0.0075", total: "$0.01" }
+/* {
+  inputCost: "$0.06",
+  outputCost: "$0.03",
+  cacheReadCost: null,
+  cacheWriteCost: null,
+  imageCost: null,
+  requestCost: null,
+  totalCost: "$0.09",
+  currency: "USD",
+  warnings: [],
+} */
 ```
 
 ### Standalone function
@@ -80,7 +86,7 @@ const result = await getModelInfo("anthropic/claude-3-5-sonnet", {
 Use this when you already have the model JSON (e.g. fetched server-side and passed to a SPA, or bundled at build time). No API key required.
 
 ```typescript
-import { LLMIntelClient } from "llm-intel/client";
+import { LLMIntelClient } from "@basisoasis/llm-intel/client";
 
 // Hydrate from a URL your server exposes
 const client = new LLMIntelClient({
@@ -91,12 +97,17 @@ const client = new LLMIntelClient({
 // Or hydrate statically from a pre-loaded array
 const client = new LLMIntelClient({ models: modelDataArray });
 
-const result = await client.getModel("google/gemini-2.5-pro");
-const cost = client.calculateCost(result, {
-  promptTokens: 2000,
-  completionTokens: 800,
+const model = await client.getModel("google/gemini-2.5-pro");
+if (!model) throw new Error('Model not found!');
+
+const cost = client.calculateCost(model, {
+  inputTokens: 2000,
+  outputTokens: 800,
 });
-console.log(client.formatCost(cost.total)); // "$0.021"
+
+console.log(client.formatCost(cost.inputCost));  // $0.0025
+console.log(client.formatCost(cost.outputCost)); // $0.008
+console.log(client.formatCost(cost.totalCost));  // $0.01
 ```
 
 ## API Reference

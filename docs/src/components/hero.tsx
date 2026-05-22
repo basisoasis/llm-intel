@@ -35,7 +35,7 @@ export default function Hero({ modelsCount, providersCount }: HeroProps) {
       </p>
 
       {/* CTAs */}
-      <div className="relative flex items-center gap-3 flex-wrap">
+      <div className="relative flex items-center gap-2 flex-wrap">
         <a
           href="#install"
           className="font-mono text-[12px] font-medium tracking-wider text-bg bg-accent px-5 py-2.5 rounded-app hover:opacity-85 hover:shadow-glow transition-all"
