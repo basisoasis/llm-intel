@@ -6,7 +6,7 @@ import tailwindScrollbar from "tailwind-scrollbar";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/llmintel/",
+  base: "/llm-intel/",
   resolve: {
     alias: {
       react: path.resolve("./node_modules/react"),

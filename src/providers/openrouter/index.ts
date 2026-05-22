@@ -8,15 +8,17 @@ import {
 } from "../../cache/file-cache";
 
 import { fetchOpenRouterModels } from "./client";
-import type { ModelsResult, ModelResultStatus, ModelResult } from "../../types/models";
+import type {
+  ModelsResult,
+  ModelResultStatus,
+  ModelResult,
+} from "../../types/models";
 import type { OpenRouterModel } from "./types";
 import { mapModel, mapModels } from "./mapper";
 
 const CACHE_FILE_NAME = "openrouter-models.json";
 
-export async function getRawModels(
-  config: LLMIntelConfigOutput,
-): Promise<{
+export async function getRawModels(config: LLMIntelConfigOutput): Promise<{
   meta: CacheMeta;
   data: OpenRouterModel[];
   status: ModelResultStatus;

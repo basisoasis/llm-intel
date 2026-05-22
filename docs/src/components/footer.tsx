@@ -1,14 +1,13 @@
-import { FOOTER_LINKS } from '../data/links'
+import { FOOTER_LINKS } from "../data/links";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
       <div className="max-w-[1200px] mx-auto px-12 h-14 flex items-center justify-between">
-
         {/* Left */}
         <p className="text-[11px] text-muted">
           <span className="text-text-dim font-medium">LLM Intel</span>
-          {' · '}MIT License{' · '}Made for developers
+          {" · "}MIT License{" · "}Made for developers
         </p>
 
         {/* Right */}
@@ -23,8 +22,7 @@ export default function Footer() {
             </a>
           ))}
         </nav>
-
       </div>
     </footer>
-  )
+  );
 }

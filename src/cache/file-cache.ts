@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
 import type { LLMIntelConfigOutput } from "../config";
@@ -10,9 +10,9 @@ export interface CacheMeta {
   etag?: string | null; // ETag from last 200 response
 }
 
-/** 
- * Derives the `.meta.json` path from a data file path. If already a meta path, 
- * returns it unchanged. 
+/**
+ * Derives the `.meta.json` path from a data file path. If already a meta path,
+ * returns it unchanged.
  */
 function getMetaFilePath(path: string) {
   if (path.includes(".meta.")) return path;
@@ -20,9 +20,9 @@ function getMetaFilePath(path: string) {
   return parts.join(".");
 }
 
-/** 
+/**
  * Reads cache metadata from `{cacheDir}/{fileName}.meta.json`. Returns null if
- * missing or unparseable. 
+ * missing or unparseable.
  */
 async function readMeta(
   fileName: string,
@@ -31,16 +31,16 @@ async function readMeta(
   try {
     const filePath = join(opts.cacheDir, fileName);
     const metaPath = getMetaFilePath(filePath);
-    const metaData = await readFile(metaPath, 'utf-8');
+    const metaData = await readFile(metaPath, "utf-8");
     return JSON.parse(metaData) as CacheMeta;
   } catch {
     return null;
   }
 }
 
-/** 
- * Reads cached data from `{cacheDir}/{fileName}.json`. Returns null if missing or 
- * unparseable. 
+/**
+ * Reads cached data from `{cacheDir}/{fileName}.json`. Returns null if missing or
+ * unparseable.
  */
 async function readData<T>(
   fileName: string,
@@ -48,7 +48,7 @@ async function readData<T>(
 ): Promise<T[] | null> {
   try {
     const filePath = join(opts.cacheDir, fileName);
-    const fileData = await readFile(filePath, 'utf-8');
+    const fileData = await readFile(filePath, "utf-8");
     return JSON.parse(fileData) as T[];
   } catch {
     return null;

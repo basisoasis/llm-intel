@@ -1,15 +1,29 @@
 import { BigNumber } from "bignumber.js";
 import { flatten, isValiError } from "valibot";
-import { initializeConfig, type LLMIntelConfigInput, type LLMIntelConfigOutput } from "./config";
+import {
+  initializeConfig,
+  type LLMIntelConfigInput,
+  type LLMIntelConfigOutput,
+} from "./config";
 import { getModels as getOpenRouterModels } from "./providers/openrouter";
 import { getModelById as getOpenRouterModelById } from "./providers/openrouter";
-import type { ModelData, ModelResult, ModelResultStatus, ModelsResult } from "./types/models";
+import type {
+  ModelData,
+  ModelResult,
+  ModelResultStatus,
+  ModelsResult,
+} from "./types/models";
 import {
   calculateCost as _calculateCost,
   formatCost as _formatCost,
   formatCostResult as _formatCostResult,
 } from "./calculator";
-import type { CostCurrency, CostResult, FormattedCostResult, TokenInput } from "./calculator";
+import type {
+  CostCurrency,
+  CostResult,
+  FormattedCostResult,
+  TokenInput,
+} from "./calculator";
 import type { ModelId } from "./generated/model-ids";
 
 interface ModelMemoryCache {
@@ -60,7 +74,9 @@ export class LLMIntel {
    * Creates a validated LLMIntel client instance.
    * Config is initialized once here and reused across all subsequent calls.
    */
-  static async create(opts: Partial<LLMIntelConfigInput> = {}): Promise<LLMIntel> {
+  static async create(
+    opts: Partial<LLMIntelConfigInput> = {},
+  ): Promise<LLMIntel> {
     try {
       const config = await initializeConfig(opts);
       return new LLMIntel(config);
@@ -115,7 +131,9 @@ export class LLMIntel {
       case "openrouter":
         return getOpenRouterModels(this.config);
       default:
-        throw new Error(`[LLMIntel] Unsupported provider: "${this.config.provider}"`);
+        throw new Error(
+          `[LLMIntel] Unsupported provider: "${this.config.provider}"`,
+        );
     }
   }
 
@@ -172,5 +190,3 @@ export class LLMIntel {
     return _formatCostResult(result);
   }
 }
-
-

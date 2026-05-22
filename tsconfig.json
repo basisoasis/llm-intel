@@ -27,7 +27,7 @@
     "noPropertyAccessFromIndexSignature": false,
 
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": true
   },
   "exclude": ["dist", "node_modules"]
 }

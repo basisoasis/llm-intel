@@ -61,18 +61,22 @@ describe("LLMIntelClient", () => {
 
   describe("constructor", () => {
     it("accepts a valid ModelData array", () => {
-      expect(() => new LLMIntelClient({ models: validModelsArray })).not.toThrow();
+      expect(
+        () => new LLMIntelClient({ models: validModelsArray }),
+      ).not.toThrow();
     });
 
     it("throws on invalid ModelData array", () => {
       const invalid = [{ id: 123, canonicalSlug: true }];
-      expect(() => new LLMIntelClient({ models: invalid as unknown as ModelData[] })).toThrowError(
-        "[LLMIntelClient] Invalid model data from constructor",
-      );
+      expect(
+        () => new LLMIntelClient({ models: invalid as unknown as ModelData[] }),
+      ).toThrowError("[LLMIntelClient] Invalid model data from constructor");
     });
 
     it("accepts a URL without throwing", () => {
-      expect(() => new LLMIntelClient({ models: "https://example.com/models" })).not.toThrow();
+      expect(
+        () => new LLMIntelClient({ models: "https://example.com/models" }),
+      ).not.toThrow();
     });
 
     it("does not fetch during construction when given a URL", () => {
@@ -94,22 +98,33 @@ describe("LLMIntelClient", () => {
 
     it("fetches and returns models from a URL (raw array response)", async () => {
       mockFetchResponse(validModelsArray);
-      const client = new LLMIntelClient({ models: "https://example.com/models" });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+      });
       const models = await client.getModels();
       expect(models).toHaveLength(2);
       expect(fetch).toHaveBeenCalledOnce();
     });
 
     it("fetches and returns models from a URL (ModelsResult envelope response)", async () => {
-      mockFetchResponse({ data: validModelsArray, status: "fresh", source: "openrouter", fetchedAt: new Date() });
-      const client = new LLMIntelClient({ models: "https://example.com/models" });
+      mockFetchResponse({
+        data: validModelsArray,
+        status: "fresh",
+        source: "openrouter",
+        fetchedAt: new Date(),
+      });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+      });
       const models = await client.getModels();
       expect(models).toHaveLength(2);
     });
 
     it("throws on non-ok fetch response", async () => {
       mockFetchResponse(null, 500);
-      const client = new LLMIntelClient({ models: "https://example.com/models" });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+      });
       await expect(client.getModels()).rejects.toThrow(
         '[LLMIntelClient] Failed to fetch models from "https://example.com/models": HTTP 500',
       );
@@ -117,7 +132,9 @@ describe("LLMIntelClient", () => {
 
     it("throws when fetched JSON fails validation", async () => {
       mockFetchResponse([{ id: 123, bad: true }]);
-      const client = new LLMIntelClient({ models: "https://example.com/models" });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+      });
       await expect(client.getModels()).rejects.toThrow(
         "[LLMIntelClient] Invalid model data",
       );
@@ -128,12 +145,20 @@ describe("LLMIntelClient", () => {
         ...m,
         pricing: {
           ...m.pricing,
-          input: { ...m.pricing.input, amount: m.pricing.input.amount.toNumber() },
-          output: { ...m.pricing.output, amount: m.pricing.output.amount.toNumber() },
+          input: {
+            ...m.pricing.input,
+            amount: m.pricing.input.amount.toNumber(),
+          },
+          output: {
+            ...m.pricing.output,
+            amount: m.pricing.output.amount.toNumber(),
+          },
         },
       }));
       mockFetchResponse(serialized);
-      const client = new LLMIntelClient({ models: "https://example.com/models" });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+      });
       const models = await client.getModels();
       expect(BigNumber.isBigNumber(models[0]?.pricing.input.amount)).toBe(true);
     });
@@ -144,7 +169,9 @@ describe("LLMIntelClient", () => {
   describe("caching", () => {
     it("returns memory cache on second call without re-fetching", async () => {
       mockFetchResponse(validModelsArray);
-      const client = new LLMIntelClient({ models: "https://example.com/models" });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+      });
       await client.getModels();
       await client.getModels();
       expect(fetch).toHaveBeenCalledOnce();
@@ -153,7 +180,10 @@ describe("LLMIntelClient", () => {
     it("re-fetches after TTL expires", async () => {
       vi.useFakeTimers();
       mockFetchResponse(validModelsArray);
-      const client = new LLMIntelClient({ models: "https://example.com/models", cacheTtl: 1000 });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+        cacheTtl: 1000,
+      });
       await client.getModels();
       vi.advanceTimersByTime(1001);
       await client.getModels();
@@ -164,7 +194,10 @@ describe("LLMIntelClient", () => {
     it("does not re-fetch when cacheTtl is null", async () => {
       vi.useFakeTimers();
       mockFetchResponse(validModelsArray);
-      const client = new LLMIntelClient({ models: "https://example.com/models", cacheTtl: null });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+        cacheTtl: null,
+      });
       await client.getModels();
       vi.advanceTimersByTime(999999999);
       await client.getModels();
@@ -175,7 +208,10 @@ describe("LLMIntelClient", () => {
     it("does not re-fetch when cacheTtl is undefined", async () => {
       vi.useFakeTimers();
       mockFetchResponse(validModelsArray);
-      const client = new LLMIntelClient({ models: "https://example.com/models", cacheTtl: undefined });
+      const client = new LLMIntelClient({
+        models: "https://example.com/models",
+        cacheTtl: undefined,
+      });
       await client.getModels();
       vi.advanceTimersByTime(999999999);
       await client.getModels();
@@ -212,43 +248,55 @@ describe("LLMIntelClient", () => {
 
   describe("calculateCost()", () => {
     it("calculates cost for input and output tokens", async () => {
-        const client = new LLMIntelClient({ models: validModelsArray });
-        const model = await client.getModel("~openai/gpt-4o" as any);
-        const result = client.calculateCost(model!, { inputTokens: 1_000_000, outputTokens: 1_000_000 });
-        expect(BigNumber.isBigNumber(result.totalCost)).toBe(true);
-        expect(result.totalCost.isEqualTo(new BigNumber("20"))).toBe(true);
-        expect(result.inputCost?.isEqualTo(new BigNumber("5"))).toBe(true);
-        expect(result.outputCost?.isEqualTo(new BigNumber("15"))).toBe(true);
-        expect(result.currency).toBe("USD");
-        expect(result.warnings).toHaveLength(0);
+      const client = new LLMIntelClient({ models: validModelsArray });
+      const model = await client.getModel("~openai/gpt-4o" as any);
+      const result = client.calculateCost(model!, {
+        inputTokens: 1_000_000,
+        outputTokens: 1_000_000,
+      });
+      expect(BigNumber.isBigNumber(result.totalCost)).toBe(true);
+      expect(result.totalCost.isEqualTo(new BigNumber("20"))).toBe(true);
+      expect(result.inputCost?.isEqualTo(new BigNumber("5"))).toBe(true);
+      expect(result.outputCost?.isEqualTo(new BigNumber("15"))).toBe(true);
+      expect(result.currency).toBe("USD");
+      expect(result.warnings).toHaveLength(0);
     });
 
     it("returns null costs for unprovided token types", async () => {
-        const client = new LLMIntelClient({ models: validModelsArray });
-        const model = await client.getModel("~openai/gpt-4o" as any);
-        const result = client.calculateCost(model!, { inputTokens: 1_000_000 });
-        expect(result.inputCost?.isEqualTo(new BigNumber("5"))).toBe(true);
-        expect(result.outputCost).toBeNull();
-        expect(result.cacheReadCost).toBeNull();
-        expect(result.cacheWriteCost).toBeNull();
-        expect(result.totalCost.isEqualTo(new BigNumber("5"))).toBe(true);
+      const client = new LLMIntelClient({ models: validModelsArray });
+      const model = await client.getModel("~openai/gpt-4o" as any);
+      const result = client.calculateCost(model!, { inputTokens: 1_000_000 });
+      expect(result.inputCost?.isEqualTo(new BigNumber("5"))).toBe(true);
+      expect(result.outputCost).toBeNull();
+      expect(result.cacheReadCost).toBeNull();
+      expect(result.cacheWriteCost).toBeNull();
+      expect(result.totalCost.isEqualTo(new BigNumber("5"))).toBe(true);
     });
 
     it("warns when cache tokens are passed to a model without cache pricing", async () => {
-        const client = new LLMIntelClient({ models: validModelsArray });
-        const model = await client.getModel("~openai/gpt-4o" as any); // no cacheRead/cacheWrite
-        const result = client.calculateCost(model!, { cacheReadTokens: 1_000_000 });
-        expect(result.cacheReadCost).toBeNull();
-        expect(result.warnings).toHaveLength(1);
-        expect(result.warnings[0]).toMatch(/does not support cache read pricing/);
+      const client = new LLMIntelClient({ models: validModelsArray });
+      const model = await client.getModel("~openai/gpt-4o" as any); // no cacheRead/cacheWrite
+      const result = client.calculateCost(model!, {
+        cacheReadTokens: 1_000_000,
+      });
+      expect(result.cacheReadCost).toBeNull();
+      expect(result.warnings).toHaveLength(1);
+      expect(result.warnings[0]).toMatch(/does not support cache read pricing/);
     });
 
     it("calculates cache costs for models that support it", async () => {
-        const client = new LLMIntelClient({ models: validModelsArray });
-        const model = await client.getModel("~anthropic/claude-3-5-sonnet" as any);
-        const result = client.calculateCost(model!, { cacheReadTokens: 1_000_000, cacheWriteTokens: 1_000_000 });
-        expect(result.cacheReadCost?.isEqualTo(new BigNumber("0.3"))).toBe(true);
-        expect(result.cacheWriteCost?.isEqualTo(new BigNumber("3.75"))).toBe(true);
+      const client = new LLMIntelClient({ models: validModelsArray });
+      const model = await client.getModel(
+        "~anthropic/claude-3-5-sonnet" as any,
+      );
+      const result = client.calculateCost(model!, {
+        cacheReadTokens: 1_000_000,
+        cacheWriteTokens: 1_000_000,
+      });
+      expect(result.cacheReadCost?.isEqualTo(new BigNumber("0.3"))).toBe(true);
+      expect(result.cacheWriteCost?.isEqualTo(new BigNumber("3.75"))).toBe(
+        true,
+      );
     });
   });
 
@@ -268,7 +316,10 @@ describe("LLMIntelClient", () => {
     it("formats all line items in a CostResult", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
       const model = await client.getModel("~openai/gpt-4o" as any);
-      const costResult = client.calculateCost(model!, { inputTokens: 500_000, outputTokens: 500_000 });
+      const costResult = client.calculateCost(model!, {
+        inputTokens: 500_000,
+        outputTokens: 500_000,
+      });
       const formatted = client.formatCostResult(costResult);
       expect(typeof formatted.totalCost).toBe("string");
       expect(formatted.totalCost).toMatch(/^\$/);

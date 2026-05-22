@@ -3,7 +3,7 @@ import { CodeBlock } from "./demo/code-block";
 
 // ── Code strings ──────────────────────────────────────────────────────────────
 
-const PACKAGE_NAME = `basisoasis/llm-intel`;
+const PACKAGE_NAME = `@basisoasis/llm-intel`;
 
 const USAGE_CODE = `import { LLMIntel } from 'llm-intel';
 

@@ -57,7 +57,10 @@ const anotherModel: ModelData = {
   },
 };
 
-const mockModelsResult = (models: ModelData[], status = "fresh"): ModelsResult => ({
+const mockModelsResult = (
+  models: ModelData[],
+  status = "fresh",
+): ModelsResult => ({
   source: "openrouter",
   status: status as ModelsResult["status"],
   data: models,
@@ -150,7 +153,9 @@ describe("LLMIntel", () => {
 
     it("preserves status from provider result", async () => {
       const { getModels } = await getOpenRouterMock();
-      getModels.mockResolvedValue(mockModelsResult([validModel], "stale-fallback"));
+      getModels.mockResolvedValue(
+        mockModelsResult([validModel], "stale-fallback"),
+      );
 
       const intel = await LLMIntel.create();
       const result = await intel.getModels();

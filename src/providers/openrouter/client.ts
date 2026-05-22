@@ -3,9 +3,9 @@ import type { OpenRouterModel } from "./types";
 
 const OPENROUTER_MODELS_URL = "https://openrouter.ai/api/v1/models";
 
-/** 
- * Fetches the OpenRouter models list. Sends `If-None-Match` if an etag is provided. 
- * Returns a 304 (unchanged) or 200 (new data) result. 
+/**
+ * Fetches the OpenRouter models list. Sends `If-None-Match` if an etag is provided.
+ * Returns a 304 (unchanged) or 200 (new data) result.
  */
 export async function fetchOpenRouterModels(
   apiKey?: string,

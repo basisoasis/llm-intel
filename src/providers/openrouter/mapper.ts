@@ -29,7 +29,7 @@ function tokenPriceToValue(raw: string | undefined): PricingValue | null {
  */
 function flatPriceToValue(
   raw: string | undefined,
-  unit: "per_image" | "per_request"
+  unit: "per_image" | "per_request",
 ): PricingValue | null {
   if (raw === undefined || raw === null) return null;
 
@@ -43,8 +43,14 @@ function flatPriceToValue(
 
 function mapPricing(raw: OpenRouterModel["pricing"]): ModelPricing {
   return {
-    input: tokenPriceToValue(raw.prompt) ?? { amount: BigNumber(0), unit: "free" },
-    output: tokenPriceToValue(raw.completion) ?? { amount: BigNumber(0), unit: "free" },
+    input: tokenPriceToValue(raw.prompt) ?? {
+      amount: BigNumber(0),
+      unit: "free",
+    },
+    output: tokenPriceToValue(raw.completion) ?? {
+      amount: BigNumber(0),
+      unit: "free",
+    },
     cacheRead: tokenPriceToValue(raw.input_cache_read),
     cacheWrite: tokenPriceToValue(raw.input_cache_write),
     image: flatPriceToValue(raw.image, "per_image"),
