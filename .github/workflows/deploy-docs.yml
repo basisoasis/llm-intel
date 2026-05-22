@@ -23,14 +23,16 @@ jobs:
       - name: Build llm-intel
         run: bun run build
 
-      - name: Check dist
-        run: ls -la dist/
-
       - name: Debug
         run: |
           ls -la dist/
           ls -la docs/node_modules/llm-intel/ || echo "llm-intel not found in docs/node_modules"
           ls -la node_modules/llm-intel/ || echo "llm-intel not found in root node_modules"
+          ls -la docs/node_modules/llm-intel/dist/ || echo "no dist via symlink"
+
+      - name: Install docs dependencies
+        run: bun install
+        working-directory: docs
 
       - name: Build docs
         run: bun run build
