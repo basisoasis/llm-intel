@@ -14,6 +14,8 @@ Model intelligence for every LLM.
 - Three-tier caching: memory -> disk -> network
 - Full TypeScript support with generated `ModelId` types
 
+> **[View Demo →](https://basisoasis.github.io/llm-intel/)**
+
 ## Installation
 
 ```bash
