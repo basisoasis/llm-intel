@@ -1,4 +1,5 @@
 import NumberFlow from "@number-flow/react";
+import Logo from "./demo/llm-intel-logo.svg";
 
 interface HeroProps {
   modelsCount: number;
@@ -20,19 +21,27 @@ export default function Hero({ modelsCount, providersCount }: HeroProps) {
         }}
       />
 
-      {/* Headline */}
-      <h1 className="relative font-sans text-[clamp(36px,5vw,56px)] font-semibold text-text-bright leading-[1.1] tracking-tight mb-5 max-w-[720px]">
-        Model intelligence
-        <br />
-        for <span className="text-accent">every LLM</span>.
-      </h1>
+      <div className="flex gap-2">
+        <div className="flex-1">
+          {/* Headline */}
+          <h1 className="relative font-sans text-[clamp(36px,5vw,56px)] font-semibold text-text-bright leading-[1.1] tracking-tight mb-5 max-w-[720px]">
+            Model intelligence
+            <br />
+            for <span className="text-accent">every LLM</span>.
+          </h1>
 
-      {/* Subheading */}
-      <p className="relative font-sans text-[16px] font-light text-text-dim leading-relaxed max-w-[540px] mb-9">
-        LLM Intel is a library that sources model information and rates from
-        OpenRouter, enabling the developer to look up capabilities and calculate
-        token spend without maintaining data tables.
-      </p>
+          {/* Subheading */}
+          <p className="relative font-sans text-[16px] font-light text-text-dim leading-relaxed max-w-[540px] mb-9">
+            LLM Intel is a library that sources model information and rates from
+            OpenRouter, enabling the developer to look up capabilities and
+            calculate token spend without maintaining data tables.
+          </p>
+        </div>
+
+        <div className="flex flex-1 justify-center items-center w-full">
+          <img src={Logo} alt="LLM Intel Logo" width="300" />
+        </div>
+      </div>
 
       {/* CTAs */}
       <div className="relative flex items-center gap-2 flex-wrap">

@@ -1,12 +1,14 @@
 import { NAV_LINKS, GITHUB_URL } from "../data/links";
+import Logo from './demo/llm-intel-logo.svg';
 
 export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between h-[52px] px-12 bg-bg/90 backdrop-blur-md border-b border-border">
       {/* Left — brand */}
       <div className="flex items-center gap-2.5">
-        <div className="w-5 h-5 flex items-center justify-center border border-accent rounded-sm">
-          <svg viewBox="0 0 12 12" fill="none" className="w-3 h-3">
+        <div className="w-5 h-5 flex items-center justify-center rounded-sm">
+          <img src={Logo} alt="LLM Intel Logo" />
+          {/* <svg viewBox="0 0 12 12" fill="none" className="w-3 h-3">
             <rect x="1" y="1" width="4" height="4" fill="#a8ff78" />
             <rect
               x="7"
@@ -32,13 +34,13 @@ export default function Nav() {
               fill="#a8ff78"
               opacity="0.25"
             />
-          </svg>
+          </svg> */}
         </div>
         <span className="font-sans text-[13px] font-semibold text-text-bright">
           LLM <span className="text-accent">Intel</span>
         </span>
         <div className="w-px h-4 bg-border-2 mx-1" />
-        <span className="text-[11px] text-muted tracking-wide">llm-intel</span>
+        <span className="text-[11px] text-muted tracking-wide">@basisoasis/llm-intel</span>
       </div>
 
       {/* Right — links */}
