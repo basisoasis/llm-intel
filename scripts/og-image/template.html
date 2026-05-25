@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background-color: #0d0f0e;
+        color: #d4d9d4;
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 13px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        display: flex;
+        align-items: center;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.07) 2px,
+          rgba(0, 0, 0, 0.07) 4px
+        );
+        pointer-events: none;
+        z-index: 200;
+      }
+
+      .bg-triangles {
+        position: absolute;
+        top: 50%;
+        right: 80px;
+        transform: translateY(-50%) scale(2.4);
+        opacity: 0.18;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        padding: 0 96px;
+        max-width: 75%;
+      }
+
+      .site-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 36px;
+      }
+
+      .site-label span {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 18px;
+        color: #4a524a;
+        letter-spacing: 0.1em;
+      }
+
+      h1 {
+        font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+        font-size: 80px;
+        font-weight: 600;
+        color: #edf2ed;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+        max-width: 720px;
+      }
+
+      h1 .accent {
+        color: #a8ff78;
+      }
+
+      p {
+        font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+        font-size: 22px;
+        font-weight: 300;
+        color: #7a877a;
+        line-height: 1.5;
+        margin-bottom: 48px;
+        max-width: 580px;
+      }
+
+      .stats {
+        display: flex;
+        gap: 40px;
+      }
+
+      .stat-value {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 32px;
+        font-weight: 700;
+        color: #a8ff78;
+      }
+
+      .stat-label {
+        font-family: "IBM Plex Mono", ui-monospace, monospace;
+        font-size: 13px;
+        color: #4a524a;
+        letter-spacing: 0.1em;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      class="bg-triangles"
+      width="185"
+      height="174"
+      viewBox="0 0 185 174"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        opacity="0.25"
+        d="M106 98.6987L149.301 173.699H62.6987L106 98.6987Z"
+        fill="#A8FF78"
+      />
+      <path
+        opacity="0.5"
+        d="M88.3013 93.6987L45 168.699L1.69873 93.6987L88.3013 93.6987Z"
+        fill="#A8FF78"
+      />
+      <path opacity="0.5" d="M0 75L43.3013 0L86.6025 75L0 75Z" fill="#A8FF78" />
+      <path d="M98 51H184.603L141.301 126L98 51Z" fill="#A8FF78" />
+    </svg>
+
+    <div class="content">
+      <div class="site-label">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 185 174"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            opacity="0.25"
+            d="M106 98.6987L149.301 173.699H62.6987L106 98.6987Z"
+            fill="#A8FF78"
+          />
+          <path
+            opacity="0.5"
+            d="M88.3013 93.6987L45 168.699L1.69873 93.6987L88.3013 93.6987Z"
+            fill="#A8FF78"
+          />
+          <path
+            opacity="0.5"
+            d="M0 75L43.3013 0L86.6025 75L0 75Z"
+            fill="#A8FF78"
+          />
+          <path d="M98 51H184.603L141.301 126L98 51Z" fill="#A8FF78" />
+        </svg>
+        <span>@basisoasis/llm-intel</span>
+      </div>
+
+      <h1>
+        Model intelligence<br />for <span class="accent">every LLM</span>.
+      </h1>
+
+      <p>
+        LLM Intel is a library that sources model information and rates from
+        OpenRouter, enabling the developer to look up capabilities and calculate
+        token spend without maintaining data tables.
+      </p>
+
+      <div class="stats">
+        <div>
+          <div class="stat-value">{{STAT_1_VALUE}}</div>
+          <div class="stat-label">{{STAT_1_LABEL}}</div>
+        </div>
+        <div>
+          <div class="stat-value">{{STAT_2_VALUE}}</div>
+          <div class="stat-label">{{STAT_2_LABEL}}</div>
+        </div>
+        <div>
+          <div class="stat-value">MIT</div>
+          <div class="stat-label">LICENSE</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
