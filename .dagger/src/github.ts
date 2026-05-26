@@ -1,5 +1,4 @@
 import { dag, type Container, type Secret } from "@dagger.io/dagger";
-import type { ModelDiff } from "./types";
 
 interface OpenPrOptions {
   githubToken: Secret;
@@ -7,7 +6,6 @@ interface OpenPrOptions {
   githubActor: string;
   version: string;
   changelog: string;
-  diff: ModelDiff;
   /** Container with updated src/generated/model-ids.ts */
   scriptContainer: Container;
 }
@@ -23,34 +21,15 @@ export async function openPr(opts: OpenPrOptions): Promise<void> {
     githubActor,
     version,
     changelog,
-    diff,
     scriptContainer,
   } = opts;
 
   const branch = `sync/openrouter-v${version}`;
   const prTitle = `chore: sync OpenRouter models v${version}`;
 
-  const addedList = diff.added
-    .map((m) => `- ${m.name} (\`${m.id}\`)`)
-    .join("\n");
-  const removedList = diff.removed
-    .map((m) => `- ${m.name} (\`${m.id}\`)`)
-    .join("\n");
-
-  const prBody = [
-    `## OpenRouter model sync v${version}\n`,
-    diff.added.length > 0
-      ? `### Added (${diff.added.length})\n${addedList}`
-      : "",
-    diff.removed.length > 0
-      ? `### Removed (${diff.removed.length})\n${removedList}`
-      : "",
-    diff.updated.length > 0
-      ? `\n_${diff.updated.length} model(s) had field-level updates._`
-      : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
+  const prBody = [`## OpenRouter model sync v${version}`, changelog].join(
+    "\n\n",
+  );
 
   const script = [
     "set -e",
@@ -67,30 +46,52 @@ export async function openPr(opts: OpenPrOptions): Promise<void> {
     'git clone --depth=1 "https://github.com/$REPO.git" /repo',
     "cd /repo",
     "",
-    "# Create branch",
-    'git checkout -b "$BRANCH"',
+    "# Create or reset branch",
+    'if git ls-remote --exit-code --heads origin "$BRANCH"; then',
+    '  git fetch --depth=1 origin "$BRANCH"', // fetch the branch first
+    '  git checkout -b "$BRANCH" "FETCH_HEAD"', // then create from FETCH_HEAD
+    "else",
+    '  git checkout -b "$BRANCH"',
+    "fi",
     "",
     "# Copy files",
     "cp /tmp/CHANGELOG.md CHANGELOG.md",
     "cp /tmp/package.json package.json",
     "mkdir -p src/generated",
     "cp /tmp/model-ids.ts src/generated/model-ids.ts",
+    "mkdir -p docs/public",
+    "cp /tmp/og-image.png docs/public/og-image.png",
     "",
     "# Commit and push",
-    "git add CHANGELOG.md package.json src/generated/model-ids.ts",
-    'git commit -m "chore: sync OpenRouter models v$VERSION"',
+    "git add CHANGELOG.md package.json src/generated/model-ids.ts docs/public/og-image.png",
+    'git commit -m "chore: sync OpenRouter models v$VERSION" || echo "Nothing to commit"',
     'git push origin "$BRANCH"',
     "",
-    "# Build JSON payload",
-    'jq -n --arg title "$PR_TITLE" --arg head "$BRANCH" --arg body "$(cat /tmp/pr_body.txt)" \'{title: $title, body: $body, head: $head, base: "master"}\' > /tmp/pr_payload.json',
-    "",
-    "# Open PR",
-    "curl -X POST \\",
-    '  -H "Content-Type: application/json" \\',
+    "# Check if PR already exists for this branch",
+    "EXISTING_PR=$(curl -s \\",
     '  -H "Authorization: Bearer $GH_TOKEN" \\',
-    "  -d @/tmp/pr_payload.json \\",
-    '  "https://api.github.com/repos/$REPO/pulls" \\',
-    "  | jq .",
+    '  "https://api.github.com/repos/$REPO/pulls?head=${REPO%%/*}:$BRANCH&state=open" \\',
+    "  | jq '.[0].number // empty')",
+    "",
+    'if [ -n "$EXISTING_PR" ]; then',
+    '  echo "Updating existing PR #$EXISTING_PR"',
+    '  jq -n --arg title "$PR_TITLE" --arg body "$(cat /tmp/pr_body.txt)" \'{ title: $title, body: $body }\' > /tmp/pr_payload.json',
+    "  curl -X PATCH \\",
+    '    -H "Content-Type: application/json" \\',
+    '    -H "Authorization: Bearer $GH_TOKEN" \\',
+    "    -d @/tmp/pr_payload.json \\",
+    '    "https://api.github.com/repos/$REPO/pulls/$EXISTING_PR" \\',
+    "    | jq .",
+    "else",
+    '  echo "Opening new PR"',
+    '  jq -n --arg title "$PR_TITLE" --arg head "$BRANCH" --arg body "$(cat /tmp/pr_body.txt)" \'{ title: $title, body: $body, head: $head, base: "master" }\' > /tmp/pr_payload.json',
+    "  curl -X POST \\",
+    '    -H "Content-Type: application/json" \\',
+    '    -H "Authorization: Bearer $GH_TOKEN" \\',
+    "    -d @/tmp/pr_payload.json \\",
+    '    "https://api.github.com/repos/$REPO/pulls" \\',
+    "    | jq .",
+    "fi",
     "",
   ].join("\n");
 
@@ -107,14 +108,17 @@ export async function openPr(opts: OpenPrOptions): Promise<void> {
     .withNewFile("/tmp/pr_body.txt", prBody)
     .withFile("/tmp/package.json", scriptContainer.file("package.json"))
     .withFile(
+      "/tmp/og-image.png",
+      scriptContainer.file("docs/public/og-image.png"),
+    )
+    .withFile(
       "/tmp/model-ids.ts",
       scriptContainer.file("src/generated/model-ids.ts"),
     )
     .withNewFile("/tmp/CHANGELOG.md", changelog)
-    .withNewFile("/tmp/sync.sh", script)
-    .terminal();
+    .withNewFile("/tmp/sync.sh", script);
 
-  await prContainer.terminal().withExec(["sh", "/tmp/sync.sh"]).sync();
+  await prContainer.withExec(["sh", "/tmp/sync.sh"]).sync();
 }
 
 /**
@@ -143,7 +147,10 @@ export async function cutRelease(
     .stdout();
 
   const packageJson = JSON.parse(
-    Buffer.from(packageJsonB64.trim(), "base64").toString("utf-8"),
+    // GitHub API returns base64 content with newlines embedded
+    Buffer.from(packageJsonB64.trim().replace(/\s/g, ""), "base64").toString(
+      "utf-8",
+    ),
   );
   const version: string = packageJson.version;
   const tag = `v${version}`;
@@ -158,9 +165,11 @@ export async function cutRelease(
     ])
     .stdout();
 
-  const changelog = Buffer.from(changelogB64.trim(), "base64").toString(
-    "utf-8",
-  );
+  const changelog = Buffer.from(
+    // GitHub API returns base64 content with newlines embedded
+    changelogB64.trim().replace(/\s/g, ""),
+    "base64",
+  ).toString("utf-8");
 
   const script = [
     "set -e",

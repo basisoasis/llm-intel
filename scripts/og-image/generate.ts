@@ -11,7 +11,7 @@ const providers = getProviders(models.data);
 
 const templatePath = join(import.meta.dir, 'template.html');
 const tempPath = join(import.meta.dir, 'template.tmp.html');
-const output = join(import.meta.dir, '../../dist/og.png');
+const output = join(import.meta.dir, '../../docs/public/og-image.png');
 
 async function inlineFonts(html: string): Promise<string> {
   const fonts = [

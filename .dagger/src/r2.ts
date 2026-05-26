@@ -1,4 +1,4 @@
-import { dag, type Container, type Secret } from "@dagger.io/dagger"
+import { dag, type Container, type Secret } from "@dagger.io/dagger";
 
 /**
  * Build a base AWS CLI container wired to Cloudflare R2
@@ -10,20 +10,34 @@ export async function awsContainer(
   r2SecretAccessKey: Secret,
   r2Bucket: Secret,
 ): Promise<Container> {
-  const accountId = await r2AccountId.plaintext()
-  const bucket = await r2Bucket.plaintext()
+  const accountId = await r2AccountId.plaintext();
+  const bucket = await r2Bucket.plaintext();
 
   return dag
     .container()
     .from("amazon/aws-cli:latest")
+    .withExec([
+      "aws",
+      "configure",
+      "set",
+      "default.s3.request_checksum_calculation",
+      "when_required",
+    ])
+    .withExec([
+      "aws",
+      "configure",
+      "set",
+      "default.s3.response_checksum_validation",
+      "when_required",
+    ])
     .withSecretVariable("AWS_ACCESS_KEY_ID", r2AccessKeyId)
     .withSecretVariable("AWS_SECRET_ACCESS_KEY", r2SecretAccessKey)
     .withEnvVariable("AWS_DEFAULT_REGION", "auto")
-    .withEnvVariable(
-      "AWS_ENDPOINT_URL",
-      `https://${accountId}.r2.cloudflarestorage.com`,
-    )
     .withEnvVariable("BUCKET", bucket)
+    .withEnvVariable(
+      "BUCKET_ENDPOINT",
+      `https://${accountId}.r2.cloudflarestorage.com`,
+    );
 }
 
 /**
@@ -33,37 +47,43 @@ export async function fetchFromR2(
   base: Container,
   key: string,
 ): Promise<string | null> {
+  const safeKey = key.replace(/[^a-zA-Z0-9.-]/g, "_");
+  const tmpPath = `/tmp/${safeKey}`;
+  const tmpPathSuccess = `/tmp/success-${safeKey}`;
+  const tmpPathFailure = `/tmp/failure-${safeKey}`
+
   try {
     const result = await base
       .withExec([
-        "sh", "-c",
-        `aws s3 cp s3://$BUCKET/${key} /tmp/fetched.json 2>/dev/null && cat /tmp/fetched.json || echo '__NOT_FOUND__'`,
+        "sh",
+        "-c",
+        `aws s3api get-object --bucket $BUCKET --key ${key} ${tmpPath} --endpoint-url $BUCKET_ENDPOINT > ${tmpPathSuccess} 2>${tmpPathFailure} && cat ${tmpPath} || echo '__NOT_FOUND__'`,
       ])
-      .stdout()
-    const trimmed = result.trim()
-    return trimmed === "__NOT_FOUND__" ? null : trimmed
+      .stdout();
+    const trimmed = result.trim();
+    return trimmed === "__NOT_FOUND__" ? null : trimmed;
   } catch {
-    return null
+    return null;
   }
 }
 
-/**
- * Upload both model files to R2.
- */
 export async function uploadToR2(
   base: Container,
-  modelsJson: string,
-  metaJson: string,
+  key: string,
+  content: string,
+  contentType: string = "application/json",
 ): Promise<void> {
+  const safeKey = key.replace(/[^a-zA-Z0-9.-]/g, "_");
+  const tmpPath = `/tmp/${safeKey}`;
+  const tmpPathSuccess = `/tmp/success-${safeKey}`;
+  const tmpPathFailure = `/tmp/failure-${safeKey}`;
+
   await base
-    .withNewFile("/tmp/openrouter-models.json", modelsJson)
-    .withNewFile("/tmp/openrouter-models.meta.json", metaJson)
+    .withNewFile(tmpPath, content)
     .withExec([
-      "sh", "-c",
-      [
-        "aws s3 cp /tmp/openrouter-models.json s3://$BUCKET/openrouter-models.json --content-type application/json",
-        "aws s3 cp /tmp/openrouter-models.meta.json s3://$BUCKET/openrouter-models.meta.json --content-type application/json",
-      ].join(" && "),
+      "sh",
+      "-c",
+      `aws s3api put-object --bucket $BUCKET --key ${key} --body ${tmpPath} --content-type ${contentType} --endpoint-url $BUCKET_ENDPOINT > ${tmpPathSuccess} 2>${tmpPathFailure}`,
     ])
-    .sync()
+    .sync();
 }

@@ -7,7 +7,6 @@ export const MODEL_IDS = [
   "aion-labs/aion-2.0-20260223",
   "aion-labs/aion-rp-llama-3.1-8b",
   "alfredpros/codellama-7b-instruct-solidity",
-  "alibaba/tongyi-deepresearch-30b-a3b",
   "allenai/olmo-3-32b-think-20251121",
   "amazon/nova-2-lite-v1",
   "amazon/nova-lite-v1",
