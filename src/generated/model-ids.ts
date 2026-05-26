@@ -31,7 +31,6 @@ export const MODEL_IDS = [
   "arcee-ai/maestro-reasoning",
   "arcee-ai/spotlight",
   "arcee-ai/trinity-large-thinking",
-  "arcee-ai/trinity-large-thinking",
   "arcee-ai/trinity-mini-20251201",
   "arcee-ai/virtuoso-large",
   "baidu/cobuddy-20260430",
