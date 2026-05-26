@@ -22,7 +22,7 @@ jobs:
           method: "oidc"
           identity-id: ${{ vars.INFISICAL_MACHINE_IDENTITY_ID }}
           domain: "https://app.infisical.com"
-          env-slug: "production"
+          env-slug: "prd"
           project-slug: ${{ vars.INFISICAL_PROJECT_SLUG }}
           oidc-audience: ${{ vars.INFISICAL_OIDC_AUDIENCE }}
 
