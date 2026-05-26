@@ -150,8 +150,10 @@ export class LlmIntel {
     githubToken: Secret,
     /** Owner/repo e.g. "acme/llm-intel" */
     githubRepo: string,
+    /** Source directory */
+    source: Directory,
   ): Promise<string> {
-    const tag = await cutRelease(githubToken, githubRepo)
-    return `Released ${tag}`
+    const tag = await cutRelease(source, githubToken, githubRepo);
+    return `Released ${tag}`;
   }
 }
