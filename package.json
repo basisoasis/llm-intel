@@ -46,7 +46,7 @@
   "private": false,
   "scripts": {
     "build": "bun run generate && bun ./scripts/build.ts",
-    "generate": "bun scripts/generate/generate-model-ids.ts",
+    "generate:types": "bun scripts/generate/generate-model-ids.ts",
     "generate:model": "bun run scripts/generate/generate-model-serialized.ts",
     "test": "vitest run"
   },

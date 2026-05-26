@@ -1,0 +1,50 @@
+name: Sync OpenRouter Models
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # daily at midnight UTC
+  workflow_dispatch:      # allow manual trigger
+
+permissions:
+  contents: write         # push branches + commit files
+  pull-requests: write    # open PRs
+  id-token: write         # required for Infisical OIDC authentication
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inject secrets from Infisical
+        uses: Infisical/secrets-action@v1.0.9
+        with:
+          method: "oidc"
+          identity-id: ${{ vars.INFISICAL_MACHINE_IDENTITY_ID }}
+          domain: "https://app.infisical.com"
+          env-slug: "production"
+          project-slug: ${{ vars.INFISICAL_PROJECT_SLUG }}
+
+      - name: Build Dagger args
+        run: |
+          ARGS=(
+            sync
+            --source=.
+            --r2-account-id=env:LLM_INTEL_R2_ACCOUNT_ID
+            --r2-access-key-id=env:LLM_INTEL_R2_ACCESS_KEY_ID
+            --r2-secret-access-key=env:LLM_INTEL_R2_SECRET_ACCESS_KEY
+            --r2-bucket=env:LLM_INTEL_R2_BUCKET
+            --github-token=env:GITHUB_TOKEN
+            --github-repo=${{ github.repository }}
+            --github-actor=${{ github.actor }}
+          )
+          if [ -n "$LLM_INTEL_OPEN_ROUTER_API_KEY" ]; then
+            ARGS+=(--open-router-api-key=env:LLM_INTEL_OPEN_ROUTER_API_KEY)
+          fi
+          echo "DAGGER_ARGS=${ARGS[*]}" >> $GITHUB_ENV
+
+      - uses: dagger/dagger-for-github@v8.4.1
+        with:
+          verb: call
+          args: ${{ env.DAGGER_ARGS }}
+          module: .dagger
