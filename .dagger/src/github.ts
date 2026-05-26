@@ -1,4 +1,10 @@
-import { dag, type Directory, type Container, type Secret } from "@dagger.io/dagger";
+import {
+  dag,
+  type Directory,
+  type Container,
+  type Secret,
+  ReturnType,
+} from "@dagger.io/dagger";
 
 interface OpenPrOptions {
   githubToken: Secret;
@@ -134,30 +140,73 @@ export async function cutRelease(
   const tag = `v${packageJson.version}`;
   const changelog = await source.file("CHANGELOG.md").contents();
 
+  // Extract only the section for this release
+  const body = extractChangelogSection(changelog, tag);
+
   const payload = JSON.stringify({
     tag_name: tag,
+    target_commitish: "master", // ensure tag is created against master
     name: tag,
-    body: changelog,
+    body,
     draft: false,
     prerelease: false,
   });
 
-  await dag
+  const output = await dag
     .container()
     .from("alpine:latest")
     .withExec(["apk", "add", "--no-cache", "curl"])
     .withSecretVariable("GH_TOKEN", githubToken)
     .withEnvVariable("REPO", githubRepo)
     .withNewFile("/tmp/payload.json", payload)
-    .withExec([
-      "sh", "-c",
-      `curl -f -X POST \
-        -H "Authorization: Bearer $GH_TOKEN" \
-        -H "Content-Type: application/json" \
-        -d @/tmp/payload.json \
-        "https://api.github.com/repos/$REPO/releases"`,
-    ])
-    .sync();
+    .withExec(
+      [
+        "sh",
+        "-c",
+        `curl -s -w "\nHTTP_STATUS:%{http_code}" -X POST \
+      -H "Authorization: Bearer $GH_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d @/tmp/payload.json \
+      "https://api.github.com/repos/$REPO/releases"`,
+      ],
+      { expect: ReturnType.Any },
+    )
+    .stdout();
+
+  console.log("GitHub API response:", output);
 
   return tag;
+}
+
+/**
+ * Pull out the changelog block for a given tag, e.g. "## [v1.2.3]" down to
+ * (but not including) the next "## [" heading.
+ */
+function extractChangelogSection(changelog: string, tag: string): string {
+  // Match both "## [v1.2.3]" and "## [1.2.3]" style headings
+  const version = tag.replace(/^v/, "");
+  const start = new RegExp(`^## \\[v?${escapeRegex(version)}\\]`, "m");
+  const next = /^## \[/m;
+
+  const startMatch = changelog.match(start);
+  if (!startMatch || startMatch.index === undefined) {
+    // Fallback: send nothing rather than the whole file
+    return `Release ${tag}`;
+  }
+
+  const afterStart = changelog.slice(startMatch.index);
+  const lines = afterStart.split("\n");
+
+  // Skip the heading line itself, collect until the next "## [" heading
+  const bodyLines: string[] = [];
+  for (let i = 1; i < lines.length; i++) {
+    if (i > 1 && next.test(lines[i])) break;
+    bodyLines.push(lines[i]);
+  }
+
+  return bodyLines.join("\n").trim() || `Release ${tag}`;
+}
+
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
