@@ -24,6 +24,7 @@ jobs:
           domain: "https://app.infisical.com"
           env-slug: "production"
           project-slug: ${{ vars.INFISICAL_PROJECT_SLUG }}
+          audience: ${{ vars.INFISICAL_OIDC_AUDIENCE }}
 
       - name: Build Dagger args
         run: |
