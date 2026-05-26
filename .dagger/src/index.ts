@@ -34,6 +34,9 @@ export class LlmIntel {
     openRouterApiKey?: Secret,
   ): Promise<string> {
 
+    const modelsFileName = 'openrouter-models.json';
+    const modelsFileMetaName = 'openrouter-models.meta.json';
+
     // =====================================================================
     // 1. Run the generate script — populates .cache/ inside the container
     // =====================================================================
@@ -44,6 +47,7 @@ export class LlmIntel {
       .withWorkdir("/app")
       .withEnvVariable("LLM_INTEL_CACHE_DIR", "/app/.cache")
       .withExec(["bun", "install"])
+      .withExec(["bunx", "playwright", "install", "chromium", "--with-deps"])
 
     if (openRouterApiKey) {
       scriptContainer = scriptContainer
@@ -54,8 +58,8 @@ export class LlmIntel {
       .withExec(["bun", "run", "generate:model"]);
 
     const [newModelsJson, newMetaJson] = await Promise.all([
-      scriptContainer.file(".cache/openrouter-models.json").contents(),
-      scriptContainer.file(".cache/openrouter-models.meta.json").contents(),
+      scriptContainer.file(`.cache/${modelsFileName}`).contents(),
+      scriptContainer.file(`.cache/${modelsFileMetaName}`).contents(),
     ])
 
     const newMeta: MetaFile = JSON.parse(newMetaJson)
@@ -64,8 +68,12 @@ export class LlmIntel {
     // 2. Compare dataUpdatedAt against remote meta, exit early if unchanged
     // =====================================================================
     const base = await awsContainer(r2AccountId, r2AccessKeyId, r2SecretAccessKey, r2Bucket)
-    const remoteMetaRaw = await fetchFromR2(base, "openrouter-models.meta.json")
+    const remoteMetaRaw = await fetchFromR2(base, modelsFileMetaName)
     const remoteMeta: MetaFile | null = remoteMetaRaw ? JSON.parse(remoteMetaRaw) : null
+
+    scriptContainer
+      .withNewFile('tmp/remote-meta.raw.json', remoteMetaRaw || '');
+
 
     if (remoteMeta?.dataUpdatedAt === newMeta.dataUpdatedAt) {
       return "No change detected (dataUpdatedAt unchanged). Skipping."
@@ -74,7 +82,7 @@ export class LlmIntel {
     // =====================================================================
     // 3. Fetch previous models from R2 and compute diff
     // =====================================================================
-    const remoteModelsRaw = await fetchFromR2(base, "openrouter-models.json")
+    const remoteModelsRaw = await fetchFromR2(base, modelsFileName)
     const previousModels: ModelData[] = remoteModelsRaw ? JSON.parse(remoteModelsRaw) : []
     const newModels: ModelData[] = JSON.parse(newModelsJson)
     const diff: ModelDiff = diffModels(previousModels, newModels)
@@ -82,15 +90,16 @@ export class LlmIntel {
     // =====================================================================
     // 5. Structural change? Regenerate types, bump version, open PR
     // =====================================================================
-    const hasStructuralChange = diff.added.length > 0 || diff.removed.length > 0
+    const hasStructuralChange = diff.added.length > 0 || diff.updated.length > 0 || diff.removed.length > 0
 
     if (!hasStructuralChange) {
-      return `Uploaded. ${diff.updated.length} model(s) had field-level updates. No PR opened.`
+      return `No changes detected. No PR opened.`
     }      
 
     // Regenerate TypeScript model ID types from the updated cache
     const withTypes = scriptContainer
       .withExec(["bun", "run", "generate:types"])
+      .withExec(["bun", "run", "scripts/og-image/generate.ts"])
       .withExec(["bun", "pm", "version", "patch", "--no-git-tag-version"])
 
     // Read current version from package.json and bump patch
@@ -100,7 +109,6 @@ export class LlmIntel {
       .withDirectory("/app", source)
       .withWorkdir("/app")
       .withExec(["bun", "pm", "version", "patch", "--no-git-tag-version"])
-      .terminal()
       .file("package.json")
       .contents()
       .then((raw) => JSON.parse(raw).version as string)
@@ -114,14 +122,14 @@ export class LlmIntel {
       githubActor,
       version: newVersion,
       changelog,
-      diff,
       scriptContainer: withTypes,
     })
 
     // =====================================================================
     // 4. Upload both files to R2
     // =====================================================================
-    // await uploadToR2(base, newModelsJson, newMetaJson)
+    await uploadToR2(base, modelsFileName, newModelsJson);
+    await uploadToR2(base, modelsFileMetaName, newMetaJson);
 
     return (
       `Uploaded. Version bumped to v${newVersion}. PR opened. ` +
