@@ -1,5 +1,5 @@
 import { LLMIntel } from "../../src";
-import { writeFileSync } from "node:fs";
+import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,8 +8,11 @@ const models = await client.getModels();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+const assetsDir = join(__dirname, "../../assets");
+mkdirSync(assetsDir, { recursive: true });
+
 writeFileSync(
-  join(__dirname, "../../assets/providers.json"),
+  join(assetsDir, "providers.json"),
   JSON.stringify(models, null, 2),
 );
 

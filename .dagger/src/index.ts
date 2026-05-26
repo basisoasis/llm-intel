@@ -36,6 +36,7 @@ export class LlmIntel {
 
     const modelsFileName = 'openrouter-models.json';
     const modelsFileMetaName = 'openrouter-models.meta.json';
+    const providersFileName = 'providers.json';
 
     // =====================================================================
     // 1. Run the generate script — populates .cache/ inside the container
@@ -57,9 +58,10 @@ export class LlmIntel {
     scriptContainer = scriptContainer
       .withExec(["bun", "run", "generate:model"]);
 
-    const [newModelsJson, newMetaJson] = await Promise.all([
+    const [newModelsJson, newMetaJson, newProvidersJson] = await Promise.all([
       scriptContainer.file(`.cache/${modelsFileName}`).contents(),
       scriptContainer.file(`.cache/${modelsFileMetaName}`).contents(),
+      scriptContainer.file(`assets/${providersFileName}`).contents(),
     ])
 
     const newMeta: MetaFile = JSON.parse(newMetaJson)
@@ -130,6 +132,7 @@ export class LlmIntel {
     // =====================================================================
     await uploadToR2(base, modelsFileName, newModelsJson);
     await uploadToR2(base, modelsFileMetaName, newMetaJson);
+    await uploadToR2(base, providersFileName, newProvidersJson);
 
     return (
       `Uploaded. Version bumped to v${newVersion}. PR opened. ` +
