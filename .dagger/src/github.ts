@@ -173,7 +173,10 @@ export async function cutRelease(
     )
     .stdout();
 
-  console.log("GitHub API response:", output);
+  if (output.includes('"already_exists"')) {
+    console.log(`Release ${tag} already exists, skipping.`);
+    return tag;
+  }
 
   return tag;
 }
