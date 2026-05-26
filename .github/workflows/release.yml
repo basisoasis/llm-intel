@@ -3,12 +3,13 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'CHANGELOG.md'
 
 permissions:
-  contents: write # needed to create releases + tags
+  contents: write  # create GitHub releases and tags
+  id-token: write  # mint OIDC token for npm trusted publishing
 
 jobs:
   release:
@@ -21,9 +22,15 @@ jobs:
           verb: call
           args: >-
             release
+            --source=.
             --github-token=env:GITHUB_TOKEN
             --github-repo=${{ github.repository }}
           module: .dagger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}  # optional
+          DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - run: npx npm@latest publish --access public

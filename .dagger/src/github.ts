@@ -1,4 +1,4 @@
-import { dag, type Container, type Secret } from "@dagger.io/dagger";
+import { dag, type Directory, type Container, type Secret } from "@dagger.io/dagger";
 
 interface OpenPrOptions {
   githubToken: Secret;
@@ -126,73 +126,37 @@ export async function openPr(opts: OpenPrOptions): Promise<void> {
  * using CHANGELOG.md as release notes.
  */
 export async function cutRelease(
+  source: Directory,
   githubToken: Secret,
   githubRepo: string,
 ): Promise<string> {
-  const container = dag
+  const packageJson = JSON.parse(await source.file("package.json").contents());
+  const tag = `v${packageJson.version}`;
+  const changelog = await source.file("CHANGELOG.md").contents();
+
+  const payload = JSON.stringify({
+    tag_name: tag,
+    name: tag,
+    body: changelog,
+    draft: false,
+    prerelease: false,
+  });
+
+  await dag
     .container()
     .from("alpine:latest")
-    .withExec(["apk", "add", "--no-cache", "curl", "jq"])
+    .withExec(["apk", "add", "--no-cache", "curl"])
     .withSecretVariable("GH_TOKEN", githubToken)
-    .withEnvVariable("REPO", githubRepo);
-
-  // Read version from package.json on main
-  const packageJsonB64 = await container
+    .withEnvVariable("REPO", githubRepo)
+    .withNewFile("/tmp/payload.json", payload)
     .withExec([
-      "sh",
-      "-c",
-      `curl -f -H "Authorization: Bearer $GH_TOKEN" \
-        "https://api.github.com/repos/$REPO/contents/package.json" | jq -r '.content'`,
+      "sh", "-c",
+      `curl -f -X POST \
+        -H "Authorization: Bearer $GH_TOKEN" \
+        -H "Content-Type: application/json" \
+        -d @/tmp/payload.json \
+        "https://api.github.com/repos/$REPO/releases"`,
     ])
-    .stdout();
-
-  const packageJson = JSON.parse(
-    // GitHub API returns base64 content with newlines embedded
-    Buffer.from(packageJsonB64.trim().replace(/\s/g, ""), "base64").toString(
-      "utf-8",
-    ),
-  );
-  const version: string = packageJson.version;
-  const tag = `v${version}`;
-
-  // Read CHANGELOG.md on main
-  const changelogB64 = await container
-    .withExec([
-      "sh",
-      "-c",
-      `curl -f -H "Authorization: Bearer $GH_TOKEN" \
-        "https://api.github.com/repos/$REPO/contents/CHANGELOG.md" | jq -r '.content'`,
-    ])
-    .stdout();
-
-  const changelog = Buffer.from(
-    // GitHub API returns base64 content with newlines embedded
-    changelogB64.trim().replace(/\s/g, ""),
-    "base64",
-  ).toString("utf-8");
-
-  const script = [
-    "set -e",
-    "",
-    "# Build release payload",
-    "jq -n \\",
-    '  --arg tag "$TAG" \\',
-    '  --arg body "$(cat /tmp/changelog.md)" \\',
-    "  '{tag_name: $tag, name: $tag, body: $body, draft: false, prerelease: false}' > /tmp/release_payload.json",
-    "",
-    "# Cut release",
-    "curl -f -X POST \\",
-    '  -H "Authorization: Bearer $GH_TOKEN" \\',
-    '  -H "Content-Type: application/json" \\',
-    "  -d @/tmp/release_payload.json \\",
-    '  "https://api.github.com/repos/$REPO/releases" | jq .',
-  ].join("\n");
-
-  await container
-    .withEnvVariable("TAG", tag)
-    .withNewFile("/tmp/changelog.md", changelog)
-    .withNewFile("/tmp/release.sh", script)
-    .withExec(["sh", "/tmp/release.sh"])
     .sync();
 
   return tag;
