@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'CHANGELOG.md'
+  workflow_dispatch:      # allow manual trigger
 
 permissions:
   contents: write  # create GitHub releases and tags
