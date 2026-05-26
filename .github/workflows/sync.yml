@@ -49,3 +49,5 @@ jobs:
           verb: call
           args: ${{ env.DAGGER_ARGS }}
           module: .dagger
+          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
+          version: "latest"
