@@ -10,6 +10,28 @@
 
 - **Baidu Qianfan: CoBuddy (free)** (`baidu/cobuddy:free`)
 
+### Updated
+
+- `~openai/gpt-mini-latest` — changed: top_provider
+- `meta-llama/llama-3.1-8b-instruct` — changed: supported_parameters
+- `minimax/minimax-m2.5:free` — changed: context_length, top_provider
+- `openai/gpt-5.1-chat` — changed: pricing, top_provider
+- `openai/gpt-5.1-codex` — changed: pricing, top_provider
+- `openai/gpt-5.1-codex-mini` — changed: pricing, top_provider
+- `openai/gpt-5.2` — changed: top_provider
+- `openai/gpt-5.2-chat` — changed: top_provider, expiration_date
+- `openai/gpt-5.2-codex` — changed: top_provider
+- `openai/gpt-5.4` — changed: top_provider
+- `openai/gpt-5.4-mini` — changed: top_provider
+- `openai/gpt-5.4-pro` — changed: top_provider
+- `poolside/laguna-xs.2:free` — changed: context_length, top_provider
+- `qwen/qwen3-235b-a22b-2507` — changed: supported_parameters
+- `qwen/qwen3.6-27b` — changed: pricing, top_provider
+- `qwen/qwen3.6-35b-a3b` — changed: pricing, top_provider
+- `tencent/hy3-preview` — changed: supported_parameters
+
+## v1.0.4 — 2026-05-27
+
 ### Removed
 
 - **Arcee AI: Trinity Large Thinking (free)** (`arcee-ai/trinity-large-thinking:free`)
