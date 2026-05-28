@@ -5,6 +5,7 @@ import {
   type Secret,
   ReturnType,
 } from "@dagger.io/dagger";
+import { Changelog } from "./changelog";
 
 interface OpenPrOptions {
   githubToken: Secret;
@@ -32,6 +33,10 @@ export async function openPr(opts: OpenPrOptions): Promise<void> {
 
   const branch = `sync/openrouter-v${version}`;
   const prTitle = `chore: sync OpenRouter models v${version}`;
+
+  const existingChangelog = Changelog.parse(await scriptContainer.file("CHANGELOG.md").contents());
+  const incomingChangelog = Changelog.parse(changelog);
+  const mergedChangelog = existingChangelog.merge(incomingChangelog).toString();
 
   const prBody = [`## OpenRouter model sync v${version}`, changelog].join(
     "\n\n",
@@ -121,7 +126,7 @@ export async function openPr(opts: OpenPrOptions): Promise<void> {
       "/tmp/model-ids.ts",
       scriptContainer.file("src/generated/model-ids.ts"),
     )
-    .withNewFile("/tmp/CHANGELOG.md", changelog)
+    .withNewFile("/tmp/CHANGELOG.md", mergedChangelog)
     .withNewFile("/tmp/sync.sh", script);
 
   await prContainer.withExec(["sh", "/tmp/sync.sh"]).sync();
@@ -141,7 +146,7 @@ export async function cutRelease(
   const changelog = await source.file("CHANGELOG.md").contents();
 
   // Extract only the section for this release
-  const body = extractChangelogSection(changelog, tag);
+  const body = Changelog.parse(changelog).section(tag);
 
   const payload = JSON.stringify({
     tag_name: tag,
@@ -179,37 +184,4 @@ export async function cutRelease(
   }
 
   return tag;
-}
-
-/**
- * Pull out the changelog block for a given tag, e.g. "## [v1.2.3]" down to
- * (but not including) the next "## [" heading.
- */
-function extractChangelogSection(changelog: string, tag: string): string {
-  // Match both "## [v1.2.3]" and "## [1.2.3]" style headings
-  const version = tag.replace(/^v/, "");
-  const start = new RegExp(`^## \\[v?${escapeRegex(version)}\\]`, "m");
-  const next = /^## \[/m;
-
-  const startMatch = changelog.match(start);
-  if (!startMatch || startMatch.index === undefined) {
-    // Fallback: send nothing rather than the whole file
-    return `Release ${tag}`;
-  }
-
-  const afterStart = changelog.slice(startMatch.index);
-  const lines = afterStart.split("\n");
-
-  // Skip the heading line itself, collect until the next "## [" heading
-  const bodyLines: string[] = [];
-  for (let i = 1; i < lines.length; i++) {
-    if (i > 1 && next.test(lines[i])) break;
-    bodyLines.push(lines[i]);
-  }
-
-  return bodyLines.join("\n").trim() || `Release ${tag}`;
-}
-
-function escapeRegex(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
