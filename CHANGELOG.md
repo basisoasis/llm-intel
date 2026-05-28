@@ -1,6 +1,14 @@
 # Changelog
 
-## v1.0.4 — 2026-05-27
+## v1.0.5 — 2026-05-28
+
+### Added
+
+- **MoonshotAI: Kimi K2.6 (free)** (`moonshotai/kimi-k2.6:free`)
+
+### Removed
+
+- **Baidu Qianfan: CoBuddy (free)** (`baidu/cobuddy:free`)
 
 ### Removed
 
