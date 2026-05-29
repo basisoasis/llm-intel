@@ -1,5 +1,29 @@
 # Changelog
 
+## v1.0.6 — 2026-05-29
+
+### Added
+
+- **Anthropic: Claude Opus 4.8** (`anthropic/claude-opus-4.8`)
+- **Anthropic: Claude Opus 4.8 (Fast)** (`anthropic/claude-opus-4.8-fast`)
+- **StepFun: Step 3.7 Flash** (`stepfun/step-3.7-flash`)
+
+### Removed
+
+- **Baidu: Qianfan-OCR-Fast** (`baidu/qianfan-ocr-fast`)
+- **DeepSeek: DeepSeek V3.2 Speciale** (`deepseek/deepseek-v3.2-speciale`)
+
+### Updated
+
+- `anthropic/claude-opus-4.6-fast` — changed: expiration_date
+- `google/gemma-4-31b-it:free` — changed: supported_parameters
+- `minimax/minimax-m2.5:free` — changed: context_length, top_provider
+- `stepfun/step-3.5-flash` — changed: default_parameters
+- `tencent/hy3-preview` — changed: pricing, top_provider
+- `xiaomi/mimo-v2-omni` — changed: expiration_date
+- `xiaomi/mimo-v2-pro` — changed: expiration_date
+- `z-ai/glm-4.5-air` — changed: pricing
+
 ## v1.0.5 — 2026-05-28
 
 ### Added
