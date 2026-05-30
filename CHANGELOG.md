@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.7 — 2026-05-30
+
+### Removed
+
+- **OpenAI: GPT-4o Audio** (`openai/gpt-4o-audio-preview`)
+
+### Updated
+
+- `~moonshotai/kimi-latest` — changed: pricing, top_provider
+- `deepseek/deepseek-v4-flash` — changed: pricing, top_provider
+- `google/gemini-2.0-flash-001` — changed: context_length, top_provider
+- `moonshotai/kimi-k2.6` — changed: pricing, top_provider
+- `openai/gpt-audio` — changed: default_parameters
+
 ## v1.0.6 — 2026-05-29
 
 ### Added
