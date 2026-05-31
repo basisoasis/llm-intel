@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.0.8 — 2026-05-31
+
+### Removed
+
+- **AlfredPros: CodeLLaMa 7B Instruct Solidity** (`alfredpros/codellama-7b-instruct-solidity`)
+- **Baidu: ERNIE 4.5 21B A3B** (`baidu/ernie-4.5-21b-a3b`)
+- **Baidu: ERNIE 4.5 21B A3B Thinking** (`baidu/ernie-4.5-21b-a3b-thinking`)
+- **MiniMax: MiniMax M2.5 (free)** (`minimax/minimax-m2.5:free`)
+- **Mistral: Mistral 7B Instruct v0.1** (`mistralai/mistral-7b-instruct-v0.1`)
+- **Upstage: Solar Pro 3** (`upstage/solar-pro-3`)
+
+### Updated
+
+- `meta-llama/llama-4-maverick` — changed: supported_parameters
+- `minimax/minimax-m2.7` — changed: pricing, top_provider
+- `openai/gpt-oss-20b` — changed: pricing, top_provider
+- `qwen/qwen-2.5-7b-instruct` — changed: supported_parameters
+- `qwen/qwen3-235b-a22b-thinking-2507` — changed: pricing, top_provider
+- `qwen/qwen3.5-35b-a3b` — changed: pricing, top_provider
+
 ## v1.0.7 — 2026-05-30
 
 ### Removed
