@@ -1,5 +1,26 @@
 # Changelog
 
+## v1.0.9 — 2026-06-01
+
+### Added
+
+- **MiniMax: MiniMax M3** (`minimax/minimax-m3`)
+- **Upstage: Solar Pro 3** (`upstage/solar-pro-3`)
+
+### Removed
+
+- **DeepSeek: DeepSeek V4 Flash (free)** (`deepseek/deepseek-v4-flash:free`)
+- **Mistral Large 2411** (`mistralai/mistral-large-2411`)
+- **Mistral: Devstral Medium** (`mistralai/devstral-medium`)
+- **Mistral: Devstral Small 1.1** (`mistralai/devstral-small`)
+- **Mistral: Pixtral Large 2411** (`mistralai/pixtral-large-2411`)
+- **Xiaomi: MiMo-V2-Omni** (`xiaomi/mimo-v2-omni`)
+- **Xiaomi: MiMo-V2-Pro** (`xiaomi/mimo-v2-pro`)
+
+### Updated
+
+- `inclusionai/ring-2.6-1t` — changed: pricing
+
 ## v1.0.8 — 2026-05-31
 
 ### Removed
