@@ -60,8 +60,6 @@ export const MODEL_IDS = [
   "deepseek/deepseek-v4-flash-20260423",
   "deepseek/deepseek-v4-pro-20260423",
   "essentialai/rnj-1-instruct",
-  "google/gemini-2.0-flash-001",
-  "google/gemini-2.0-flash-lite-001",
   "google/gemini-2.5-flash",
   "google/gemini-2.5-flash-image",
   "google/gemini-2.5-flash-lite",
