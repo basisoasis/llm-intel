@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.0.10 — 2026-06-02
+
+### Removed
+
+- **Google: Gemini 2.0 Flash** (`google/gemini-2.0-flash-001`)
+- **Google: Gemini 2.0 Flash Lite** (`google/gemini-2.0-flash-lite-001`)
+
+### Updated
+
+- `deepseek/deepseek-chat` — changed: pricing
+- `deepseek/deepseek-v3.2` — changed: pricing, top_provider
+- `minimax/minimax-m2.7` — changed: pricing, top_provider
+- `qwen/qwen3-30b-a3b-instruct-2507` — changed: context_length, pricing, top_provider
+- `z-ai/glm-5` — changed: pricing, top_provider
+- `z-ai/glm-5.1` — changed: top_provider
+
 ## v1.0.9 — 2026-06-01
 
 ### Added
