@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.0.11 — 2026-06-03
+
+### Added
+
+- **OpenRouter: Fusion** (`openrouter/fusion`)
+
+### Removed
+
+- **Baidu: ERNIE 4.5 300B A47B ** (`baidu/ernie-4.5-300b-a47b`)
+
+### Updated
+
+- `anthropic/claude-opus-4` — changed: supported_parameters
+- `inclusionai/ring-2.6-1t` — changed: pricing
+- `minimax/minimax-m3` — changed: supported_parameters
+- `nex-agi/deepseek-v3.1-nex-n1` — changed: expiration_date
+
 ## v1.0.10 — 2026-06-02
 
 ### Removed
