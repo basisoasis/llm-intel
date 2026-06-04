@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.0.12 — 2026-06-04
+
+### Added
+
+- **Qwen: Qwen3.7 Plus** (`qwen/qwen3.7-plus`)
+
+### Removed
+
+- **OpenAI: GPT-4 (older v0314)** (`openai/gpt-4-0314`)
+
+### Updated
+
+- `minimax/minimax-m3` — changed: hugging_face_id, supported_parameters
+- `z-ai/glm-5` — changed: pricing, top_provider
+- `z-ai/glm-5.1` — changed: top_provider, supported_parameters
+
 ## v1.0.11 — 2026-06-03
 
 ### Added
