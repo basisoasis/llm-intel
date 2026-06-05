@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.0.13 — 2026-06-05
+
+### Added
+
+- **NVIDIA: Nemotron 3 Ultra** (`nvidia/nemotron-3-ultra-550b-a55b`)
+- **NVIDIA: Nemotron 3 Ultra (free)** (`nvidia/nemotron-3-ultra-550b-a55b:free`)
+- **NVIDIA: Nemotron 3.5 Content Safety (free)** (`nvidia/nemotron-3.5-content-safety:free`)
+
+### Updated
+
+- `deepseek/deepseek-r1-distill-llama-70b` — changed: expiration_date
+- `meta-llama/llama-3.1-8b-instruct` — changed: pricing, top_provider
+- `nvidia/nemotron-nano-9b-v2` — changed: expiration_date
+- `qwen/qwen3-30b-a3b-instruct-2507` — changed: pricing
+- `z-ai/glm-5.1` — changed: supported_parameters
+
 ## v1.0.12 — 2026-06-04
 
 ### Added
