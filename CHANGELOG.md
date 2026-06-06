@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.0.14 — 2026-06-06
+
+### Removed
+
+- **NousResearch: Hermes 2 Pro - Llama-3 8B** (`nousresearch/hermes-2-pro-llama-3-8b`)
+- **Sao10k: Llama 3 Euryale 70B v2.1** (`sao10k/l3-euryale-70b`)
+
+### Updated
+
+- `google/gemma-4-31b-it` — changed: pricing, top_provider
+- `meta-llama/llama-3-70b-instruct` — changed: expiration_date
+- `meta-llama/llama-3-8b-instruct` — changed: expiration_date
+- `minimax/minimax-m2.7` — changed: top_provider
+- `qwen/qwen3-30b-a3b` — changed: top_provider, expiration_date
+- `xiaomi/mimo-v2-flash` — changed: supported_parameters
+- `z-ai/glm-4.5` — changed: expiration_date
+
 ## v1.0.13 — 2026-06-05
 
 ### Added
