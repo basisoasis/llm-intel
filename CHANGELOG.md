@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.15 — 2026-06-07
+
+### Removed
+
+- **Arcee AI: Spotlight** (`arcee-ai/spotlight`)
+- **Baidu: ERNIE 4.5 VL 28B A3B** (`baidu/ernie-4.5-vl-28b-a3b`)
+- **OpenAI: GPT-4 Turbo (older v1106)** (`openai/gpt-4-1106-preview`)
+
+### Updated
+
+- `meta-llama/llama-3-8b-instruct` — changed: pricing, top_provider, supported_parameters, expiration_date
+- `qwen/qwen3.6-27b` — changed: pricing, top_provider
+
 ## v1.0.14 — 2026-06-06
 
 ### Removed
