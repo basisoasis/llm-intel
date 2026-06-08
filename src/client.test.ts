@@ -225,20 +225,21 @@ describe("LLMIntelClient", () => {
   describe("getModel()", () => {
     it("returns a matching model by canonicalSlug", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const result = await client.getModel("~openai/gpt-4o" as any);
+      const result = await client.getModel('~openai/gpt-4o');
+      console.log(result);
       expect(result).not.toBeNull();
       expect(result?.data.name).toBe("GPT-4o");
     });
 
     it("returns null for an unknown model ID", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const result = await client.getModel("~unknown/model" as any);
+      const result = await client.getModel("~unknown/model");
       expect(result).toBeNull();
     });
 
     it("returns status 'cached' and source 'openrouter'", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const result = await client.getModel("~openai/gpt-4o" as any);
+      const result = await client.getModel("~openai/gpt-4o");
       expect(result?.status).toBe("cached");
       expect(result?.source).toBe("openrouter");
     });
@@ -249,7 +250,7 @@ describe("LLMIntelClient", () => {
   describe("calculateCost()", () => {
     it("calculates cost for input and output tokens", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const model = await client.getModel("~openai/gpt-4o" as any);
+      const model = await client.getModel("~openai/gpt-4o");
       const result = client.calculateCost(model!, {
         inputTokens: 1_000_000,
         outputTokens: 1_000_000,
@@ -264,7 +265,7 @@ describe("LLMIntelClient", () => {
 
     it("returns null costs for unprovided token types", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const model = await client.getModel("~openai/gpt-4o" as any);
+      const model = await client.getModel("~openai/gpt-4o");
       const result = client.calculateCost(model!, { inputTokens: 1_000_000 });
       expect(result.inputCost?.isEqualTo(new BigNumber("5"))).toBe(true);
       expect(result.outputCost).toBeNull();
@@ -275,7 +276,7 @@ describe("LLMIntelClient", () => {
 
     it("warns when cache tokens are passed to a model without cache pricing", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const model = await client.getModel("~openai/gpt-4o" as any); // no cacheRead/cacheWrite
+      const model = await client.getModel("~openai/gpt-4o"); // no cacheRead/cacheWrite
       const result = client.calculateCost(model!, {
         cacheReadTokens: 1_000_000,
       });
@@ -286,9 +287,7 @@ describe("LLMIntelClient", () => {
 
     it("calculates cache costs for models that support it", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const model = await client.getModel(
-        "~anthropic/claude-3-5-sonnet" as any,
-      );
+      const model = await client.getModel("~anthropic/claude-3-5-sonnet");
       const result = client.calculateCost(model!, {
         cacheReadTokens: 1_000_000,
         cacheWriteTokens: 1_000_000,
@@ -315,7 +314,7 @@ describe("LLMIntelClient", () => {
   describe("formatCostResult()", () => {
     it("formats all line items in a CostResult", async () => {
       const client = new LLMIntelClient({ models: validModelsArray });
-      const model = await client.getModel("~openai/gpt-4o" as any);
+      const model = await client.getModel("~openai/gpt-4o");
       const costResult = client.calculateCost(model!, {
         inputTokens: 500_000,
         outputTokens: 500_000,

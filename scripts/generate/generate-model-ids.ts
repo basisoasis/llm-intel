@@ -14,7 +14,7 @@ const output = `
 // AUTO-GENERATED: do not edit manually
 export const MODEL_IDS = ${JSON.stringify(modelIds, null, 2)} as const;
 
-export type ModelId = typeof MODEL_IDS[number];
+export type ModelId = typeof MODEL_IDS[number] | (string & {});
 `;
 
 const generatedPath = join(process.cwd(), "./src/generated/model-ids.ts");
