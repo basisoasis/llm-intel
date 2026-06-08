@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.16 — 2026-06-08
+
+### Updated
+
+- `google/gemma-3-12b-it` — changed: pricing
+- `google/gemma-3-4b-it` — changed: pricing
+- `meta-llama/llama-3.2-11b-vision-instruct` — changed: pricing
+- `meta-llama/llama-4-scout` — changed: pricing
+- `nousresearch/hermes-3-llama-3.1-70b` — changed: pricing
+- `nvidia/llama-3.3-nemotron-super-49b-v1.5` — changed: pricing
+- `qwen/qwen3-235b-a22b-2507` — changed: pricing
+- `qwen/qwen3-30b-a3b` — changed: pricing
+- `qwen/qwen3.5-9b` — changed: pricing, top_provider
+
 ## v1.0.15 — 2026-06-07
 
 ### Removed
