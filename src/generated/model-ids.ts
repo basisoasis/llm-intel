@@ -149,7 +149,7 @@ export const MODEL_IDS = [
   "moonshotai/kimi-k2.6-20260420",
   "morph/morph-v3-fast",
   "morph/morph-v3-large",
-  "nex-agi/deepseek-v3.1-nex-n1",
+  "nex-agi/nex-n2-pro",
   "nousresearch/hermes-3-llama-3.1-405b",
   "nousresearch/hermes-3-llama-3.1-405b",
   "nousresearch/hermes-3-llama-3.1-70b",
@@ -344,4 +344,4 @@ export const MODEL_IDS = [
   "~openai/gpt-mini-latest"
 ] as const;
 
-export type ModelId = typeof MODEL_IDS[number];
+export type ModelId = typeof MODEL_IDS[number] | (string & {});

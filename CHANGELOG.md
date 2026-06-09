@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.0.18 — 2026-06-09
+
+### Added
+
+- **Nex AGI: Nex-N2-Pro (free)** (`nex-agi/nex-n2-pro:free`)
+
+### Removed
+
+- **Nex AGI: DeepSeek V3.1 Nex N1** (`nex-agi/deepseek-v3.1-nex-n1`)
+
+### Updated
+
+- `~moonshotai/kimi-latest` — changed: pricing, top_provider
+- `moonshotai/kimi-k2.6` — changed: pricing, top_provider
+- `openrouter/free` — changed: supported_parameters
+- `z-ai/glm-5.1` — changed: supported_parameters
+
 ## v1.0.17 — 2026-06-08
 
 ### Bug Fixes
