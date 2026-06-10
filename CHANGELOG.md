@@ -1,5 +1,28 @@
 # Changelog
 
+## v1.0.19 — 2026-06-10
+
+### Added
+
+- **Anthropic: Claude Fable 5** (`anthropic/claude-fable-5`)
+- **Anthropic: Claude Fable Latest** (`~anthropic/claude-fable-latest`)
+
+### Removed
+
+- **Arcee AI: Maestro Reasoning** (`arcee-ai/maestro-reasoning`)
+- **Z.ai: GLM 4 32B ** (`z-ai/glm-4-32b`)
+- **Z.ai: GLM 4.5 Air (free)** (`z-ai/glm-4.5-air:free`)
+- **Z.ai: GLM 5V Turbo** (`z-ai/glm-5v-turbo`)
+
+### Updated
+
+- `anthropic/claude-3-haiku` — changed: pricing
+- `minimax/minimax-m2.5` — changed: pricing
+- `minimax/minimax-m2.7` — changed: pricing, top_provider
+- `nex-agi/nex-n2-pro:free` — changed: supported_parameters
+- `z-ai/glm-4.6v` — changed: pricing, top_provider
+- `z-ai/glm-5-turbo` — changed: context_length, top_provider
+
 ## v1.0.18 — 2026-06-09
 
 ### Added
