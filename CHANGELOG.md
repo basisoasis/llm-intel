@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.20 — 2026-06-11
+
+### Removed
+
+- **MoonshotAI: Kimi K2.6 (free)** (`moonshotai/kimi-k2.6:free`)
+
+### Updated
+
+- `deepseek/deepseek-chat-v3-0324` — changed: context_length, top_provider
+- `nvidia/nemotron-3-super-120b-a12b` — changed: supported_parameters
+- `z-ai/glm-5.1` — changed: supported_parameters
+
 ## v1.0.19 — 2026-06-10
 
 ### Added
