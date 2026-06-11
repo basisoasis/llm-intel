@@ -146,7 +146,6 @@ export const MODEL_IDS = [
   "moonshotai/kimi-k2-thinking-20251106",
   "moonshotai/kimi-k2.5-0127",
   "moonshotai/kimi-k2.6-20260420",
-  "moonshotai/kimi-k2.6-20260420",
   "morph/morph-v3-fast",
   "morph/morph-v3-large",
   "nex-agi/nex-n2-pro",
