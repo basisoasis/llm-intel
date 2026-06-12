@@ -165,7 +165,6 @@ export const MODEL_IDS = [
   "nvidia/nemotron-3.5-content-safety-20260604",
   "nvidia/nemotron-nano-12b-v2-vl",
   "nvidia/nemotron-nano-9b-v2",
-  "nvidia/nemotron-nano-9b-v2",
   "openai/gpt-3.5-turbo",
   "openai/gpt-3.5-turbo-0613",
   "openai/gpt-3.5-turbo-16k",
