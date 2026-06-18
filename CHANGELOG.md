@@ -1,5 +1,248 @@
 # Changelog
 
+## v1.0.27 — 2026-06-18
+
+### Added
+
+- **Cohere: North Mini Code (free)** (`cohere/north-mini-code:free`)
+
+### Removed
+
+- **Xiaomi: MiMo-V2-Flash** (`xiaomi/mimo-v2-flash`)
+
+### Updated
+
+- `~anthropic/claude-fable-latest` — changed: reasoning
+- `~anthropic/claude-haiku-latest` — changed: reasoning
+- `~anthropic/claude-opus-latest` — changed: reasoning
+- `~anthropic/claude-sonnet-latest` — changed: reasoning
+- `~google/gemini-flash-latest` — changed: reasoning
+- `~google/gemini-pro-latest` — changed: reasoning
+- `~moonshotai/kimi-latest` — changed: supported_parameters, reasoning
+- `~openai/gpt-latest` — changed: reasoning
+- `~openai/gpt-mini-latest` — changed: reasoning
+- `aion-labs/aion-1.0` — changed: reasoning
+- `aion-labs/aion-1.0-mini` — changed: reasoning
+- `aion-labs/aion-2.0` — changed: reasoning
+- `allenai/olmo-3-32b-think` — changed: reasoning
+- `amazon/nova-2-lite-v1` — changed: reasoning
+- `anthropic/claude-fable-5` — changed: benchmarks, reasoning
+- `anthropic/claude-haiku-4.5` — changed: benchmarks, reasoning
+- `anthropic/claude-opus-4` — changed: benchmarks, reasoning
+- `anthropic/claude-opus-4.1` — changed: benchmarks, reasoning
+- `anthropic/claude-opus-4.5` — changed: benchmarks, reasoning
+- `anthropic/claude-opus-4.6` — changed: benchmarks, reasoning
+- `anthropic/claude-opus-4.6-fast` — changed: reasoning
+- `anthropic/claude-opus-4.7` — changed: benchmarks, reasoning
+- `anthropic/claude-opus-4.7-fast` — changed: reasoning
+- `anthropic/claude-opus-4.8` — changed: benchmarks, reasoning
+- `anthropic/claude-opus-4.8-fast` — changed: reasoning
+- `anthropic/claude-sonnet-4` — changed: benchmarks, reasoning
+- `anthropic/claude-sonnet-4.5` — changed: benchmarks, reasoning
+- `anthropic/claude-sonnet-4.6` — changed: benchmarks, reasoning
+- `arcee-ai/trinity-large-thinking` — changed: benchmarks, reasoning
+- `arcee-ai/trinity-mini` — changed: reasoning
+- `baidu/ernie-4.5-vl-424b-a47b` — changed: reasoning
+- `bytedance-seed/seed-1.6` — changed: reasoning
+- `bytedance-seed/seed-1.6-flash` — changed: reasoning
+- `bytedance-seed/seed-2.0-lite` — changed: reasoning
+- `bytedance-seed/seed-2.0-mini` — changed: reasoning
+- `cohere/command-a` — changed: benchmarks
+- `deepcogito/cogito-v2.1-671b` — changed: reasoning
+- `deepseek/deepseek-chat` — changed: benchmarks
+- `deepseek/deepseek-chat-v3-0324` — changed: supported_parameters
+- `deepseek/deepseek-chat-v3.1` — changed: benchmarks, reasoning
+- `deepseek/deepseek-r1` — changed: reasoning
+- `deepseek/deepseek-r1-0528` — changed: benchmarks, reasoning
+- `deepseek/deepseek-r1-distill-llama-70b` — changed: reasoning
+- `deepseek/deepseek-v3.1-terminus` — changed: benchmarks, reasoning
+- `deepseek/deepseek-v3.2` — changed: supported_parameters, benchmarks, reasoning
+- `deepseek/deepseek-v3.2-exp` — changed: benchmarks, reasoning
+- `deepseek/deepseek-v4-flash` — changed: benchmarks, reasoning
+- `deepseek/deepseek-v4-pro` — changed: benchmarks, reasoning
+- `essentialai/rnj-1-instruct` — changed: reasoning
+- `google/gemini-2.5-flash` — changed: benchmarks, reasoning
+- `google/gemini-2.5-flash-image` — changed: top_provider, benchmarks
+- `google/gemini-2.5-flash-lite` — changed: reasoning
+- `google/gemini-2.5-flash-lite-preview-09-2025` — changed: benchmarks, reasoning
+- `google/gemini-2.5-pro` — changed: benchmarks, reasoning
+- `google/gemini-2.5-pro-preview` — changed: reasoning
+- `google/gemini-2.5-pro-preview-05-06` — changed: reasoning
+- `google/gemini-3-flash-preview` — changed: top_provider, benchmarks, reasoning
+- `google/gemini-3-pro-image-preview` — changed: benchmarks, reasoning
+- `google/gemini-3.1-flash-image-preview` — changed: supported_parameters, reasoning
+- `google/gemini-3.1-flash-lite` — changed: reasoning
+- `google/gemini-3.1-flash-lite-preview` — changed: benchmarks, reasoning
+- `google/gemini-3.1-pro-preview` — changed: benchmarks, reasoning
+- `google/gemini-3.1-pro-preview-customtools` — changed: supported_parameters, reasoning
+- `google/gemini-3.5-flash` — changed: benchmarks, reasoning
+- `google/gemma-3-27b-it` — changed: supported_parameters
+- `google/gemma-4-26b-a4b-it` — changed: reasoning
+- `google/gemma-4-26b-a4b-it:free` — changed: top_provider, reasoning
+- `google/gemma-4-31b-it` — changed: reasoning
+- `google/gemma-4-31b-it:free` — changed: top_provider, supported_parameters, reasoning
+- `inception/mercury-2` — changed: reasoning
+- `inclusionai/ring-2.6-1t` — changed: reasoning
+- `liquid/lfm-2-24b-a2b` — changed: supported_parameters
+- `liquid/lfm-2.5-1.2b-thinking:free` — changed: reasoning
+- `meta-llama/llama-3.1-70b-instruct` — changed: supported_parameters
+- `meta-llama/llama-3.1-8b-instruct` — changed: supported_parameters
+- `meta-llama/llama-3.2-3b-instruct` — changed: supported_parameters
+- `meta-llama/llama-3.3-70b-instruct` — changed: supported_parameters
+- `meta-llama/llama-4-maverick` — changed: supported_parameters, benchmarks
+- `meta-llama/llama-4-scout` — changed: benchmarks
+- `minimax/minimax-m1` — changed: reasoning
+- `minimax/minimax-m2` — changed: benchmarks, reasoning
+- `minimax/minimax-m2.1` — changed: benchmarks, reasoning
+- `minimax/minimax-m2.5` — changed: benchmarks, reasoning
+- `minimax/minimax-m2.7` — changed: benchmarks, reasoning
+- `minimax/minimax-m3` — changed: benchmarks, reasoning
+- `mistralai/codestral-2508` — changed: benchmarks
+- `mistralai/ministral-8b-2512` — changed: benchmarks
+- `mistralai/mistral-large-2512` — changed: benchmarks
+- `mistralai/mistral-medium-3` — changed: benchmarks
+- `mistralai/mistral-medium-3-5` — changed: reasoning
+- `mistralai/mistral-medium-3.1` — changed: benchmarks
+- `mistralai/mistral-nemo` — changed: supported_parameters
+- `mistralai/mistral-small-2603` — changed: reasoning
+- `mistralai/mistral-small-3.2-24b-instruct` — changed: supported_parameters, benchmarks
+- `moonshotai/kimi-k2` — changed: benchmarks
+- `moonshotai/kimi-k2-0905` — changed: benchmarks
+- `moonshotai/kimi-k2-thinking` — changed: reasoning
+- `moonshotai/kimi-k2.5` — changed: benchmarks, reasoning
+- `moonshotai/kimi-k2.6` — changed: supported_parameters, benchmarks, reasoning
+- `moonshotai/kimi-k2.7-code` — changed: benchmarks, reasoning
+- `nex-agi/nex-n2-pro:free` — changed: reasoning
+- `nousresearch/hermes-4-405b` — changed: reasoning
+- `nousresearch/hermes-4-70b` — changed: reasoning
+- `nvidia/llama-3.3-nemotron-super-49b-v1.5` — changed: reasoning
+- `nvidia/nemotron-3-nano-30b-a3b` — changed: reasoning
+- `nvidia/nemotron-3-nano-30b-a3b:free` — changed: reasoning
+- `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` — changed: hugging_face_id, reasoning
+- `nvidia/nemotron-3-super-120b-a12b` — changed: reasoning
+- `nvidia/nemotron-3-super-120b-a12b:free` — changed: reasoning
+- `nvidia/nemotron-3-ultra-550b-a55b` — changed: benchmarks, reasoning
+- `nvidia/nemotron-3-ultra-550b-a55b:free` — changed: benchmarks, reasoning
+- `nvidia/nemotron-3.5-content-safety:free` — changed: reasoning
+- `nvidia/nemotron-nano-12b-v2-vl:free` — changed: reasoning
+- `nvidia/nemotron-nano-9b-v2:free` — changed: reasoning
+- `openai/gpt-4.1` — changed: benchmarks
+- `openai/gpt-4.1-mini` — changed: benchmarks
+- `openai/gpt-4.1-nano` — changed: benchmarks
+- `openai/gpt-4o` — changed: benchmarks
+- `openai/gpt-5` — changed: benchmarks, reasoning
+- `openai/gpt-5-codex` — changed: reasoning
+- `openai/gpt-5-image` — changed: benchmarks, reasoning
+- `openai/gpt-5-image-mini` — changed: benchmarks, reasoning
+- `openai/gpt-5-mini` — changed: benchmarks, reasoning
+- `openai/gpt-5-nano` — changed: benchmarks, reasoning
+- `openai/gpt-5-pro` — changed: reasoning
+- `openai/gpt-5.1` — changed: benchmarks, reasoning
+- `openai/gpt-5.1-codex` — changed: benchmarks, reasoning
+- `openai/gpt-5.1-codex-max` — changed: reasoning
+- `openai/gpt-5.1-codex-mini` — changed: benchmarks, reasoning
+- `openai/gpt-5.2` — changed: benchmarks, reasoning
+- `openai/gpt-5.2-codex` — changed: benchmarks, reasoning
+- `openai/gpt-5.2-pro` — changed: reasoning
+- `openai/gpt-5.3-codex` — changed: benchmarks, reasoning
+- `openai/gpt-5.4` — changed: benchmarks, reasoning
+- `openai/gpt-5.4-image-2` — changed: reasoning
+- `openai/gpt-5.4-mini` — changed: reasoning
+- `openai/gpt-5.4-nano` — changed: reasoning
+- `openai/gpt-5.4-pro` — changed: reasoning
+- `openai/gpt-5.5` — changed: benchmarks, reasoning
+- `openai/gpt-5.5-pro` — changed: reasoning
+- `openai/gpt-oss-120b` — changed: benchmarks, reasoning
+- `openai/gpt-oss-120b:free` — changed: supported_parameters, benchmarks, reasoning
+- `openai/gpt-oss-20b` — changed: reasoning
+- `openai/gpt-oss-20b:free` — changed: top_provider, supported_parameters, reasoning
+- `openai/gpt-oss-safeguard-20b` — changed: reasoning
+- `openai/o1` — changed: reasoning
+- `openai/o1-pro` — changed: reasoning
+- `openai/o3` — changed: benchmarks, reasoning
+- `openai/o3-deep-research` — changed: reasoning
+- `openai/o3-mini` — changed: reasoning
+- `openai/o3-mini-high` — changed: reasoning
+- `openai/o3-pro` — changed: reasoning
+- `openai/o4-mini` — changed: benchmarks, reasoning
+- `openai/o4-mini-deep-research` — changed: reasoning
+- `openai/o4-mini-high` — changed: reasoning
+- `openrouter/auto` — changed: supported_parameters
+- `openrouter/free` — changed: supported_parameters
+- `perceptron/perceptron-mk1` — changed: reasoning
+- `perplexity/sonar-deep-research` — changed: reasoning
+- `perplexity/sonar-pro-search` — changed: reasoning
+- `perplexity/sonar-reasoning-pro` — changed: reasoning
+- `poolside/laguna-m.1:free` — changed: supported_parameters, reasoning
+- `poolside/laguna-xs.2:free` — changed: description, reasoning
+- `prime-intellect/intellect-3` — changed: benchmarks, reasoning
+- `qwen/qwen-2.5-7b-instruct` — changed: supported_parameters
+- `qwen/qwen-plus-2025-07-28` — changed: reasoning
+- `qwen/qwen-plus-2025-07-28:thinking` — changed: reasoning
+- `qwen/qwen2.5-vl-72b-instruct` — changed: supported_parameters
+- `qwen/qwen3-14b` — changed: reasoning
+- `qwen/qwen3-235b-a22b` — changed: benchmarks, reasoning
+- `qwen/qwen3-235b-a22b-2507` — changed: supported_parameters, benchmarks
+- `qwen/qwen3-235b-a22b-thinking-2507` — changed: benchmarks, reasoning
+- `qwen/qwen3-30b-a3b` — changed: benchmarks, reasoning
+- `qwen/qwen3-30b-a3b-instruct-2507` — changed: supported_parameters
+- `qwen/qwen3-30b-a3b-thinking-2507` — changed: reasoning
+- `qwen/qwen3-32b` — changed: supported_parameters, reasoning
+- `qwen/qwen3-8b` — changed: reasoning
+- `qwen/qwen3-coder` — changed: benchmarks
+- `qwen/qwen3-coder-30b-a3b-instruct` — changed: benchmarks
+- `qwen/qwen3-coder-plus` — changed: reasoning
+- `qwen/qwen3-coder:free` — changed: benchmarks
+- `qwen/qwen3-max` — changed: benchmarks, reasoning
+- `qwen/qwen3-max-thinking` — changed: reasoning
+- `qwen/qwen3-next-80b-a3b-instruct` — changed: supported_parameters
+- `qwen/qwen3-next-80b-a3b-thinking` — changed: reasoning
+- `qwen/qwen3-vl-235b-a22b-thinking` — changed: reasoning
+- `qwen/qwen3-vl-30b-a3b-instruct` — changed: supported_parameters
+- `qwen/qwen3-vl-30b-a3b-thinking` — changed: reasoning
+- `qwen/qwen3-vl-32b-instruct` — changed: supported_parameters
+- `qwen/qwen3-vl-8b-thinking` — changed: reasoning
+- `qwen/qwen3.5-122b-a10b` — changed: reasoning
+- `qwen/qwen3.5-27b` — changed: reasoning
+- `qwen/qwen3.5-35b-a3b` — changed: reasoning
+- `qwen/qwen3.5-397b-a17b` — changed: benchmarks, reasoning
+- `qwen/qwen3.5-9b` — changed: reasoning
+- `qwen/qwen3.5-flash-02-23` — changed: reasoning
+- `qwen/qwen3.5-plus-02-15` — changed: benchmarks, reasoning
+- `qwen/qwen3.5-plus-20260420` — changed: reasoning
+- `qwen/qwen3.6-27b` — changed: reasoning
+- `qwen/qwen3.6-35b-a3b` — changed: supported_parameters, benchmarks, reasoning
+- `qwen/qwen3.6-flash` — changed: reasoning
+- `qwen/qwen3.6-max-preview` — changed: reasoning
+- `qwen/qwen3.6-plus` — changed: benchmarks, reasoning
+- `qwen/qwen3.7-max` — changed: benchmarks, reasoning
+- `qwen/qwen3.7-plus` — changed: reasoning
+- `rekaai/reka-edge` — changed: reasoning
+- `rekaai/reka-flash-3` — changed: reasoning
+- `stepfun/step-3.5-flash` — changed: reasoning
+- `stepfun/step-3.7-flash` — changed: benchmarks, reasoning
+- `switchpoint/router` — changed: reasoning
+- `tencent/hunyuan-a13b-instruct` — changed: reasoning
+- `tencent/hy3-preview` — changed: reasoning
+- `upstage/solar-pro-3` — changed: reasoning
+- `x-ai/grok-4.20` — changed: reasoning
+- `x-ai/grok-4.20-multi-agent` — changed: reasoning
+- `x-ai/grok-4.3` — changed: benchmarks, reasoning
+- `x-ai/grok-build-0.1` — changed: reasoning
+- `xiaomi/mimo-v2.5` — changed: benchmarks, reasoning
+- `xiaomi/mimo-v2.5-pro` — changed: benchmarks, reasoning
+- `z-ai/glm-4.5` — changed: benchmarks, reasoning
+- `z-ai/glm-4.5-air` — changed: benchmarks, reasoning
+- `z-ai/glm-4.5v` — changed: reasoning
+- `z-ai/glm-4.6` — changed: benchmarks, reasoning
+- `z-ai/glm-4.6v` — changed: reasoning
+- `z-ai/glm-4.7` — changed: benchmarks, reasoning
+- `z-ai/glm-4.7-flash` — changed: benchmarks, reasoning
+- `z-ai/glm-5` — changed: supported_parameters, benchmarks, reasoning
+- `z-ai/glm-5-turbo` — changed: benchmarks, reasoning
+- `z-ai/glm-5.1` — changed: benchmarks, reasoning
+- `z-ai/glm-5.2` — changed: description, supported_parameters, benchmarks, reasoning
+
 ## v1.0.26 — 2026-06-17
 
 ### Added
