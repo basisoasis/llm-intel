@@ -99,7 +99,6 @@ export const MODEL_IDS = [
   "liquid/lfm-2.5-1.2b-instruct-20260120",
   "liquid/lfm-2.5-1.2b-thinking-20260120",
   "mancer/weaver",
-  "meta-llama/llama-3-70b-instruct",
   "meta-llama/llama-3-8b-instruct",
   "meta-llama/llama-3.1-70b-instruct",
   "meta-llama/llama-3.1-8b-instruct",
