@@ -1,5 +1,141 @@
 # Changelog
 
+## v1.0.29 — 2026-06-20
+
+### Removed
+
+- **Meta: Llama 3 70B Instruct** (`meta-llama/llama-3-70b-instruct`)
+
+### Updated
+
+- `amazon/nova-premier-v1` — changed: benchmarks
+- `amazon/nova-pro-v1` — changed: benchmarks
+- `anthropic/claude-fable-5` — changed: benchmarks
+- `anthropic/claude-haiku-4.5` — changed: benchmarks
+- `anthropic/claude-opus-4` — changed: benchmarks
+- `anthropic/claude-opus-4.1` — changed: benchmarks
+- `anthropic/claude-opus-4.5` — changed: benchmarks
+- `anthropic/claude-opus-4.6` — changed: benchmarks
+- `anthropic/claude-opus-4.7` — changed: benchmarks
+- `anthropic/claude-opus-4.8` — changed: benchmarks
+- `anthropic/claude-sonnet-4` — changed: benchmarks
+- `anthropic/claude-sonnet-4.5` — changed: benchmarks
+- `anthropic/claude-sonnet-4.6` — changed: benchmarks
+- `arcee-ai/trinity-large-thinking` — changed: benchmarks
+- `arcee-ai/trinity-mini` — changed: supported_parameters
+- `deepseek/deepseek-chat` — changed: benchmarks
+- `deepseek/deepseek-chat-v3.1` — changed: benchmarks
+- `deepseek/deepseek-r1-0528` — changed: benchmarks
+- `deepseek/deepseek-v3.1-terminus` — changed: benchmarks
+- `deepseek/deepseek-v3.2` — changed: benchmarks
+- `deepseek/deepseek-v3.2-exp` — changed: benchmarks
+- `deepseek/deepseek-v4-flash` — changed: benchmarks
+- `deepseek/deepseek-v4-pro` — changed: benchmarks
+- `google/gemini-2.5-flash` — changed: benchmarks
+- `google/gemini-2.5-flash-lite-preview-09-2025` — changed: benchmarks
+- `google/gemini-2.5-pro` — changed: benchmarks
+- `google/gemini-3-flash-preview` — changed: benchmarks
+- `google/gemini-3-pro-image-preview` — changed: benchmarks
+- `google/gemini-3.1-flash-image-preview` — changed: benchmarks
+- `google/gemini-3.1-flash-lite-preview` — changed: benchmarks
+- `google/gemini-3.1-pro-preview` — changed: benchmarks
+- `google/gemini-3.5-flash` — changed: benchmarks
+- `google/gemma-4-26b-a4b-it` — changed: benchmarks
+- `google/gemma-4-26b-a4b-it:free` — changed: benchmarks
+- `google/gemma-4-31b-it` — changed: benchmarks
+- `google/gemma-4-31b-it:free` — changed: benchmarks
+- `ibm-granite/granite-4.1-8b` — changed: benchmarks
+- `inclusionai/ring-2.6-1t` — changed: benchmarks
+- `meta-llama/llama-4-maverick` — changed: benchmarks
+- `meta-llama/llama-4-scout` — changed: benchmarks
+- `minimax/minimax-m2` — changed: benchmarks
+- `minimax/minimax-m2.1` — changed: benchmarks
+- `minimax/minimax-m2.5` — changed: benchmarks
+- `minimax/minimax-m2.7` — changed: benchmarks
+- `minimax/minimax-m3` — changed: benchmarks
+- `mistralai/ministral-14b-2512` — changed: benchmarks
+- `mistralai/ministral-3b-2512` — changed: benchmarks
+- `mistralai/ministral-8b-2512` — changed: benchmarks
+- `mistralai/mistral-large-2512` — changed: benchmarks
+- `mistralai/mistral-medium-3` — changed: benchmarks
+- `mistralai/mistral-medium-3-5` — changed: benchmarks
+- `mistralai/mistral-medium-3.1` — changed: benchmarks
+- `mistralai/mistral-small-3.2-24b-instruct` — changed: benchmarks
+- `moonshotai/kimi-k2` — changed: benchmarks
+- `moonshotai/kimi-k2-0905` — changed: benchmarks
+- `moonshotai/kimi-k2-thinking` — changed: benchmarks
+- `moonshotai/kimi-k2.5` — changed: benchmarks
+- `moonshotai/kimi-k2.6` — changed: benchmarks
+- `moonshotai/kimi-k2.7-code` — changed: pricing, top_provider, benchmarks
+- `nvidia/nemotron-3-super-120b-a12b` — changed: benchmarks
+- `nvidia/nemotron-3-super-120b-a12b:free` — changed: benchmarks
+- `nvidia/nemotron-3-ultra-550b-a55b` — changed: benchmarks
+- `nvidia/nemotron-3-ultra-550b-a55b:free` — changed: benchmarks
+- `openai/gpt-4.1` — changed: benchmarks
+- `openai/gpt-4.1-mini` — changed: benchmarks
+- `openai/gpt-4.1-nano` — changed: benchmarks
+- `openai/gpt-4o` — changed: benchmarks
+- `openai/gpt-5` — changed: benchmarks
+- `openai/gpt-5-codex` — changed: benchmarks
+- `openai/gpt-5-image` — changed: benchmarks
+- `openai/gpt-5-image-mini` — changed: benchmarks
+- `openai/gpt-5-mini` — changed: benchmarks
+- `openai/gpt-5-nano` — changed: benchmarks
+- `openai/gpt-5.1` — changed: benchmarks
+- `openai/gpt-5.1-codex` — changed: benchmarks
+- `openai/gpt-5.1-codex-mini` — changed: benchmarks
+- `openai/gpt-5.2` — changed: benchmarks
+- `openai/gpt-5.2-codex` — changed: benchmarks
+- `openai/gpt-5.3-codex` — changed: benchmarks
+- `openai/gpt-5.4` — changed: benchmarks
+- `openai/gpt-5.4-mini` — changed: benchmarks
+- `openai/gpt-5.4-nano` — changed: benchmarks
+- `openai/gpt-5.5` — changed: benchmarks
+- `openai/gpt-oss-120b` — changed: benchmarks
+- `openai/gpt-oss-120b:free` — changed: benchmarks
+- `openai/gpt-oss-20b` — changed: benchmarks
+- `openai/gpt-oss-20b:free` — changed: benchmarks
+- `openai/gpt-oss-safeguard-20b` — changed: supported_parameters
+- `openai/o1` — changed: benchmarks
+- `openai/o3` — changed: benchmarks
+- `openai/o3-mini-high` — changed: benchmarks
+- `openai/o4-mini` — changed: benchmarks
+- `poolside/laguna-m.1` — changed: supported_parameters
+- `poolside/laguna-xs.2` — changed: supported_parameters
+- `prime-intellect/intellect-3` — changed: supported_parameters, benchmarks
+- `qwen/qwen3-235b-a22b` — changed: benchmarks
+- `qwen/qwen3-235b-a22b-2507` — changed: benchmarks
+- `qwen/qwen3-235b-a22b-thinking-2507` — changed: benchmarks
+- `qwen/qwen3-30b-a3b` — changed: benchmarks
+- `qwen/qwen3-30b-a3b-thinking-2507` — changed: benchmarks
+- `qwen/qwen3-coder` — changed: benchmarks
+- `qwen/qwen3-coder-30b-a3b-instruct` — changed: benchmarks
+- `qwen/qwen3-coder:free` — changed: benchmarks
+- `qwen/qwen3-max` — changed: benchmarks
+- `qwen/qwen3.5-122b-a10b` — changed: benchmarks
+- `qwen/qwen3.5-397b-a17b` — changed: benchmarks
+- `qwen/qwen3.5-9b` — changed: benchmarks
+- `qwen/qwen3.5-plus-02-15` — changed: benchmarks
+- `qwen/qwen3.6-27b` — changed: benchmarks
+- `qwen/qwen3.6-35b-a3b` — changed: benchmarks
+- `qwen/qwen3.6-plus` — changed: benchmarks
+- `qwen/qwen3.7-max` — changed: benchmarks
+- `qwen/qwen3.7-plus` — changed: benchmarks
+- `stepfun/step-3.7-flash` — changed: benchmarks
+- `upstage/solar-pro-3` — changed: benchmarks
+- `x-ai/grok-4.3` — changed: benchmarks
+- `xiaomi/mimo-v2.5` — changed: benchmarks
+- `xiaomi/mimo-v2.5-pro` — changed: benchmarks
+- `z-ai/glm-4.5` — changed: supported_parameters, expiration_date, benchmarks
+- `z-ai/glm-4.5-air` — changed: benchmarks
+- `z-ai/glm-4.6` — changed: benchmarks
+- `z-ai/glm-4.7` — changed: benchmarks
+- `z-ai/glm-4.7-flash` — changed: benchmarks
+- `z-ai/glm-5` — changed: benchmarks
+- `z-ai/glm-5-turbo` — changed: benchmarks
+- `z-ai/glm-5.1` — changed: benchmarks
+- `z-ai/glm-5.2` — changed: benchmarks
+
 ## v1.0.28 — 2026-06-19
 
 ### Added
