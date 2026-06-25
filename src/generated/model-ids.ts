@@ -295,6 +295,7 @@ export const MODEL_IDS = [
   "rekaai/reka-flash-3",
   "relace/relace-apply-3",
   "relace/relace-search-20251208",
+  "sakana/fugu-ultra-20260615",
   "sao10k/l3-lunaris-8b",
   "sao10k/l3.1-70b-hanami-x1",
   "sao10k/l3.1-euryale-70b",
