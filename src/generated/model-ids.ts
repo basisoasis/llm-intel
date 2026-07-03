@@ -239,6 +239,8 @@ export const MODEL_IDS = [
   "perplexity/sonar-reasoning-pro",
   "poolside/laguna-m.1-20260312",
   "poolside/laguna-m.1-20260312",
+  "poolside/laguna-xs-2.1-20260625",
+  "poolside/laguna-xs-2.1-20260625",
   "poolside/laguna-xs.2-20260421",
   "poolside/laguna-xs.2-20260421",
   "qwen/qwen-2.5-72b-instruct",
