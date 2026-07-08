@@ -2,9 +2,9 @@
 // AUTO-GENERATED: do not edit manually
 export const MODEL_IDS = [
   "ai21/jamba-large-1.7",
-  "aion-labs/aion-1.0",
-  "aion-labs/aion-1.0-mini",
   "aion-labs/aion-2.0-20260223",
+  "aion-labs/aion-3.0-20260707",
+  "aion-labs/aion-3.0-mini-20260707",
   "aion-labs/aion-rp-llama-3.1-8b",
   "allenai/olmo-3-32b-think-20251121",
   "amazon/nova-2-lite-v1",
