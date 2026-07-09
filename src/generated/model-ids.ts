@@ -304,7 +304,6 @@ export const MODEL_IDS = [
   "sao10k/l3.3-euryale-70b-v2.3",
   "stepfun/step-3.5-flash",
   "stepfun/step-3.7-flash-20260528",
-  "switchpoint/router",
   "tencent/hunyuan-a13b-instruct",
   "tencent/hy3-20260706",
   "tencent/hy3-20260706",
@@ -320,6 +319,7 @@ export const MODEL_IDS = [
   "x-ai/grok-4.20-20260309",
   "x-ai/grok-4.20-multi-agent-20260309",
   "x-ai/grok-4.3-20260430",
+  "x-ai/grok-4.5-20260708",
   "x-ai/grok-build-0.1-20260520",
   "xiaomi/mimo-v2.5-20260422",
   "xiaomi/mimo-v2.5-pro-20260422",
@@ -343,7 +343,8 @@ export const MODEL_IDS = [
   "~google/gemini-pro-latest",
   "~moonshotai/kimi-latest",
   "~openai/gpt-latest",
-  "~openai/gpt-mini-latest"
+  "~openai/gpt-mini-latest",
+  "~x-ai/grok-latest"
 ] as const;
 
 export type ModelId = typeof MODEL_IDS[number] | (string & {});
