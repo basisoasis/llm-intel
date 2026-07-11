@@ -30,7 +30,6 @@ export const MODEL_IDS = [
   "anthropic/claude-sonnet-5-20260630",
   "arcee-ai/coder-large",
   "arcee-ai/trinity-large-thinking",
-  "arcee-ai/trinity-mini-20251201",
   "arcee-ai/virtuoso-large",
   "baidu/ernie-4.5-vl-424b-a47b",
   "bytedance-seed/seed-1.6-20250625",
