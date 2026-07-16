@@ -28,7 +28,6 @@ export const MODEL_IDS = [
   "anthropic/claude-4.8-opus-fast-20260528",
   "anthropic/claude-5-fable-20260609",
   "anthropic/claude-sonnet-5-20260630",
-  "arcee-ai/coder-large",
   "arcee-ai/trinity-large-thinking",
   "arcee-ai/virtuoso-large",
   "baidu/ernie-4.5-vl-424b-a47b",
