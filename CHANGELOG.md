@@ -1,10 +1,19 @@
 # Changelog
 
-## v1.0.50 — 2026-07-19
+## v1.0.50 — 2026-07-20
+
+### Removed
+
+- **Meta: Llama 3.2 3B Instruct (free)** (`meta-llama/llama-3.2-3b-instruct:free`)
+- **Meta: Llama 3.3 70B Instruct (free)** (`meta-llama/llama-3.3-70b-instruct:free`)
+- **Nous: Hermes 3 405B Instruct (free)** (`nousresearch/hermes-3-llama-3.1-405b:free`)
+- **Qwen: Qwen3 Coder 480B A35B (free)** (`qwen/qwen3-coder:free`)
+- **Qwen: Qwen3 Next 80B A3B Instruct (free)** (`qwen/qwen3-next-80b-a3b-instruct:free`)
+- **Venice: Uncensored (free)** (`cognitivecomputations/dolphin-mistral-24b-venice-edition:free`)
 
 ### Updated
 
-- `~x-ai/grok-latest` — changed: pricing
+- `~moonshotai/kimi-latest` — changed: reasoning
 - `amazon/nova-premier-v1` — changed: benchmarks
 - `amazon/nova-pro-v1` — changed: benchmarks
 - `anthropic/claude-fable-5` — changed: benchmarks
@@ -32,16 +41,15 @@
 - `google/gemini-2.5-pro` — changed: benchmarks
 - `google/gemini-3-flash-preview` — changed: benchmarks
 - `google/gemini-3-pro-image-preview` — changed: benchmarks
+- `google/gemini-3.1-flash-image-preview` — changed: benchmarks
 - `google/gemini-3.1-flash-lite-preview` — changed: benchmarks
 - `google/gemini-3.1-pro-preview` — changed: benchmarks
 - `google/gemini-3.5-flash` — changed: benchmarks
-- `google/gemma-4-26b-a4b-it` — changed: pricing, top_provider
-- `google/gemma-4-31b-it` — changed: supported_parameters
 - `inception/mercury-2` — changed: benchmarks
 - `meta-llama/llama-4-maverick` — changed: benchmarks
 - `meta-llama/llama-4-scout` — changed: benchmarks
 - `meta/muse-spark-1.1` — changed: benchmarks
-- `minimax/minimax-m2` — changed: pricing, benchmarks
+- `minimax/minimax-m2` — changed: benchmarks
 - `minimax/minimax-m2.1` — changed: benchmarks
 - `minimax/minimax-m2.5` — changed: benchmarks
 - `minimax/minimax-m2.7` — changed: benchmarks
@@ -58,10 +66,11 @@
 - `moonshotai/kimi-k2-0905` — changed: benchmarks
 - `moonshotai/kimi-k2-thinking` — changed: benchmarks
 - `moonshotai/kimi-k2.5` — changed: benchmarks
-- `moonshotai/kimi-k2.6` — changed: pricing, top_provider, benchmarks
-- `moonshotai/kimi-k2.7-code` — changed: pricing, benchmarks
-- `moonshotai/kimi-k3` — changed: benchmarks
+- `moonshotai/kimi-k2.6` — changed: benchmarks
+- `moonshotai/kimi-k2.7-code` — changed: benchmarks
+- `moonshotai/kimi-k3` — changed: benchmarks, reasoning
 - `nex-agi/nex-n2-pro` — changed: benchmarks
+- `nvidia/nemotron-3-super-120b-a12b` — changed: pricing, top_provider
 - `nvidia/nemotron-3-ultra-550b-a55b` — changed: benchmarks
 - `nvidia/nemotron-3-ultra-550b-a55b:free` — changed: benchmarks
 - `openai/gpt-4.1` — changed: benchmarks
@@ -69,6 +78,9 @@
 - `openai/gpt-4.1-nano` — changed: benchmarks
 - `openai/gpt-4o` — changed: benchmarks
 - `openai/gpt-5` — changed: benchmarks
+- `openai/gpt-5-codex` — changed: benchmarks
+- `openai/gpt-5-image` — changed: benchmarks
+- `openai/gpt-5-image-mini` — changed: benchmarks
 - `openai/gpt-5-mini` — changed: benchmarks
 - `openai/gpt-5-nano` — changed: benchmarks
 - `openai/gpt-5.1` — changed: benchmarks
@@ -87,12 +99,11 @@
 - `qwen/qwen3-14b` — changed: pricing, top_provider
 - `qwen/qwen3-235b-a22b` — changed: benchmarks
 - `qwen/qwen3-235b-a22b-2507` — changed: benchmarks
-- `qwen/qwen3-235b-a22b-thinking-2507` — changed: benchmarks
+- `qwen/qwen3-235b-a22b-thinking-2507` — changed: pricing, top_provider, benchmarks
 - `qwen/qwen3-30b-a3b` — changed: benchmarks
 - `qwen/qwen3-30b-a3b-thinking-2507` — changed: benchmarks
 - `qwen/qwen3-coder` — changed: benchmarks
 - `qwen/qwen3-coder-30b-a3b-instruct` — changed: benchmarks
-- `qwen/qwen3-coder:free` — changed: benchmarks
 - `qwen/qwen3-max` — changed: benchmarks
 - `qwen/qwen3.5-397b-a17b` — changed: benchmarks
 - `qwen/qwen3.5-plus-02-15` — changed: benchmarks
@@ -104,15 +115,15 @@
 - `tencent/hy3:free` — changed: benchmarks
 - `x-ai/grok-4.20` — changed: benchmarks
 - `x-ai/grok-4.3` — changed: benchmarks
-- `x-ai/grok-4.5` — changed: pricing, benchmarks
+- `x-ai/grok-4.5` — changed: benchmarks
 - `xiaomi/mimo-v2.5` — changed: benchmarks
 - `xiaomi/mimo-v2.5-pro` — changed: benchmarks
 - `z-ai/glm-4.5` — changed: benchmarks
 - `z-ai/glm-4.5-air` — changed: benchmarks
 - `z-ai/glm-4.6` — changed: benchmarks
-- `z-ai/glm-4.7` — changed: benchmarks
+- `z-ai/glm-4.7` — changed: default_parameters, benchmarks
 - `z-ai/glm-4.7-flash` — changed: benchmarks
-- `z-ai/glm-5` — changed: benchmarks
+- `z-ai/glm-5` — changed: context_length, pricing, top_provider, benchmarks
 - `z-ai/glm-5-turbo` — changed: benchmarks
 - `z-ai/glm-5.1` — changed: benchmarks
 - `z-ai/glm-5.2` — changed: pricing, benchmarks
