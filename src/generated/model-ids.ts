@@ -89,6 +89,7 @@ export const MODEL_IDS = [
   "inception/mercury-2-20260304",
   "inclusionai/ling-2.6-1t-20260423",
   "inclusionai/ling-2.6-flash-20260421",
+  "inclusionai/ling-3.0-flash-20260723",
   "inclusionai/ring-2.6-1t-20260508",
   "inflection/inflection-3-pi",
   "inflection/inflection-3-productivity",
