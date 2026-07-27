@@ -93,8 +93,6 @@ export const MODEL_IDS = [
   "inclusionai/ling-2.6-flash-20260421",
   "inclusionai/ling-3.0-flash-20260723",
   "inclusionai/ring-2.6-1t-20260508",
-  "inflection/inflection-3-pi",
-  "inflection/inflection-3-productivity",
   "kwaipilot/kat-coder-air-v2.5-20260710",
   "kwaipilot/kat-coder-pro-v2-20260327",
   "kwaipilot/kat-coder-pro-v2.5-20260710",
