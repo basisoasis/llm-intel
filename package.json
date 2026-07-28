@@ -1,6 +1,6 @@
 {
   "name": "@basisoasis/llm-intel",
-  "version": "1.0.54",
+  "version": "1.0.55",
   "description": "Source model capabilities and pricing from OpenRouter for cost-aware development without hardcoded data tables",
   "license": "MIT",
   "keywords": [
