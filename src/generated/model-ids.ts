@@ -331,6 +331,7 @@ export const MODEL_IDS = [
   "~anthropic/claude-haiku-latest",
   "~anthropic/claude-opus-latest",
   "~anthropic/claude-sonnet-latest",
+  "~deepseek/deepseek-v4-flash-latest",
   "~google/gemini-flash-latest",
   "~google/gemini-pro-latest",
   "~moonshotai/kimi-latest",
