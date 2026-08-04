@@ -285,6 +285,7 @@ export const MODEL_IDS = [
   "qwen/qwen3.7-flash-20260727",
   "qwen/qwen3.7-max-20260520",
   "qwen/qwen3.7-plus-20260602",
+  "qwen/qwen3.8-max-20260803",
   "rekaai/reka-edge-2603",
   "rekaai/reka-flash-3",
   "relace/relace-apply-3",
