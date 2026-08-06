@@ -1,10 +1,14 @@
 # Changelog
 
-## v1.0.59 — 2026-08-05
+## v1.0.59 — 2026-08-06
+
+### Added
+
+- **Ling-3.0-flash** (`inclusionai/ling-3.0-flash`)
+- **Meta: Muse Spark 1.2** (`meta/muse-spark-1.2`)
 
 ### Updated
 
-- `~x-ai/grok-latest` — changed: alias_target
 - `amazon/nova-premier-v1` — changed: benchmarks
 - `amazon/nova-pro-v1` — changed: benchmarks
 - `anthropic/claude-fable-5` — changed: benchmarks
@@ -27,25 +31,28 @@
 - `deepseek/deepseek-v3.1-terminus` — changed: benchmarks
 - `deepseek/deepseek-v3.2` — changed: benchmarks
 - `deepseek/deepseek-v3.2-exp` — changed: benchmarks
-- `deepseek/deepseek-v4-flash` — changed: benchmarks
+- `deepseek/deepseek-v4-flash` — changed: pricing, top_provider, benchmarks
 - `deepseek/deepseek-v4-flash-0731` — changed: benchmarks
 - `deepseek/deepseek-v4-pro` — changed: benchmarks
 - `google/gemini-2.5-flash` — changed: benchmarks
 - `google/gemini-2.5-flash-image` — changed: benchmarks
 - `google/gemini-2.5-pro` — changed: benchmarks
 - `google/gemini-3-flash-preview` — changed: benchmarks
+- `google/gemini-3-pro-image-preview` — changed: benchmarks
+- `google/gemini-3.1-flash-image-preview` — changed: benchmarks
 - `google/gemini-3.1-flash-lite-preview` — changed: benchmarks
 - `google/gemini-3.1-pro-preview` — changed: benchmarks
 - `google/gemini-3.5-flash` — changed: benchmarks
 - `google/gemini-3.6-flash` — changed: benchmarks
 - `inception/mercury-2` — changed: benchmarks
+- `inclusionai/ling-3.0-flash:free` — changed: hugging_face_id, default_parameters
 - `meta-llama/llama-4-maverick` — changed: benchmarks
 - `meta-llama/llama-4-scout` — changed: benchmarks
-- `meta/muse-spark-1.1` — changed: benchmarks
+- `meta/muse-spark-1.1` — changed: default_parameters, benchmarks
 - `minimax/minimax-m2` — changed: benchmarks
 - `minimax/minimax-m2.1` — changed: benchmarks
-- `minimax/minimax-m2.5` — changed: benchmarks
-- `minimax/minimax-m2.7` — changed: pricing, top_provider, benchmarks
+- `minimax/minimax-m2.5` — changed: pricing, benchmarks
+- `minimax/minimax-m2.7` — changed: benchmarks
 - `minimax/minimax-m3` — changed: benchmarks
 - `mistralai/codestral-2508` — changed: benchmarks
 - `mistralai/ministral-14b-2512` — changed: benchmarks
@@ -54,13 +61,13 @@
 - `mistralai/mistral-large-2512` — changed: benchmarks
 - `mistralai/mistral-medium-3` — changed: benchmarks
 - `mistralai/mistral-medium-3.1` — changed: benchmarks
-- `mistralai/mistral-small-3.2-24b-instruct` — changed: pricing, top_provider, benchmarks
+- `mistralai/mistral-small-3.2-24b-instruct` — changed: benchmarks
 - `moonshotai/kimi-k2` — changed: benchmarks
 - `moonshotai/kimi-k2-0905` — changed: benchmarks
 - `moonshotai/kimi-k2-thinking` — changed: benchmarks
 - `moonshotai/kimi-k2.5` — changed: benchmarks
 - `moonshotai/kimi-k2.6` — changed: benchmarks
-- `moonshotai/kimi-k2.7-code` — changed: benchmarks
+- `moonshotai/kimi-k2.7-code` — changed: pricing, benchmarks
 - `moonshotai/kimi-k3` — changed: benchmarks
 - `nex-agi/nex-n2-pro` — changed: benchmarks
 - `nvidia/nemotron-3-ultra-550b-a55b` — changed: benchmarks
@@ -87,9 +94,8 @@
 - `openai/gpt-oss-20b:free` — changed: benchmarks
 - `openai/o3` — changed: benchmarks
 - `openai/o4-mini` — changed: benchmarks
-- `qwen/qwen2.5-vl-72b-instruct` — changed: pricing, top_provider
 - `qwen/qwen3-235b-a22b` — changed: benchmarks
-- `qwen/qwen3-235b-a22b-2507` — changed: benchmarks
+- `qwen/qwen3-235b-a22b-2507` — changed: pricing, top_provider, benchmarks
 - `qwen/qwen3-235b-a22b-thinking-2507` — changed: benchmarks
 - `qwen/qwen3-30b-a3b` — changed: benchmarks
 - `qwen/qwen3-30b-a3b-thinking-2507` — changed: benchmarks
@@ -104,21 +110,20 @@
 - `stepfun/step-3.7-flash` — changed: benchmarks
 - `tencent/hy3` — changed: benchmarks
 - `thinkingmachines/inkling` — changed: benchmarks
-- `x-ai/grok-4.20` — changed: name, description, benchmarks
-- `x-ai/grok-4.20-multi-agent` — changed: name, description
-- `x-ai/grok-4.3` — changed: name, description, benchmarks
-- `x-ai/grok-4.5` — changed: name, benchmarks
-- `x-ai/grok-build-0.1` — changed: name, description
+- `upstage/solar-pro-3` — changed: context_length, top_provider, supported_parameters
+- `x-ai/grok-4.20` — changed: benchmarks
+- `x-ai/grok-4.3` — changed: benchmarks
+- `x-ai/grok-4.5` — changed: benchmarks
 - `xiaomi/mimo-v2.5` — changed: benchmarks
 - `xiaomi/mimo-v2.5-pro` — changed: benchmarks
 - `z-ai/glm-4.5` — changed: benchmarks
 - `z-ai/glm-4.5-air` — changed: benchmarks
 - `z-ai/glm-4.6` — changed: benchmarks
-- `z-ai/glm-4.7` — changed: benchmarks
+- `z-ai/glm-4.7` — changed: supported_parameters, benchmarks
 - `z-ai/glm-4.7-flash` — changed: benchmarks
 - `z-ai/glm-5` — changed: benchmarks
 - `z-ai/glm-5-turbo` — changed: benchmarks
-- `z-ai/glm-5.1` — changed: benchmarks
+- `z-ai/glm-5.1` — changed: pricing, top_provider, benchmarks
 - `z-ai/glm-5.2` — changed: benchmarks
 - `z-ai/glm-5v-turbo` — changed: benchmarks
 
