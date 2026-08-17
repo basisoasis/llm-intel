@@ -402,6 +402,7 @@ export const MODEL_IDS = [
   "z-ai/glm-5.1-20260406",
   "z-ai/glm-5.2-20260616",
   "z-ai/glm-5.2-20260616",
+  "z-ai/glm-5.2-20260616",
   "z-ai/glm-5v-turbo-20260401",
   "~anthropic/claude-fable-latest",
   "~anthropic/claude-haiku-latest",
