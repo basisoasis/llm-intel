@@ -123,7 +123,6 @@ export const MODEL_IDS = [
   "kwaipilot/kat-coder-air-v2.5-20260710",
   "kwaipilot/kat-coder-pro-v2-20260327",
   "kwaipilot/kat-coder-pro-v2.5-20260710",
-  "liquid/lfm-2.5-2.6b-20260811",
   "mancer/weaver",
   "meituan/longcat-2.0-20260720",
   "meta-llama/llama-3.1-70b-instruct",
