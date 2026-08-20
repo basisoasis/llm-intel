@@ -1,5 +1,39 @@
 # Changelog
 
+## v1.0.67 — 2026-08-20
+
+### Added
+
+- **Z.ai: GLM Latest** (`~z-ai/glm-latest`)
+
+### Removed
+
+- **AI21: Jamba Large 1.7** (`ai21/jamba-large-1.7`)
+- **Mancer: Weaver (alpha)** (`mancer/weaver`)
+
+### Updated
+
+- `~deepseek/deepseek-v4-flash-latest` — changed: pricing, top_provider
+- `arcee-ai/trinity-large-thinking` — changed: benchmarks
+- `deepseek/deepseek-chat-v3-0324` — changed: pricing, top_provider, supported_parameters
+- `deepseek/deepseek-v3.1-terminus` — changed: benchmarks
+- `deepseek/deepseek-v4-pro` — changed: pricing, top_provider
+- `deepseek/deepseek-v4-pro-0813` — changed: pricing, top_provider
+- `google/gemini-3.1-flash-lite-image` — changed: top_provider
+- `inclusionai/ling-2.6-1t` — changed: expiration_date
+- `inclusionai/ling-2.6-flash` — changed: expiration_date
+- `inclusionai/ling-3.0-flash` — changed: supported_parameters
+- `inclusionai/ring-2.6-1t` — changed: expiration_date, benchmarks
+- `kwaipilot/kat-coder-pro-v2` — changed: benchmarks
+- `meituan/longcat-2.0` — changed: benchmarks
+- `minimax/minimax-m2.5` — changed: pricing, top_provider, supported_parameters
+- `nex-agi/nex-n2-pro` — changed: benchmarks
+- `nvidia/nemotron-3-nano-30b-a3b:free` — changed: expiration_date
+- `nvidia/nemotron-nano-9b-v2:free` — changed: expiration_date
+- `qwen/qwen3.5-35b-a3b` — changed: pricing, top_provider
+- `qwen/qwen3.8-27b` — changed: context_length, supported_parameters, benchmarks
+- `z-ai/glm-5.3` — changed: benchmarks
+
 ## v1.0.66 — 2026-08-19
 
 ### Added
