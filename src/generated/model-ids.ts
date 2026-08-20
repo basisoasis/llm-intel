@@ -1,7 +1,6 @@
 
 // AUTO-GENERATED: do not edit manually
 export const MODEL_IDS = [
-  "ai21/jamba-large-1.7",
   "aion-labs/aion-2.0-20260223",
   "aion-labs/aion-3.0-20260707",
   "aion-labs/aion-3.0-mini-20260707",
@@ -124,7 +123,6 @@ export const MODEL_IDS = [
   "kwaipilot/kat-coder-pro-v2-20260327",
   "kwaipilot/kat-coder-pro-v2.5-20260710",
   "liquid/lfm-2.5-2.6b-20260811",
-  "mancer/weaver",
   "meituan/longcat-2.0-20260720",
   "meta-llama/llama-3.1-70b-instruct",
   "meta-llama/llama-3.1-8b-instruct",
@@ -415,7 +413,8 @@ export const MODEL_IDS = [
   "~moonshotai/kimi-latest",
   "~openai/gpt-latest",
   "~openai/gpt-mini-latest",
-  "~x-ai/grok-latest"
+  "~x-ai/grok-latest",
+  "~z-ai/glm-latest"
 ] as const;
 
 export type ModelId = typeof MODEL_IDS[number] | (string & {});
