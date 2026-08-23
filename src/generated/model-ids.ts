@@ -371,6 +371,7 @@ export const MODEL_IDS = [
   "tencent/hunyuan-a13b-instruct",
   "tencent/hy-mt2-1.8b-20260521",
   "tencent/hy-mt2-30b-a3b-20260521",
+  "tencent/hy-mt2-7b-20260521",
   "tencent/hy3-20260706",
   "tencent/hy3-preview-20260421",
   "thedrummer/cydonia-24b-v4.1",
