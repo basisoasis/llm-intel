@@ -414,7 +414,6 @@ export const MODEL_IDS = [
   "z-ai/glm-5-turbo-20260315",
   "z-ai/glm-5.1-20260406",
   "z-ai/glm-5.2-20260616",
-  "z-ai/glm-5.2-20260616",
   "z-ai/glm-5.3-20260816",
   "z-ai/glm-5.3-flash-20260826",
   "z-ai/glm-5.3-flash-20260826",

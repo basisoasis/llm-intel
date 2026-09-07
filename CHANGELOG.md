@@ -1,19 +1,14 @@
 # Changelog
 
-## v1.0.79 — 2026-09-06
-
-### Added
-
-- **Qwen: Qwen3.8 Max (0902)** (`qwen/qwen3.8-max-0902`)
+## v1.0.79 — 2026-09-07
 
 ### Removed
 
-- **Qwen: Qwen3.8 Max** (`qwen/qwen3.8-max`)
+- **Z.ai: GLM 5.2 (free)** (`z-ai/glm-5.2:free`)
 
 ### Updated
 
-- `~moonshotai/kimi-latest` — changed: pricing
-- `~z-ai/glm-latest` — changed: pricing
+- `~deepseek/deepseek-v4-flash-latest` — changed: pricing, top_provider
 - `amazon/nova-premier-v1` — changed: benchmarks
 - `amazon/nova-pro-v1` — changed: benchmarks
 - `anthropic/claude-fable-5` — changed: benchmarks
@@ -50,8 +45,9 @@
 - `deepseek/deepseek-v3.2` — changed: benchmarks
 - `deepseek/deepseek-v3.2-exp` — changed: benchmarks
 - `deepseek/deepseek-v4-flash` — changed: pricing, benchmarks
-- `deepseek/deepseek-v4-flash-0731` — changed: benchmarks
+- `deepseek/deepseek-v4-flash-0731` — changed: pricing, top_provider, benchmarks
 - `deepseek/deepseek-v4-flash-0731:batch` — changed: benchmarks
+- `deepseek/deepseek-v4-flash-vision-exp` — changed: pricing
 - `deepseek/deepseek-v4-pro` — changed: pricing, benchmarks
 - `google/gemini-2.5-flash` — changed: benchmarks
 - `google/gemini-2.5-flash-image` — changed: benchmarks
@@ -78,7 +74,6 @@
 - `meta-llama/llama-4-scout` — changed: benchmarks
 - `meta/muse-spark-1.1` — changed: benchmarks
 - `meta/muse-spark-1.2` — changed: benchmarks
-- `meta/muse-spark-1.3` — changed: benchmarks
 - `minimax/minimax-m2` — changed: benchmarks
 - `minimax/minimax-m2.1` — changed: benchmarks
 - `minimax/minimax-m2.5` — changed: benchmarks
@@ -150,16 +145,14 @@
 - `qwen/qwen3-coder` — changed: benchmarks
 - `qwen/qwen3-coder-30b-a3b-instruct` — changed: benchmarks
 - `qwen/qwen3-max` — changed: benchmarks
-- `qwen/qwen3.5-35b-a3b` — changed: pricing, top_provider
-- `qwen/qwen3.5-397b-a17b` — changed: benchmarks
+- `qwen/qwen3-next-80b-a3b-thinking` — changed: top_provider
+- `qwen/qwen3.5-397b-a17b` — changed: pricing, top_provider, benchmarks
 - `qwen/qwen3.5-plus-02-15` — changed: benchmarks
 - `qwen/qwen3.6-plus` — changed: benchmarks
 - `qwen/qwen3.7-max` — changed: benchmarks
 - `qwen/qwen3.7-plus` — changed: benchmarks
-- `qwen/qwen3.8-27b` — changed: benchmarks
 - `stepfun/step-3.7-flash` — changed: benchmarks
 - `tencent/hy3` — changed: benchmarks
-- `thedrummer/unslopnemo-12b` — changed: top_provider
 - `thinkingmachines/inkling` — changed: benchmarks
 - `thinkingmachines/inkling:batch` — changed: benchmarks
 - `thinkingmachines/inkling:free` — changed: benchmarks
@@ -180,7 +173,7 @@
 - `z-ai/glm-5-turbo` — changed: benchmarks
 - `z-ai/glm-5.1` — changed: benchmarks
 - `z-ai/glm-5.2` — changed: benchmarks
-- `z-ai/glm-5.2:free` — changed: benchmarks
+- `z-ai/glm-5.3` — changed: pricing, top_provider
 - `z-ai/glm-5v-turbo` — changed: benchmarks
 
 ## v1.0.78 — 2026-09-05
