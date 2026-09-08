@@ -150,8 +150,6 @@ export const MODEL_IDS = [
   "minimax/minimax-m2.1",
   "minimax/minimax-m2.5-20260211",
   "minimax/minimax-m2.7-20260318",
-  "minimax/minimax-m2.7-20260318",
-  "minimax/minimax-m3-20260531",
   "minimax/minimax-m3-20260531",
   "minimax/minimax-m3-20260531",
   "mistralai/codestral-2508",
