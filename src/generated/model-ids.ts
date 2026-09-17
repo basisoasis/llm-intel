@@ -377,6 +377,7 @@ export const MODEL_IDS = [
   "sao10k/l3-lunaris-8b",
   "sao10k/l3.1-euryale-70b",
   "sao10k/l3.3-euryale-70b-v2.3",
+  "stealth/union-alpha",
   "stepfun/step-3.5-flash",
   "stepfun/step-3.7-flash-20260528",
   "tencent/hunyuan-a13b-instruct",
