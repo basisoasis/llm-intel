@@ -64,7 +64,6 @@ export const MODEL_IDS = [
   "deepseek/deepseek-v4-flash-20260423",
   "deepseek/deepseek-v4-flash-20260731",
   "deepseek/deepseek-v4-flash-20260731",
-  "deepseek/deepseek-v4-flash-20260731",
   "deepseek/deepseek-v4-flash-vision-exp-20260821",
   "deepseek/deepseek-v4-flash-vision-exp-20260821",
   "deepseek/deepseek-v4-pro-20260423",
