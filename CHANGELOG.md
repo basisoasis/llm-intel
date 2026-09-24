@@ -1,46 +1,28 @@
 # Changelog
 
-## v1.0.86 — 2026-09-23
+## v1.0.86 — 2026-09-24
 
 ### Added
 
-- **Anthropic: Claude Opus 5.5** (`anthropic/claude-opus-5.5`)
-- **Anthropic: Claude Opus 5.5 (batch)** (`anthropic/claude-opus-5.5:batch`)
-- **Cohere: Command A+** (`cohere/command-a-plus`)
-- **DeepSeek: DeepSeek V4.1 Flash (batch)** (`deepseek/deepseek-v4.1-flash:batch`)
-- **MoonshotAI: Kimi K3 (batch)** (`moonshotai/kimi-k3:batch`)
-- **Nex AGI: Nex-N2.5-Mini** (`nex-agi/nex-n2.5-mini`)
-- **Nex AGI: Nex-N2.5-Pro** (`nex-agi/nex-n2.5-pro`)
-- **OpenAI: GPT-6 Luna** (`openai/gpt-6-luna`)
-- **OpenAI: GPT-6 Luna (batch)** (`openai/gpt-6-luna:batch`)
-- **OpenAI: GPT-6 Luna Pro** (`openai/gpt-6-luna-pro`)
-- **OpenAI: GPT-6 Luna Pro (batch)** (`openai/gpt-6-luna-pro:batch`)
-- **OpenAI: GPT-6 Sol** (`openai/gpt-6-sol`)
-- **OpenAI: GPT-6 Sol (batch)** (`openai/gpt-6-sol:batch`)
-- **OpenAI: GPT-6 Sol Pro** (`openai/gpt-6-sol-pro`)
-- **OpenAI: GPT-6 Sol Pro (batch)** (`openai/gpt-6-sol-pro:batch`)
-- **OpenAI: gpt-oss-20b (batch)** (`openai/gpt-oss-20b:batch`)
-- **Qwen: Qwen3.8 Omni Flash** (`qwen/qwen3.8-omni-flash`)
+- **AionLabs: Aion 3.5** (`aion-labs/aion-3.5`)
+- **AionLabs: Aion 3.5 Mini** (`aion-labs/aion-3.5-mini`)
+- **OpenAI: gpt-oss-120b (batch)** (`openai/gpt-oss-120b:batch`)
+- **Qwen: Qwen3.8 Max Prime** (`qwen/qwen3.8-max-prime`)
+- **Space Bunny Alpha** (`stealth/space-bunny-alpha`)
+- **Upstage: Solar Mini 4** (`upstage/solar-mini4`)
+- **Z.ai: GLM 5.3 Prime** (`z-ai/glm-5.3-prime`)
 
 ### Removed
 
-- **DeepSeek: DeepSeek V4 Flash 0731 (batch)** (`deepseek/deepseek-v4-flash-0731:batch`)
-- **DeepSeek: DeepSeek V4 Flash Vision Exp (batch)** (`deepseek/deepseek-v4-flash-vision-exp:batch`)
-- **DeepSeek: DeepSeek V4 Pro 0813 (batch)** (`deepseek/deepseek-v4-pro-0813:batch`)
-- **Kwaipilot: KAT-Coder-Pro V2** (`kwaipilot/kat-coder-pro-v2`)
-- **Meta: Muse Glimmer 30B (batch)** (`meta/muse-glimmer-30b:batch`)
-- **Z.ai: GLM 5.2 (batch)** (`z-ai/glm-5.2:batch`)
+- **inclusionAI: Ling 3.0 Flash VL (free)** (`inclusionai/ling-3.0-flash-vl:free`)
+- **Mistral: Devstral 2 2512** (`mistralai/devstral-2512`)
 
 ### Updated
 
-- `~anthropic/claude-opus-latest` — changed: alias_target, pricing, reasoning
 - `~deepseek/deepseek-flash-latest` — changed: pricing
 - `~deepseek/deepseek-pro-latest` — changed: pricing, top_provider
+- `~deepseek/deepseek-v4-flash-latest` — changed: pricing
 - `~moonshotai/kimi-latest` — changed: pricing
-- `~openai/gpt-luna-latest` — changed: alias_target, pricing, top_provider, knowledge_cutoff
-- `~openai/gpt-sol-latest` — changed: alias_target, knowledge_cutoff
-- `~z-ai/glm-flash-latest` — changed: pricing, top_provider
-- `~z-ai/glm-latest` — changed: pricing
 - `amazon/nova-premier-v1` — changed: benchmarks
 - `amazon/nova-pro-v1` — changed: benchmarks
 - `anthropic/claude-fable-5` — changed: benchmarks
@@ -75,9 +57,9 @@
 - `deepseek/deepseek-v3.2-exp` — changed: benchmarks
 - `deepseek/deepseek-v4-flash` — changed: benchmarks
 - `deepseek/deepseek-v4-flash-0731` — changed: benchmarks
-- `deepseek/deepseek-v4-pro` — changed: benchmarks
+- `deepseek/deepseek-v4-pro` — changed: pricing, benchmarks
+- `deepseek/deepseek-v4-pro-0813` — changed: pricing, top_provider
 - `deepseek/deepseek-v4.1-flash` — changed: pricing, top_provider
-- `dots-studio/dots-3-note-preview:free` — changed: expiration_date
 - `google/gemini-2.5-flash` — changed: benchmarks
 - `google/gemini-2.5-flash:batch` — changed: benchmarks
 - `google/gemini-2.5-pro` — changed: benchmarks
@@ -96,12 +78,14 @@
 - `google/gemini-3.8-flash` — changed: benchmarks
 - `google/gemini-3.8-flash:batch` — changed: benchmarks
 - `inception/mercury-2` — changed: benchmarks
+- `inclusionai/ling-3.0-flash-vl` — changed: context_length, supported_parameters
+- `liquid/lfm-2.5-2.6b:free` — changed: supported_parameters
 - `meta-llama/llama-4-maverick` — changed: benchmarks
 - `meta-llama/llama-4-scout` — changed: benchmarks
 - `meta/muse-spark-1.1` — changed: benchmarks
 - `meta/muse-spark-1.2` — changed: benchmarks
 - `meta/muse-spark-1.3` — changed: benchmarks
-- `minimax/minimax-m2` — changed: benchmarks
+- `minimax/minimax-m2` — changed: pricing, top_provider, benchmarks
 - `minimax/minimax-m2.1` — changed: benchmarks
 - `minimax/minimax-m2.5` — changed: benchmarks
 - `minimax/minimax-m2.7` — changed: benchmarks
@@ -122,10 +106,12 @@
 - `moonshotai/kimi-k2-thinking` — changed: benchmarks
 - `moonshotai/kimi-k2.5` — changed: benchmarks
 - `moonshotai/kimi-k2.6` — changed: benchmarks
-- `moonshotai/kimi-k2.7-code` — changed: pricing, benchmarks
+- `moonshotai/kimi-k2.7-code` — changed: benchmarks
 - `moonshotai/kimi-k3` — changed: benchmarks
+- `moonshotai/kimi-k3:batch` — changed: benchmarks
 - `nvidia/nemotron-3-ultra-550b-a55b` — changed: benchmarks
 - `nvidia/nemotron-3-ultra-550b-a55b:free` — changed: benchmarks
+- `nvidia/nemotron-3.5-lightning` — changed: pricing, top_provider
 - `openai/gpt-4.1` — changed: benchmarks
 - `openai/gpt-4.1-mini` — changed: benchmarks
 - `openai/gpt-4.1-mini:batch` — changed: benchmarks
@@ -154,7 +140,8 @@
 - `openai/gpt-5.5` — changed: benchmarks
 - `openai/gpt-5.5:batch` — changed: benchmarks
 - `openai/gpt-oss-120b` — changed: benchmarks
-- `openai/gpt-oss-20b` — changed: pricing, top_provider, benchmarks
+- `openai/gpt-oss-20b` — changed: benchmarks
+- `openai/gpt-oss-20b:batch` — changed: benchmarks
 - `openai/o3` — changed: benchmarks
 - `openai/o3:batch` — changed: benchmarks
 - `openai/o4-mini` — changed: benchmarks
@@ -167,10 +154,9 @@
 - `qwen/qwen3-coder` — changed: benchmarks
 - `qwen/qwen3-coder-30b-a3b-instruct` — changed: benchmarks
 - `qwen/qwen3-max` — changed: benchmarks
-- `qwen/qwen3-next-80b-a3b-thinking` — changed: top_provider
+- `qwen/qwen3-next-80b-a3b-instruct` — changed: pricing, top_provider
 - `qwen/qwen3.5-397b-a17b` — changed: benchmarks
 - `qwen/qwen3.5-plus-02-15` — changed: benchmarks
-- `qwen/qwen3.6-27b` — changed: pricing, top_provider
 - `qwen/qwen3.6-plus` — changed: benchmarks
 - `qwen/qwen3.7-max` — changed: benchmarks
 - `qwen/qwen3.7-plus` — changed: benchmarks
@@ -178,7 +164,6 @@
 - `tencent/hy3` — changed: benchmarks
 - `tencent/hy4-preview` — changed: supported_parameters
 - `thinkingmachines/inkling` — changed: benchmarks
-- `thinkingmachines/inkling-small` — changed: supported_parameters
 - `thinkingmachines/inkling:free` — changed: benchmarks
 - `upstage/solar-pro4` — changed: benchmarks
 - `x-ai/grok-4.20` — changed: benchmarks
@@ -188,8 +173,7 @@
 - `x-ai/grok-4.6` — changed: benchmarks
 - `xiaomi/mimo-v2.5` — changed: benchmarks
 - `xiaomi/mimo-v2.5-pro` — changed: benchmarks
-- `xiaomi/mimo-v2.6-flash` — changed: hugging_face_id, supported_parameters
-- `xiaomi/mimo-v2.6-pro` — changed: hugging_face_id, supported_parameters, benchmarks
+- `xiaomi/mimo-v2.6-pro` — changed: benchmarks
 - `z-ai/glm-4.5` — changed: benchmarks
 - `z-ai/glm-4.5-air` — changed: benchmarks
 - `z-ai/glm-4.6` — changed: benchmarks
@@ -202,8 +186,9 @@
 - `z-ai/glm-5.2:free` — changed: benchmarks
 - `z-ai/glm-5.3` — changed: benchmarks
 - `z-ai/glm-5.3-flash` — changed: benchmarks
-- `z-ai/glm-5.3-flash:batch` — changed: pricing, top_provider, supported_parameters, benchmarks
-- `z-ai/glm-5.3:batch` — changed: pricing, top_provider, supported_parameters, benchmarks
+- `z-ai/glm-5.3-flash:batch` — changed: benchmarks
+- `z-ai/glm-5.3-flashx` — changed: pricing, expiration_date
+- `z-ai/glm-5.3:batch` — changed: pricing, benchmarks
 - `z-ai/glm-5v-turbo` — changed: benchmarks
 
 ## v1.0.85 — 2026-09-21
