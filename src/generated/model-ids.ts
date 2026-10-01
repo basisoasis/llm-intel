@@ -286,8 +286,6 @@ export const MODEL_IDS = [
   "openai/gpt-6-sol-pro-20260922",
   "openai/gpt-6-sol-pro-20260922",
   "openai/gpt-6.1-sol-20260929",
-  "openai/gpt-6.1-sol-20260929",
-  "openai/gpt-6.1-sol-pro-20260929",
   "openai/gpt-6.1-sol-pro-20260929",
   "openai/gpt-audio",
   "openai/gpt-audio-mini",
