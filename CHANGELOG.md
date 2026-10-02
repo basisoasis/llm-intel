@@ -1,11 +1,11 @@
 # Changelog
 
-## v1.0.89 — 2026-10-01
+## v1.0.89 — 2026-10-02
 
-### Removed
+### Added
 
-- **OpenAI: GPT-6.1 Sol (batch)** (`openai/gpt-6.1-sol:batch`)
-- **OpenAI: GPT-6.1 Sol Pro (batch)** (`openai/gpt-6.1-sol-pro:batch`)
+- **Apodex: Apodex 1.1 Mini (free)** (`apodex/apodex-1.1-mini:free`)
+- **Pareto 26.10 Preview** (`unbiased/pareto-26.10-preview`)
 
 ### Updated
 
@@ -13,8 +13,15 @@
 - `~deepseek/deepseek-pro-latest` — changed: pricing
 - `~deepseek/deepseek-v4-flash-latest` — changed: pricing
 - `~moonshotai/kimi-latest` — changed: pricing
+- `~openai/gpt-astra-latest` — changed: supported_parameters
+- `~openai/gpt-luna-latest` — changed: supported_parameters
+- `~openai/gpt-mini-latest` — changed: supported_parameters
+- `~openai/gpt-sol-latest` — changed: supported_parameters
+- `~openai/gpt-terra-latest` — changed: supported_parameters
 - `~z-ai/glm-flash-latest` — changed: pricing
 - `~z-ai/glm-latest` — changed: pricing, top_provider
+- `amazon/nova-premier-v1` — changed: benchmarks
+- `amazon/nova-pro-v1` — changed: benchmarks
 - `anthropic/claude-fable-5` — changed: benchmarks
 - `anthropic/claude-fable-5:batch` — changed: benchmarks
 - `anthropic/claude-fable-5.1` — changed: benchmarks
@@ -42,21 +49,26 @@
 - `anthropic/claude-sonnet-5:batch` — changed: benchmarks
 - `arcee-ai/trinity-large-thinking` — changed: benchmarks
 - `deepseek/deepseek-chat` — changed: benchmarks
+- `deepseek/deepseek-chat-v3-0324` — changed: top_provider
 - `deepseek/deepseek-chat-v3.1` — changed: benchmarks
 - `deepseek/deepseek-r1-0528` — changed: benchmarks
 - `deepseek/deepseek-v3.1-terminus` — changed: benchmarks
 - `deepseek/deepseek-v3.2` — changed: benchmarks
-- `deepseek/deepseek-v3.2-exp` — changed: supported_parameters, benchmarks
-- `deepseek/deepseek-v4-flash` — changed: pricing, top_provider, benchmarks
+- `deepseek/deepseek-v3.2-exp` — changed: benchmarks
+- `deepseek/deepseek-v4-flash` — changed: benchmarks
 - `deepseek/deepseek-v4-flash-0731` — changed: pricing, benchmarks
 - `deepseek/deepseek-v4-pro` — changed: pricing, benchmarks
 - `deepseek/deepseek-v4.1-flash` — changed: pricing
+- `dots-studio/dots-3-note-preview:free` — changed: expiration_date
 - `google/gemini-2.5-flash` — changed: benchmarks
+- `google/gemini-2.5-flash-image` — changed: benchmarks
 - `google/gemini-2.5-flash:batch` — changed: benchmarks
 - `google/gemini-2.5-pro` — changed: benchmarks
 - `google/gemini-2.5-pro:batch` — changed: benchmarks
 - `google/gemini-3-flash-preview` — changed: benchmarks
 - `google/gemini-3-flash-preview:batch` — changed: benchmarks
+- `google/gemini-3-pro-image-preview` — changed: benchmarks
+- `google/gemini-3.1-flash-image-preview` — changed: benchmarks
 - `google/gemini-3.1-flash-lite-preview` — changed: benchmarks
 - `google/gemini-3.1-pro-preview` — changed: benchmarks
 - `google/gemini-3.1-pro-preview:batch` — changed: benchmarks
@@ -68,22 +80,17 @@
 - `google/gemini-3.7-flash:batch` — changed: benchmarks
 - `google/gemini-3.8-flash` — changed: benchmarks
 - `google/gemini-3.8-flash:batch` — changed: benchmarks
-- `google/gemma-4-31b-it` — changed: benchmarks
-- `google/gemma-4-31b-it:free` — changed: benchmarks
 - `inception/mercury-2` — changed: benchmarks
-- `inference-net/schematron-v2-small` — changed: supported_parameters
-- `inference-net/schematron-v2-turbo` — changed: supported_parameters
 - `meta-llama/llama-3.3-70b-instruct` — changed: top_provider
-- `meta-llama/llama-4-maverick` — changed: benchmarks
+- `meta-llama/llama-4-maverick` — changed: supported_parameters, benchmarks
 - `meta-llama/llama-4-scout` — changed: benchmarks
 - `meta/muse-spark-1.1` — changed: benchmarks
 - `meta/muse-spark-1.2` — changed: benchmarks
 - `meta/muse-spark-1.3` — changed: benchmarks
-- `minimax/minimax-m1` — changed: pricing
 - `minimax/minimax-m2` — changed: benchmarks
 - `minimax/minimax-m2.1` — changed: benchmarks
 - `minimax/minimax-m2.5` — changed: benchmarks
-- `minimax/minimax-m2.7` — changed: benchmarks
+- `minimax/minimax-m2.7` — changed: supported_parameters, benchmarks
 - `minimax/minimax-m3` — changed: benchmarks
 - `mistralai/codestral-2508` — changed: benchmarks
 - `mistralai/codestral-2508:batch` — changed: benchmarks
@@ -99,13 +106,13 @@
 - `mistralai/mistral-small-3.2-24b-instruct` — changed: benchmarks
 - `moonshotai/kimi-k2` — changed: benchmarks
 - `moonshotai/kimi-k2-0905` — changed: benchmarks
-- `moonshotai/kimi-k2-thinking` — changed: pricing, top_provider
+- `moonshotai/kimi-k2-thinking` — changed: pricing, top_provider, benchmarks
 - `moonshotai/kimi-k2.5` — changed: benchmarks
-- `moonshotai/kimi-k2.6` — changed: benchmarks
-- `moonshotai/kimi-k2.7-code` — changed: pricing, benchmarks
+- `moonshotai/kimi-k2.6` — changed: pricing, benchmarks
+- `moonshotai/kimi-k2.7-code` — changed: benchmarks
 - `moonshotai/kimi-k3` — changed: pricing, benchmarks
 - `moonshotai/kimi-k3:batch` — changed: benchmarks
-- `nvidia/nemotron-3-ultra-550b-a55b` — changed: benchmarks
+- `nvidia/nemotron-3-ultra-550b-a55b` — changed: pricing, top_provider, benchmarks
 - `nvidia/nemotron-3-ultra-550b-a55b:free` — changed: benchmarks
 - `nvidia/nemotron-3.5-lightning` — changed: pricing, top_provider
 - `openai/gpt-4.1` — changed: benchmarks
@@ -116,24 +123,67 @@
 - `openai/gpt-4.1:batch` — changed: benchmarks
 - `openai/gpt-4o` — changed: benchmarks
 - `openai/gpt-4o:batch` — changed: benchmarks
-- `openai/gpt-5` — changed: benchmarks
-- `openai/gpt-5-mini` — changed: benchmarks
-- `openai/gpt-5-mini:batch` — changed: benchmarks
-- `openai/gpt-5-nano` — changed: benchmarks
-- `openai/gpt-5-nano:batch` — changed: benchmarks
-- `openai/gpt-5:batch` — changed: benchmarks
-- `openai/gpt-5.1` — changed: benchmarks
-- `openai/gpt-5.1-codex` — changed: benchmarks
-- `openai/gpt-5.1-codex-mini` — changed: benchmarks
-- `openai/gpt-5.1:batch` — changed: benchmarks
-- `openai/gpt-5.2` — changed: benchmarks
-- `openai/gpt-5.2-codex` — changed: benchmarks
-- `openai/gpt-5.2:batch` — changed: benchmarks
-- `openai/gpt-5.3-codex` — changed: benchmarks
-- `openai/gpt-5.4` — changed: benchmarks
-- `openai/gpt-5.4:batch` — changed: benchmarks
-- `openai/gpt-5.5` — changed: benchmarks
-- `openai/gpt-5.5:batch` — changed: benchmarks
+- `openai/gpt-5` — changed: supported_parameters, benchmarks
+- `openai/gpt-5-image` — changed: supported_parameters, benchmarks
+- `openai/gpt-5-image-mini` — changed: supported_parameters, benchmarks
+- `openai/gpt-5-mini` — changed: supported_parameters, benchmarks
+- `openai/gpt-5-mini:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-5-nano` — changed: supported_parameters, benchmarks
+- `openai/gpt-5-nano:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-5-pro` — changed: supported_parameters
+- `openai/gpt-5-pro:batch` — changed: supported_parameters
+- `openai/gpt-5:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.1` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.1-codex` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.1-codex-max` — changed: supported_parameters
+- `openai/gpt-5.1-codex-mini` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.1:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.2` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.2-chat` — changed: supported_parameters
+- `openai/gpt-5.2-codex` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.2-pro` — changed: supported_parameters
+- `openai/gpt-5.2-pro:batch` — changed: supported_parameters
+- `openai/gpt-5.2:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.3-codex` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.4` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.4-image-2` — changed: supported_parameters
+- `openai/gpt-5.4-mini` — changed: supported_parameters
+- `openai/gpt-5.4-mini:batch` — changed: supported_parameters
+- `openai/gpt-5.4-nano` — changed: supported_parameters
+- `openai/gpt-5.4-nano:batch` — changed: supported_parameters
+- `openai/gpt-5.4-pro` — changed: supported_parameters
+- `openai/gpt-5.4-pro:batch` — changed: supported_parameters
+- `openai/gpt-5.4:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.5` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.5-pro` — changed: supported_parameters
+- `openai/gpt-5.5-pro:batch` — changed: supported_parameters
+- `openai/gpt-5.5:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-5.6-luna` — changed: supported_parameters
+- `openai/gpt-5.6-luna-pro` — changed: supported_parameters
+- `openai/gpt-5.6-luna-pro:batch` — changed: supported_parameters
+- `openai/gpt-5.6-luna:batch` — changed: supported_parameters
+- `openai/gpt-5.6-sol` — changed: supported_parameters
+- `openai/gpt-5.6-sol-pro` — changed: supported_parameters
+- `openai/gpt-5.6-sol-pro:batch` — changed: supported_parameters
+- `openai/gpt-5.6-sol:batch` — changed: supported_parameters
+- `openai/gpt-5.6-terra` — changed: supported_parameters
+- `openai/gpt-5.6-terra-pro` — changed: top_provider, supported_parameters
+- `openai/gpt-5.6-terra-pro:batch` — changed: supported_parameters
+- `openai/gpt-5.6-terra:batch` — changed: supported_parameters
+- `openai/gpt-6-astra` — changed: supported_parameters
+- `openai/gpt-6-astra-pro` — changed: supported_parameters
+- `openai/gpt-6-astra-pro:batch` — changed: supported_parameters
+- `openai/gpt-6-astra:batch` — changed: supported_parameters
+- `openai/gpt-6-luna` — changed: supported_parameters, benchmarks
+- `openai/gpt-6-luna-pro` — changed: supported_parameters
+- `openai/gpt-6-luna-pro:batch` — changed: supported_parameters
+- `openai/gpt-6-luna:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-6-sol` — changed: supported_parameters, benchmarks
+- `openai/gpt-6-sol-pro` — changed: supported_parameters
+- `openai/gpt-6-sol-pro:batch` — changed: supported_parameters
+- `openai/gpt-6-sol:batch` — changed: supported_parameters, benchmarks
+- `openai/gpt-6.1-sol` — changed: supported_parameters
+- `openai/gpt-6.1-sol-pro` — changed: supported_parameters
 - `openai/gpt-oss-120b` — changed: benchmarks
 - `openai/gpt-oss-120b:batch` — changed: benchmarks
 - `openai/gpt-oss-20b` — changed: benchmarks
@@ -145,26 +195,22 @@
 - `qwen/qwen3-235b-a22b` — changed: benchmarks
 - `qwen/qwen3-235b-a22b-2507` — changed: benchmarks
 - `qwen/qwen3-235b-a22b-thinking-2507` — changed: benchmarks
-- `qwen/qwen3-30b-a3b` — changed: pricing, top_provider, expiration_date, benchmarks
+- `qwen/qwen3-30b-a3b` — changed: benchmarks
+- `qwen/qwen3-30b-a3b-instruct-2507` — changed: pricing, top_provider
 - `qwen/qwen3-30b-a3b-thinking-2507` — changed: benchmarks
 - `qwen/qwen3-coder` — changed: benchmarks
 - `qwen/qwen3-coder-30b-a3b-instruct` — changed: benchmarks
 - `qwen/qwen3-max` — changed: benchmarks
+- `qwen/qwen3.5-35b-a3b` — changed: pricing, top_provider
 - `qwen/qwen3.5-397b-a17b` — changed: benchmarks
 - `qwen/qwen3.5-plus-02-15` — changed: benchmarks
 - `qwen/qwen3.6-plus` — changed: benchmarks
 - `qwen/qwen3.7-max` — changed: benchmarks
 - `qwen/qwen3.7-plus` — changed: benchmarks
-- `stealth/space-bunny-alpha` — changed: expiration_date
-- `stepfun/step-3.7-flash` — changed: benchmarks
+- `stepfun/step-3.7-flash` — changed: supported_parameters, benchmarks
 - `tencent/hy3` — changed: benchmarks
-- `tencent/hy4-preview` — changed: pricing
-- `thinkingmachines/inkling` — changed: benchmarks
-- `thinkingmachines/inkling-small` — changed: benchmarks
-- `thinkingmachines/inkling-small:free` — changed: benchmarks
+- `thinkingmachines/inkling` — changed: pricing, top_provider, benchmarks
 - `thinkingmachines/inkling:free` — changed: benchmarks
-- `typesafe/jev-router` — changed: supported_parameters
-- `upstage/solar-mini4` — changed: benchmarks
 - `upstage/solar-pro4` — changed: benchmarks
 - `x-ai/grok-4.20` — changed: benchmarks
 - `x-ai/grok-4.3` — changed: benchmarks
@@ -174,16 +220,16 @@
 - `x-ai/grok-4.7` — changed: benchmarks
 - `xiaomi/mimo-v2.5` — changed: benchmarks
 - `xiaomi/mimo-v2.5-pro` — changed: benchmarks
-- `xiaomi/mimo-v2.6-flash` — changed: context_length
 - `xiaomi/mimo-v2.6-pro` — changed: benchmarks
-- `z-ai/glm-4.5` — changed: benchmarks
+- `z-ai/glm-4.5` — changed: expiration_date, benchmarks
 - `z-ai/glm-4.5-air` — changed: benchmarks
 - `z-ai/glm-4.6` — changed: benchmarks
-- `z-ai/glm-4.7` — changed: benchmarks
+- `z-ai/glm-4.6v` — changed: pricing
+- `z-ai/glm-4.7` — changed: expiration_date, benchmarks
 - `z-ai/glm-4.7-flash` — changed: benchmarks
 - `z-ai/glm-5` — changed: benchmarks
 - `z-ai/glm-5-turbo` — changed: benchmarks
-- `z-ai/glm-5.1` — changed: pricing, benchmarks
+- `z-ai/glm-5.1` — changed: benchmarks
 - `z-ai/glm-5.2` — changed: pricing, benchmarks
 - `z-ai/glm-5.3` — changed: pricing, top_provider, benchmarks
 - `z-ai/glm-5.3-flash` — changed: benchmarks
