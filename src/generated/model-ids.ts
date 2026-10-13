@@ -147,6 +147,7 @@ export const MODEL_IDS = [
   "meta/muse-spark-1.2-contributor-20260805",
   "meta/muse-spark-1.3-20260902",
   "meta/muse-spark-1.3-contributor-20260902",
+  "meta/muse-wonder-20261012",
   "microsoft/phi-4",
   "microsoft/wizardlm-2-8x22b",
   "minimax/minimax-01",
