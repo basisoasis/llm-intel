@@ -403,7 +403,6 @@ export const MODEL_IDS = [
   "unbiased/pareto-26.9-20260917",
   "undi95/remm-slerp-l2-13b",
   "upstage/solar-mini4-20260922",
-  "upstage/solar-pro-3",
   "upstage/solar-pro4-20260810",
   "venice/uncensored",
   "writer/palmyra-x5-20250428",
