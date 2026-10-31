@@ -1,5 +1,466 @@
 # Changelog
 
+## v1.0.102 — 2026-10-31
+
+### Updated
+
+- `~anthropic/claude-fable-latest` — changed: endpoints
+- `~anthropic/claude-haiku-latest` — changed: endpoints
+- `~anthropic/claude-opus-latest` — changed: endpoints
+- `~anthropic/claude-sonnet-latest` — changed: endpoints
+- `~deepseek/deepseek-flash-latest` — changed: pricing, endpoints
+- `~deepseek/deepseek-pro-latest` — changed: endpoints
+- `~deepseek/deepseek-v4-flash-latest` — changed: pricing, endpoints
+- `~google/gemini-flash-latest` — changed: endpoints
+- `~google/gemini-pro-latest` — changed: endpoints
+- `~moonshotai/kimi-latest` — changed: pricing, endpoints
+- `~openai/gpt-astra-latest` — changed: endpoints
+- `~openai/gpt-luna-latest` — changed: endpoints
+- `~openai/gpt-mini-latest` — changed: endpoints
+- `~openai/gpt-sol-latest` — changed: endpoints
+- `~openai/gpt-terra-latest` — changed: endpoints
+- `~unbiased/pareto-latest` — changed: endpoints
+- `~x-ai/grok-latest` — changed: endpoints
+- `~z-ai/glm-flash-latest` — changed: pricing, endpoints
+- `~z-ai/glm-latest` — changed: endpoints
+- `aion-labs/aion-2.0` — changed: endpoints
+- `aion-labs/aion-3.0` — changed: endpoints
+- `aion-labs/aion-3.0-mini` — changed: endpoints
+- `aion-labs/aion-3.5` — changed: endpoints
+- `aion-labs/aion-3.5-mini` — changed: endpoints
+- `aion-labs/aion-rp-llama-3.1-8b` — changed: endpoints
+- `amazon/nova-2-lite-v1` — changed: endpoints
+- `amazon/nova-lite-v1` — changed: endpoints
+- `amazon/nova-micro-v1` — changed: endpoints
+- `amazon/nova-premier-v1` — changed: endpoints
+- `amazon/nova-pro-v1` — changed: endpoints
+- `anthracite-org/magnum-v4-72b` — changed: endpoints
+- `anthropic/claude-fable-5` — changed: endpoints, benchmarks
+- `anthropic/claude-fable-5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-fable-5.1` — changed: endpoints, benchmarks
+- `anthropic/claude-fable-5.1:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-haiku-4.5` — changed: endpoints, benchmarks
+- `anthropic/claude-haiku-4.5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-haiku-5.5` — changed: endpoints, benchmarks
+- `anthropic/claude-haiku-5.5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-4.1` — changed: endpoints
+- `anthropic/claude-opus-4.1:batch` — changed: endpoints
+- `anthropic/claude-opus-4.5` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-4.5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-4.6` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-4.6:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-4.7` — changed: endpoints
+- `anthropic/claude-opus-4.7:batch` — changed: endpoints
+- `anthropic/claude-opus-4.8` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-4.8:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-5` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-5.5` — changed: endpoints, benchmarks
+- `anthropic/claude-opus-5.5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-4.5` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-4.5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-4.6` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-4.6:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-5` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-5:batch` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-5.5` — changed: endpoints, benchmarks
+- `anthropic/claude-sonnet-5.5:batch` — changed: endpoints, benchmarks
+- `bytedance-seed/seed-1.6` — changed: endpoints
+- `bytedance-seed/seed-1.6-flash` — changed: endpoints
+- `bytedance-seed/seed-2-1-turbo` — changed: endpoints
+- `bytedance-seed/seed-2.0-code` — changed: endpoints
+- `bytedance-seed/seed-2.0-lite` — changed: endpoints
+- `bytedance-seed/seed-2.0-mini` — changed: endpoints
+- `bytedance/ui-tars-1.5-7b` — changed: endpoints
+- `cognitivecomputations/dolphin-mistral-24b-venice-edition` — changed: endpoints
+- `cohere/command-a` — changed: endpoints
+- `cohere/command-a-plus` — changed: endpoints
+- `cohere/command-r-08-2024` — changed: endpoints
+- `cohere/command-r-plus-08-2024` — changed: endpoints
+- `cohere/command-r7b-12-2024` — changed: endpoints
+- `cohere/north-mini-code:free` — changed: endpoints
+- `deepseek/deepseek-chat` — changed: endpoints
+- `deepseek/deepseek-chat-v3-0324` — changed: endpoints
+- `deepseek/deepseek-chat-v3.1` — changed: endpoints
+- `deepseek/deepseek-r1-0528` — changed: endpoints
+- `deepseek/deepseek-v3.1-terminus` — changed: endpoints
+- `deepseek/deepseek-v3.2` — changed: pricing, top_provider, endpoints
+- `deepseek/deepseek-v3.2-exp` — changed: endpoints
+- `deepseek/deepseek-v4-flash` — changed: endpoints, benchmarks
+- `deepseek/deepseek-v4-flash-0731` — changed: endpoints, benchmarks
+- `deepseek/deepseek-v4-flash-vision-exp` — changed: endpoints
+- `deepseek/deepseek-v4-pro` — changed: pricing, top_provider, endpoints
+- `deepseek/deepseek-v4-pro-0813` — changed: endpoints
+- `deepseek/deepseek-v4.1-flash` — changed: endpoints
+- `deepseek/deepseek-v4.1-flash-1017` — changed: endpoints, benchmarks
+- `deepseek/deepseek-v4.1-flash:batch` — changed: endpoints
+- `dots-studio/dots-3-note-preview:free` — changed: endpoints
+- `elorian/glimpse` — changed: endpoints
+- `fireworks/ember-1` — changed: endpoints
+- `google/gemini-2.5-flash` — changed: endpoints
+- `google/gemini-2.5-flash-image` — changed: endpoints
+- `google/gemini-2.5-flash-lite` — changed: endpoints
+- `google/gemini-2.5-pro` — changed: endpoints
+- `google/gemini-2.5-pro-preview` — changed: endpoints
+- `google/gemini-3-flash-preview` — changed: endpoints, benchmarks
+- `google/gemini-3-flash-preview:batch` — changed: endpoints, benchmarks
+- `google/gemini-3-pro-image` — changed: endpoints
+- `google/gemini-3-pro-image-preview` — changed: endpoints
+- `google/gemini-3.1-flash-image` — changed: endpoints
+- `google/gemini-3.1-flash-image-preview` — changed: endpoints
+- `google/gemini-3.1-flash-lite` — changed: endpoints
+- `google/gemini-3.1-flash-lite-image` — changed: endpoints
+- `google/gemini-3.1-flash-lite-preview` — changed: endpoints
+- `google/gemini-3.1-flash-lite:batch` — changed: endpoints
+- `google/gemini-3.1-pro-preview` — changed: endpoints, benchmarks
+- `google/gemini-3.1-pro-preview-customtools` — changed: endpoints
+- `google/gemini-3.1-pro-preview:batch` — changed: endpoints, benchmarks
+- `google/gemini-3.5-flash` — changed: endpoints, benchmarks
+- `google/gemini-3.5-flash-lite` — changed: endpoints
+- `google/gemini-3.5-flash-lite:batch` — changed: endpoints
+- `google/gemini-3.5-flash:batch` — changed: endpoints, benchmarks
+- `google/gemini-3.6-flash` — changed: endpoints, benchmarks
+- `google/gemini-3.6-flash:batch` — changed: endpoints, benchmarks
+- `google/gemini-3.7-flash` — changed: endpoints, benchmarks
+- `google/gemini-3.7-flash:batch` — changed: endpoints, benchmarks
+- `google/gemini-3.8-flash` — changed: endpoints, benchmarks
+- `google/gemini-3.8-flash:batch` — changed: endpoints, benchmarks
+- `google/gemini-4-argon` — changed: endpoints, benchmarks
+- `google/gemini-4-argon:batch` — changed: endpoints, benchmarks
+- `google/gemini-nano-banana-2.1` — changed: endpoints
+- `google/gemma-2-27b-it` — changed: endpoints
+- `google/gemma-3-12b-it` — changed: endpoints
+- `google/gemma-3-27b-it` — changed: endpoints
+- `google/gemma-3-4b-it` — changed: endpoints
+- `google/gemma-4-26b-a4b-it` — changed: pricing, endpoints
+- `google/gemma-4-26b-a4b-it:free` — changed: endpoints
+- `google/gemma-4-31b-it` — changed: endpoints
+- `google/gemma-4-31b-it:free` — changed: endpoints
+- `google/lyria-3-clip-preview` — changed: endpoints
+- `google/lyria-3-pro-preview` — changed: endpoints
+- `gryphe/mythomax-l2-13b` — changed: endpoints
+- `ibm-granite/granite-4.2-8b` — changed: endpoints
+- `inception/mercury-2` — changed: endpoints, benchmarks
+- `inception/mercury-2.5` — changed: endpoints
+- `inception/mercury-3` — changed: endpoints, benchmarks
+- `inclusionai/ling-3.0-flash` — changed: endpoints
+- `inclusionai/ling-3.0-flash-vl` — changed: endpoints
+- `inclusionai/ling-3.1-flash` — changed: endpoints
+- `inference-net/schematron-v2-small` — changed: endpoints
+- `inference-net/schematron-v2-turbo` — changed: endpoints
+- `liquid/lfm-2.5-2.6b` — changed: endpoints
+- `liquid/lfm-2.5-2.6b:free` — changed: endpoints
+- `liquid/lfm-2.5-24b-a2b` — changed: endpoints
+- `mancer/weaver` — changed: endpoints
+- `meituan/longcat-2.0` — changed: endpoints
+- `meta-llama/llama-3.1-70b-instruct` — changed: endpoints
+- `meta-llama/llama-3.1-8b-instruct` — changed: endpoints
+- `meta-llama/llama-3.2-1b-instruct` — changed: endpoints
+- `meta-llama/llama-3.2-3b-instruct` — changed: endpoints
+- `meta-llama/llama-3.3-70b-instruct` — changed: endpoints
+- `meta-llama/llama-4-maverick` — changed: endpoints
+- `meta-llama/llama-4-scout` — changed: endpoints
+- `meta-llama/llama-guard-4-12b` — changed: endpoints
+- `meta/muse-glimmer-30b` — changed: endpoints, benchmarks
+- `meta/muse-spark-1.1` — changed: endpoints, benchmarks
+- `meta/muse-spark-1.2` — changed: endpoints, benchmarks
+- `meta/muse-spark-1.2-contributor` — changed: endpoints
+- `meta/muse-spark-1.3` — changed: endpoints, benchmarks
+- `meta/muse-spark-1.3-contributor` — changed: endpoints
+- `meta/muse-spark-open` — changed: endpoints, benchmarks
+- `meta/muse-wonder` — changed: endpoints, benchmarks
+- `microsoft/phi-4` — changed: endpoints
+- `minimax/minimax-01` — changed: endpoints
+- `minimax/minimax-m1` — changed: endpoints
+- `minimax/minimax-m2` — changed: endpoints, benchmarks
+- `minimax/minimax-m2-her` — changed: endpoints
+- `minimax/minimax-m2.1` — changed: endpoints
+- `minimax/minimax-m2.5` — changed: pricing, top_provider, endpoints
+- `minimax/minimax-m2.7` — changed: endpoints, benchmarks
+- `minimax/minimax-m3` — changed: endpoints, benchmarks
+- `minimax/minimax-m3.1-flash` — changed: pricing, endpoints
+- `mistralai/codestral-2508` — changed: endpoints
+- `mistralai/devstral-2512` — changed: endpoints
+- `mistralai/ministral-14b-2512` — changed: endpoints
+- `mistralai/ministral-3b-2512` — changed: endpoints
+- `mistralai/ministral-8b-2512` — changed: endpoints
+- `mistralai/mistral-large` — changed: endpoints
+- `mistralai/mistral-large-2407` — changed: endpoints
+- `mistralai/mistral-large-2512` — changed: endpoints, benchmarks
+- `mistralai/mistral-large-4-0` — changed: endpoints, benchmarks
+- `mistralai/mistral-medium-3` — changed: endpoints
+- `mistralai/mistral-medium-3-5` — changed: endpoints
+- `mistralai/mistral-medium-3-5:batch` — changed: endpoints
+- `mistralai/mistral-medium-3.1` — changed: endpoints
+- `mistralai/mistral-nemo` — changed: endpoints
+- `mistralai/mistral-saba` — changed: endpoints
+- `mistralai/mistral-small-24b-instruct-2501` — changed: endpoints
+- `mistralai/mistral-small-2603` — changed: endpoints
+- `mistralai/mistral-small-3.1-24b-instruct` — changed: endpoints
+- `mistralai/mistral-small-3.2-24b-instruct` — changed: endpoints
+- `mistralai/mixtral-8x22b-instruct` — changed: endpoints
+- `mistralai/voxtral-small-24b-2507` — changed: endpoints
+- `moondream/moondream3-preview` — changed: endpoints
+- `moondream/moondream3.1-9b-a2b` — changed: endpoints
+- `moonshotai/kimi-k2` — changed: endpoints
+- `moonshotai/kimi-k2-0905` — changed: endpoints
+- `moonshotai/kimi-k2-thinking` — changed: endpoints
+- `moonshotai/kimi-k2.5` — changed: endpoints, benchmarks
+- `moonshotai/kimi-k2.6` — changed: endpoints, benchmarks
+- `moonshotai/kimi-k2.7-code` — changed: pricing, endpoints, benchmarks
+- `moonshotai/kimi-k3` — changed: endpoints, benchmarks
+- `moonshotai/kimi-k3:batch` — changed: endpoints, benchmarks
+- `moonshotai/kimi-k3.1-pro` — changed: endpoints, benchmarks
+- `morph/morph-v3-fast` — changed: endpoints
+- `morph/morph-v3-large` — changed: endpoints
+- `nex-agi/nex-n2.5-mini` — changed: endpoints
+- `nex-agi/nex-n2.5-pro` — changed: endpoints
+- `nousresearch/hermes-3-llama-3.1-405b` — changed: endpoints
+- `nousresearch/hermes-3-llama-3.1-70b` — changed: endpoints
+- `nousresearch/hermes-4-405b` — changed: endpoints
+- `nvidia/nemotron-3-nano-30b-a3b` — changed: endpoints
+- `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free` — changed: endpoints
+- `nvidia/nemotron-3-super-120b-a12b` — changed: endpoints
+- `nvidia/nemotron-3-ultra-550b-a55b` — changed: endpoints, benchmarks
+- `nvidia/nemotron-3-ultra-550b-a55b:free` — changed: endpoints, benchmarks
+- `nvidia/nemotron-3.5-content-safety` — changed: endpoints
+- `nvidia/nemotron-3.5-content-safety:free` — changed: endpoints
+- `nvidia/nemotron-3.5-lightning` — changed: endpoints
+- `nvidia/nemotron-3.5-lightning:free` — changed: endpoints
+- `nvidia/nemotron-3.5-super-vl` — changed: endpoints, benchmarks
+- `nvidia/nemotron-3.5-super-vl:free` — changed: endpoints, benchmarks
+- `nvidia/switchyard` — changed: endpoints
+- `openai/gpt-3.5-turbo-0613` — changed: endpoints
+- `openai/gpt-3.5-turbo-16k` — changed: supported_parameters, endpoints
+- `openai/gpt-4` — changed: endpoints
+- `openai/gpt-4-turbo:batch` — changed: endpoints
+- `openai/gpt-4.1` — changed: endpoints
+- `openai/gpt-4.1-mini` — changed: endpoints
+- `openai/gpt-4.1-mini:batch` — changed: endpoints
+- `openai/gpt-4.1-nano` — changed: endpoints
+- `openai/gpt-4.1-nano:batch` — changed: endpoints
+- `openai/gpt-4.1:batch` — changed: endpoints
+- `openai/gpt-4o` — changed: endpoints
+- `openai/gpt-4o-2024-05-13` — changed: endpoints
+- `openai/gpt-4o-2024-08-06` — changed: endpoints
+- `openai/gpt-4o-2024-11-20` — changed: endpoints
+- `openai/gpt-4o-mini` — changed: endpoints
+- `openai/gpt-4o-mini-2024-07-18` — changed: endpoints
+- `openai/gpt-4o-mini:batch` — changed: endpoints
+- `openai/gpt-4o:batch` — changed: endpoints
+- `openai/gpt-5` — changed: endpoints
+- `openai/gpt-5-image` — changed: endpoints, benchmarks
+- `openai/gpt-5-image-mini` — changed: endpoints
+- `openai/gpt-5-mini` — changed: endpoints
+- `openai/gpt-5-mini:batch` — changed: endpoints
+- `openai/gpt-5-nano` — changed: endpoints
+- `openai/gpt-5-nano:batch` — changed: endpoints
+- `openai/gpt-5-pro` — changed: endpoints
+- `openai/gpt-5-pro:batch` — changed: endpoints
+- `openai/gpt-5:batch` — changed: endpoints
+- `openai/gpt-5.1` — changed: endpoints
+- `openai/gpt-5.1-codex` — changed: endpoints, benchmarks
+- `openai/gpt-5.1-codex-max` — changed: endpoints
+- `openai/gpt-5.1-codex-mini` — changed: endpoints
+- `openai/gpt-5.1:batch` — changed: endpoints
+- `openai/gpt-5.2` — changed: endpoints, benchmarks
+- `openai/gpt-5.2-chat` — changed: endpoints
+- `openai/gpt-5.2-codex` — changed: endpoints, benchmarks
+- `openai/gpt-5.2-pro` — changed: endpoints
+- `openai/gpt-5.2-pro:batch` — changed: endpoints
+- `openai/gpt-5.2:batch` — changed: endpoints, benchmarks
+- `openai/gpt-5.3-codex` — changed: endpoints, benchmarks
+- `openai/gpt-5.4` — changed: endpoints, benchmarks
+- `openai/gpt-5.4-image-2` — changed: endpoints
+- `openai/gpt-5.4-mini` — changed: endpoints
+- `openai/gpt-5.4-mini:batch` — changed: endpoints
+- `openai/gpt-5.4-nano` — changed: endpoints
+- `openai/gpt-5.4-nano:batch` — changed: endpoints
+- `openai/gpt-5.4-pro` — changed: endpoints
+- `openai/gpt-5.4-pro:batch` — changed: endpoints
+- `openai/gpt-5.4:batch` — changed: endpoints, benchmarks
+- `openai/gpt-5.5` — changed: endpoints, benchmarks
+- `openai/gpt-5.5-pro` — changed: endpoints
+- `openai/gpt-5.5-pro:batch` — changed: endpoints
+- `openai/gpt-5.5:batch` — changed: endpoints, benchmarks
+- `openai/gpt-5.6-luna` — changed: endpoints
+- `openai/gpt-5.6-luna-pro` — changed: endpoints
+- `openai/gpt-5.6-luna-pro:batch` — changed: endpoints
+- `openai/gpt-5.6-luna:batch` — changed: endpoints
+- `openai/gpt-5.6-sol` — changed: endpoints
+- `openai/gpt-5.6-sol-pro` — changed: endpoints
+- `openai/gpt-5.6-sol-pro:batch` — changed: endpoints
+- `openai/gpt-5.6-sol:batch` — changed: endpoints
+- `openai/gpt-5.6-terra` — changed: endpoints
+- `openai/gpt-5.6-terra-pro` — changed: endpoints
+- `openai/gpt-5.6-terra-pro:batch` — changed: endpoints
+- `openai/gpt-5.6-terra:batch` — changed: endpoints
+- `openai/gpt-6-astra` — changed: endpoints
+- `openai/gpt-6-astra-pro` — changed: endpoints
+- `openai/gpt-6-astra-pro:batch` — changed: endpoints
+- `openai/gpt-6-astra:batch` — changed: endpoints
+- `openai/gpt-6-luna` — changed: endpoints
+- `openai/gpt-6-luna-pro` — changed: endpoints
+- `openai/gpt-6-luna-pro:batch` — changed: endpoints
+- `openai/gpt-6-luna:batch` — changed: endpoints
+- `openai/gpt-6-sol` — changed: endpoints
+- `openai/gpt-6-sol-pro` — changed: endpoints
+- `openai/gpt-6-sol-pro:batch` — changed: endpoints
+- `openai/gpt-6-sol:batch` — changed: endpoints
+- `openai/gpt-6.1-sol` — changed: endpoints, benchmarks
+- `openai/gpt-6.1-sol-pro` — changed: endpoints
+- `openai/gpt-6.1-sol-pro:batch` — changed: endpoints
+- `openai/gpt-6.1-sol:batch` — changed: endpoints, benchmarks
+- `openai/gpt-6.1-terra` — changed: endpoints
+- `openai/gpt-6.1-terra-pro` — changed: endpoints
+- `openai/gpt-6.1-terra-pro:batch` — changed: endpoints
+- `openai/gpt-6.1-terra:batch` — changed: endpoints
+- `openai/gpt-audio` — changed: endpoints
+- `openai/gpt-audio-mini` — changed: endpoints
+- `openai/gpt-chat-latest` — changed: endpoints
+- `openai/gpt-oss-120b` — changed: endpoints
+- `openai/gpt-oss-120b:batch` — changed: endpoints
+- `openai/gpt-oss-20b` — changed: endpoints
+- `openai/gpt-oss-20b:batch` — changed: endpoints
+- `openai/gpt-oss-safeguard-20b` — changed: endpoints
+- `openai/o3` — changed: endpoints, benchmarks
+- `openai/o3-mini:batch` — changed: endpoints
+- `openai/o3-pro` — changed: endpoints
+- `openai/o3:batch` — changed: endpoints, benchmarks
+- `openai/o4-mini:batch` — changed: endpoints
+- `openrouter/auto` — changed: endpoints
+- `openrouter/auto-beta` — changed: endpoints
+- `openrouter/bodybuilder` — changed: endpoints
+- `openrouter/free` — changed: endpoints
+- `openrouter/fusion` — changed: endpoints
+- `openrouter/pareto-code` — changed: endpoints
+- `particle-ai/particle-1` — changed: pricing, endpoints
+- `perceptron/perceptron-mk1` — changed: endpoints
+- `perceptron/perceptron-mk1.5` — changed: endpoints
+- `perplexity/sonar` — changed: endpoints
+- `perplexity/sonar-deep-research` — changed: endpoints
+- `perplexity/sonar-pro` — changed: endpoints
+- `perplexity/sonar-pro-search` — changed: endpoints
+- `perplexity/sonar-reasoning-pro` — changed: endpoints
+- `poolside/laguna-s-2.1` — changed: endpoints
+- `poolside/laguna-s-2.1:free` — changed: endpoints
+- `poolside/laguna-xs-2.1` — changed: endpoints
+- `poolside/laguna-xs-2.1:free` — changed: endpoints
+- `prism-ml/ternary-bonsai-2-27b` — changed: endpoints
+- `prism-ml/ternary-bonsai-2-9b` — changed: endpoints
+- `qwen/qwen-2.5-72b-instruct` — changed: endpoints
+- `qwen/qwen-2.5-7b-instruct` — changed: endpoints
+- `qwen/qwen-2.5-coder-32b-instruct` — changed: endpoints
+- `qwen/qwen-plus` — changed: endpoints
+- `qwen/qwen2.5-vl-72b-instruct` — changed: endpoints
+- `qwen/qwen3-14b` — changed: endpoints
+- `qwen/qwen3-235b-a22b-2507` — changed: endpoints
+- `qwen/qwen3-235b-a22b-thinking-2507` — changed: endpoints
+- `qwen/qwen3-30b-a3b` — changed: endpoints
+- `qwen/qwen3-30b-a3b-instruct-2507` — changed: endpoints
+- `qwen/qwen3-32b` — changed: endpoints
+- `qwen/qwen3-coder` — changed: endpoints
+- `qwen/qwen3-coder-30b-a3b-instruct` — changed: endpoints
+- `qwen/qwen3-coder-flash` — changed: endpoints
+- `qwen/qwen3-coder-next` — changed: endpoints
+- `qwen/qwen3-next-80b-a3b-instruct` — changed: endpoints
+- `qwen/qwen3-vl-235b-a22b-instruct` — changed: endpoints
+- `qwen/qwen3-vl-30b-a3b-instruct` — changed: endpoints
+- `qwen/qwen3-vl-30b-a3b-thinking` — changed: endpoints
+- `qwen/qwen3-vl-8b-instruct` — changed: endpoints
+- `qwen/qwen3.5-122b-a10b` — changed: endpoints
+- `qwen/qwen3.5-27b` — changed: endpoints
+- `qwen/qwen3.5-35b-a3b` — changed: endpoints
+- `qwen/qwen3.5-397b-a17b` — changed: endpoints, benchmarks
+- `qwen/qwen3.5-9b` — changed: endpoints
+- `qwen/qwen3.5-flash-02-23` — changed: endpoints
+- `qwen/qwen3.5-plus-02-15` — changed: endpoints, benchmarks
+- `qwen/qwen3.5-plus-20260420` — changed: endpoints
+- `qwen/qwen3.6-27b` — changed: pricing, top_provider, endpoints
+- `qwen/qwen3.6-35b-a3b` — changed: endpoints
+- `qwen/qwen3.6-flash` — changed: endpoints
+- `qwen/qwen3.6-plus` — changed: endpoints, benchmarks
+- `qwen/qwen3.7-flash` — changed: endpoints
+- `qwen/qwen3.7-max` — changed: endpoints, benchmarks
+- `qwen/qwen3.7-plus` — changed: endpoints, benchmarks
+- `qwen/qwen3.7-plus:batch` — changed: endpoints, benchmarks
+- `qwen/qwen3.8-2.4t-a95b` — changed: endpoints
+- `qwen/qwen3.8-27b` — changed: endpoints
+- `qwen/qwen3.8-flash` — changed: endpoints
+- `qwen/qwen3.8-max-0902` — changed: endpoints
+- `qwen/qwen3.8-max-prime` — changed: endpoints
+- `qwen/qwen3.8-omni-flash` — changed: endpoints
+- `recursive/flint-v1.0:free` — changed: endpoints
+- `reflection/beam-1.0-501b-a23b` — changed: endpoints, benchmarks
+- `rekaai/reka-edge` — changed: endpoints
+- `rekaai/reka-flash-3` — changed: endpoints
+- `relace/relace-apply-3` — changed: endpoints
+- `relace/relace-search` — changed: endpoints
+- `sakana/fugu-max` — changed: endpoints
+- `sakana/fugu-ultra` — changed: endpoints
+- `sakana/fugu-ultra-v2` — changed: endpoints
+- `sakana/sakana-namazu` — changed: endpoints
+- `sao10k/l3-lunaris-8b` — changed: endpoints
+- `sao10k/l3.1-euryale-70b` — changed: endpoints
+- `scaledown/extract` — changed: endpoints
+- `scaledown/summarize` — changed: endpoints
+- `stepfun/step-3.5-flash` — changed: endpoints
+- `stepfun/step-3.7-flash` — changed: endpoints, benchmarks
+- `stepfun/step-5-preview` — changed: endpoints
+- `tencent/hunyuan-a13b-instruct` — changed: endpoints
+- `tencent/hy-mt2-1.8b` — changed: endpoints
+- `tencent/hy-mt2-30b-a3b` — changed: endpoints
+- `tencent/hy-mt2-7b` — changed: endpoints
+- `tencent/hy3` — changed: endpoints, benchmarks
+- `tencent/hy3-preview` — changed: endpoints
+- `tencent/hy4-preview` — changed: endpoints
+- `thedrummer/cydonia-24b-v4.1` — changed: endpoints
+- `thedrummer/skyfall-36b-v2` — changed: endpoints
+- `thedrummer/unslopnemo-12b` — changed: endpoints
+- `thinkingmachines/inkling` — changed: endpoints, benchmarks
+- `thinkingmachines/inkling-small` — changed: endpoints
+- `thinkingmachines/inkling-small:free` — changed: endpoints
+- `thinkingmachines/inkling:free` — changed: endpoints, benchmarks
+- `typesafe/jev-router` — changed: endpoints
+- `unbiased/pareto-26.10` — changed: endpoints
+- `unbiased/pareto-26.9` — changed: endpoints
+- `undi95/remm-slerp-l2-13b` — changed: endpoints
+- `upstage/solar-mini4` — changed: endpoints, benchmarks
+- `upstage/solar-pro4` — changed: endpoints, benchmarks
+- `writer/palmyra-x5` — changed: endpoints
+- `x-ai/grok-4.20` — changed: endpoints, benchmarks
+- `x-ai/grok-4.20-multi-agent` — changed: endpoints
+- `x-ai/grok-4.3` — changed: endpoints, benchmarks
+- `x-ai/grok-4.3:batch` — changed: endpoints, benchmarks
+- `x-ai/grok-4.5` — changed: endpoints, benchmarks
+- `x-ai/grok-4.6` — changed: endpoints, benchmarks
+- `x-ai/grok-4.7` — changed: endpoints, benchmarks
+- `x-ai/grok-build-0.1` — changed: endpoints
+- `xiaomi/mimo-v2.5` — changed: endpoints, benchmarks
+- `xiaomi/mimo-v2.5-pro` — changed: endpoints, benchmarks
+- `xiaomi/mimo-v2.6-flash` — changed: endpoints
+- `xiaomi/mimo-v2.6-pro` — changed: endpoints, benchmarks
+- `xiaomi/mimo-v2.6-pro-ultraspeed` — changed: endpoints
+- `xingchen-agi/xing4.0-29b-a4b:free` — changed: endpoints
+- `z-ai/glm-4.5` — changed: endpoints, benchmarks
+- `z-ai/glm-4.5-air` — changed: endpoints
+- `z-ai/glm-4.5v` — changed: endpoints
+- `z-ai/glm-4.6` — changed: endpoints, benchmarks
+- `z-ai/glm-4.6v` — changed: endpoints
+- `z-ai/glm-4.7` — changed: endpoints
+- `z-ai/glm-4.7-flash` — changed: endpoints, benchmarks
+- `z-ai/glm-5` — changed: endpoints, benchmarks
+- `z-ai/glm-5-turbo` — changed: endpoints, benchmarks
+- `z-ai/glm-5.1` — changed: endpoints, benchmarks
+- `z-ai/glm-5.2` — changed: endpoints, benchmarks
+- `z-ai/glm-5.3` — changed: pricing, endpoints, benchmarks
+- `z-ai/glm-5.3-flash` — changed: pricing, endpoints, benchmarks
+- `z-ai/glm-5.3-flash:batch` — changed: endpoints, benchmarks
+- `z-ai/glm-5.3-flashx` — changed: endpoints
+- `z-ai/glm-5.3-prime` — changed: endpoints
+- `z-ai/glm-5.3:batch` — changed: endpoints, benchmarks
+- `z-ai/glm-5v-turbo` — changed: endpoints, benchmarks
+
 ## v1.0.101 — 2026-10-30
 
 ### Removed
