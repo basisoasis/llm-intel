@@ -111,6 +111,8 @@ export const MODEL_IDS = [
   "google/gemini-4-carbon-20261110",
   "google/gemini-4-hydrogen-20261112",
   "google/gemini-4-hydrogen-20261112",
+  "google/gemini-4-neon-20261118",
+  "google/gemini-4-neon-20261118",
   "google/gemini-nano-banana-2.1-20261006",
   "google/gemini-omni-1.1-flash-20260911",
   "google/gemini-omni-1.2-flash-20261105",
