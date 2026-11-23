@@ -73,6 +73,7 @@ export const MODEL_IDS = [
   "deepseek/deepseek-v4.1-flash-20260910",
   "deepseek/deepseek-v4.1-flash-20261017",
   "deepseek/deepseek-v4.1-flash-20261017",
+  "dots-studio/dots-3-note-preview-20260813",
   "elorian/glimpse-20261016",
   "fireworks/ember-1-20260923",
   "google/gemini-2.5-flash",
