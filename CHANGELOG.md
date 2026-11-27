@@ -1,25 +1,16 @@
 # Changelog
 
-## v1.0.110 — 2026-11-26
+## v1.0.110 — 2026-11-27
 
 ### Added
 
-- **Mistral: Codestral 2508 (batch)** (`mistralai/codestral-2508:batch`)
-- **Mistral: Ministral 3 8B 2512 (batch)** (`mistralai/ministral-8b-2512:batch`)
-- **Mistral: Mistral Large 3 2512 (batch)** (`mistralai/mistral-large-2512:batch`)
-- **Mistral: Mistral Small 4 (batch)** (`mistralai/mistral-small-2603:batch`)
-- **TNG: DeepSeek R1T2 Chimera** (`tngtech/deepseek-r1t2-chimera`)
-
-### Removed
-
-- **Pareto 26.10** (`unbiased/pareto-26.10`)
-- **Pareto 26.10 Preview** (`unbiased/pareto-26.10-preview`)
-- **Pareto 26.9** (`unbiased/pareto-26.9`)
+- **inclusionAI: LingSante 3.1 Air VL** (`inclusionai/lingsante-3.1-air-vl`)
+- **MoonshotAI: Kimi K2 0711** (`moonshotai/kimi-k2`)
+- **MoonshotAI: Kimi K2 0905** (`moonshotai/kimi-k2-0905`)
 
 ### Updated
 
 - `~deepseek/deepseek-pro-latest` — changed: pricing, top_provider
-- `~unbiased/pareto-latest` — changed: context_length, pricing, top_provider, supported_parameters, expiration_date
 - `anthropic/claude-fable-5` — changed: benchmarks
 - `anthropic/claude-fable-5:batch` — changed: benchmarks
 - `anthropic/claude-fable-5.1` — changed: benchmarks
@@ -59,11 +50,13 @@
 - `deepseek/deepseek-v4-flash` — changed: benchmarks
 - `deepseek/deepseek-v4-flash-0731` — changed: pricing, top_provider, benchmarks
 - `deepseek/deepseek-v4-flash-0731:batch` — changed: benchmarks
-- `deepseek/deepseek-v4-pro` — changed: pricing, benchmarks
+- `deepseek/deepseek-v4-flash-vision-exp` — changed: pricing, top_provider
+- `deepseek/deepseek-v4-pro` — changed: benchmarks
+- `deepseek/deepseek-v4-pro-0813` — changed: pricing, top_provider
 - `deepseek/deepseek-v4.1-flash-1017` — changed: benchmarks
 - `deepseek/deepseek-v4.1-flash-1017:batch` — changed: benchmarks
-- `google/gemini-2.5-flash` — changed: expiration_date, benchmarks
-- `google/gemini-2.5-pro` — changed: expiration_date, benchmarks
+- `google/gemini-2.5-flash` — changed: benchmarks
+- `google/gemini-2.5-pro` — changed: benchmarks
 - `google/gemini-3-flash-preview` — changed: benchmarks
 - `google/gemini-3-flash-preview:batch` — changed: benchmarks
 - `google/gemini-3.1-flash-lite-preview` — changed: benchmarks
@@ -85,14 +78,18 @@
 - `google/gemini-4-hydrogen:batch` — changed: benchmarks
 - `google/gemini-4-neon` — changed: benchmarks
 - `google/gemini-4-neon:batch` — changed: benchmarks
+- `google/gemma-3-4b-it` — changed: pricing, top_provider
+- `google/gemma-4-26b-a4b-it` — changed: benchmarks
+- `google/gemma-4-26b-a4b-it:free` — changed: benchmarks
+- `meta-llama/llama-3.3-70b-instruct` — changed: pricing, top_provider
 - `meta-llama/llama-4-maverick` — changed: benchmarks
 - `meta-llama/llama-4-scout` — changed: benchmarks
 - `meta/muse-ember` — changed: benchmarks
-- `meta/muse-glimmer-30b` — changed: benchmarks
+- `meta/muse-glimmer-30b` — changed: pricing, top_provider, benchmarks
 - `meta/muse-glimmer-30b:batch` — changed: benchmarks
 - `meta/muse-spark-1.1` — changed: benchmarks
 - `meta/muse-spark-1.2` — changed: benchmarks
-- `meta/muse-spark-1.3` — changed: pricing, top_provider, benchmarks
+- `meta/muse-spark-1.3` — changed: benchmarks
 - `meta/muse-spark-open` — changed: benchmarks
 - `meta/muse-wonder` — changed: benchmarks
 - `minimax/minimax-m2.5` — changed: benchmarks
@@ -100,12 +97,16 @@
 - `minimax/minimax-m3` — changed: benchmarks
 - `minimax/minimax-m3:batch` — changed: benchmarks
 - `mistralai/codestral-2508` — changed: benchmarks
+- `mistralai/codestral-2508:batch` — changed: benchmarks
+- `mistralai/ministral-14b-2512` — changed: benchmarks
 - `mistralai/ministral-3b-2512` — changed: benchmarks
 - `mistralai/ministral-8b-2512` — changed: benchmarks
+- `mistralai/ministral-8b-2512:batch` — changed: benchmarks
 - `mistralai/mistral-large-2512` — changed: benchmarks
+- `mistralai/mistral-large-2512:batch` — changed: benchmarks
 - `mistralai/mistral-large-4-0` — changed: benchmarks
 - `mistralai/mistral-small-3.2-24b-instruct` — changed: benchmarks
-- `moonshotai/kimi-k2.5` — changed: benchmarks
+- `moonshotai/kimi-k2.5` — changed: pricing, top_provider, benchmarks
 - `moonshotai/kimi-k2.6` — changed: benchmarks
 - `moonshotai/kimi-k2.7-code` — changed: benchmarks
 - `moonshotai/kimi-k3` — changed: benchmarks
@@ -114,7 +115,6 @@
 - `moonshotai/kimi-k3.1-pro:batch` — changed: benchmarks
 - `nvidia/nemotron-3-ultra-550b-a55b` — changed: benchmarks
 - `nvidia/nemotron-3-ultra-550b-a55b:free` — changed: benchmarks
-- `nvidia/nemotron-3.5-lightning` — changed: pricing
 - `nvidia/nemotron-3.5-super-vl` — changed: benchmarks
 - `nvidia/nemotron-3.5-super-vl:free` — changed: benchmarks
 - `openai/gpt-4.1` — changed: benchmarks
@@ -145,7 +145,7 @@
 - `openai/gpt-5.5:batch` — changed: benchmarks
 - `openai/gpt-6.1-sol` — changed: benchmarks
 - `openai/gpt-6.1-sol:batch` — changed: benchmarks
-- `openai/gpt-6.2-sol-pro` — changed: top_provider
+- `openai/gpt-6.2-astra-pro` — changed: top_provider
 - `openai/gpt-oss-120b` — changed: benchmarks
 - `openai/gpt-oss-120b:batch` — changed: benchmarks
 - `openai/gpt-oss-20b` — changed: benchmarks
@@ -153,26 +153,27 @@
 - `openai/o3` — changed: benchmarks
 - `openai/o3:batch` — changed: benchmarks
 - `openai/o4-mini:batch` — changed: benchmarks
+- `particle-ai/particle-1` — changed: top_provider
+- `particle-ai/particle-1:free` — changed: top_provider
 - `qwen/qwen3-235b-a22b-2507` — changed: benchmarks
 - `qwen/qwen3-235b-a22b-thinking-2507` — changed: benchmarks
 - `qwen/qwen3-30b-a3b` — changed: benchmarks
 - `qwen/qwen3-coder` — changed: benchmarks
 - `qwen/qwen3-coder-30b-a3b-instruct` — changed: benchmarks
-- `qwen/qwen3.5-397b-a17b` — changed: pricing, top_provider, benchmarks
-- `qwen/qwen3.5-9b` — changed: pricing
+- `qwen/qwen3.5-397b-a17b` — changed: benchmarks
 - `qwen/qwen3.5-plus-02-15` — changed: benchmarks
 - `qwen/qwen3.6-plus` — changed: benchmarks
 - `qwen/qwen3.7-max` — changed: benchmarks
 - `qwen/qwen3.7-plus` — changed: benchmarks
 - `qwen/qwen3.7-plus:batch` — changed: benchmarks
-- `qwen/qwen3.8-27b` — changed: benchmarks
-- `qwen/qwen3.8-27b:batch` — changed: benchmarks
-- `reflection/beam-1.0-501b-a23b` — changed: pricing, top_provider, benchmarks
+- `qwen/qwen3.8-27b` — changed: pricing, top_provider, supported_parameters
+- `reflection/beam-1.0-501b-a23b` — changed: benchmarks
 - `stepfun/step-3.7-flash` — changed: benchmarks
 - `tencent/hy3` — changed: benchmarks
 - `tencent/hy4` — changed: benchmarks
 - `tencent/hy4-flash` — changed: benchmarks
 - `thinkingmachines/inkling` — changed: benchmarks
+- `upstage/solar-mini-4-5` — changed: benchmarks
 - `upstage/solar-mini4` — changed: benchmarks
 - `upstage/solar-pro4` — changed: benchmarks
 - `x-ai/grok-4.20` — changed: benchmarks
@@ -183,22 +184,19 @@
 - `x-ai/grok-4.6:batch` — changed: benchmarks
 - `x-ai/grok-4.7` — changed: benchmarks
 - `x-ai/grok-4.7:batch` — changed: benchmarks
-- `xiaomi/mimo-v2.6-flash-mopd` — changed: pricing
 - `xiaomi/mimo-v2.6-pro` — changed: benchmarks
 - `z-ai/glm-4.5` — changed: benchmarks
-- `z-ai/glm-4.5-air` — changed: pricing, supported_parameters, benchmarks
-- `z-ai/glm-4.5v` — changed: supported_parameters
-- `z-ai/glm-4.6` — changed: benchmarks
-- `z-ai/glm-4.6v` — changed: pricing, supported_parameters
+- `z-ai/glm-4.5-air` — changed: benchmarks
+- `z-ai/glm-4.6` — changed: context_length, benchmarks
 - `z-ai/glm-4.7` — changed: benchmarks
-- `z-ai/glm-4.7-flash` — changed: context_length, benchmarks
+- `z-ai/glm-4.7-flash` — changed: benchmarks
 - `z-ai/glm-5` — changed: benchmarks
 - `z-ai/glm-5-turbo` — changed: benchmarks
 - `z-ai/glm-5.1` — changed: benchmarks
 - `z-ai/glm-5.2` — changed: benchmarks
 - `z-ai/glm-5.2:batch` — changed: benchmarks
 - `z-ai/glm-5.3` — changed: benchmarks
-- `z-ai/glm-5.3-flash` — changed: pricing, top_provider, benchmarks
+- `z-ai/glm-5.3-flash` — changed: benchmarks
 - `z-ai/glm-5.3-flash:batch` — changed: benchmarks
 - `z-ai/glm-5.3:batch` — changed: benchmarks
 - `z-ai/glm-5v-turbo` — changed: benchmarks
