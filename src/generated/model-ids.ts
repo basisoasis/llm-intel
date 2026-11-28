@@ -347,7 +347,6 @@ export const MODEL_IDS = [
   "qwen/qwen2.5-vl-72b-instruct",
   "qwen/qwen3-14b-04-28",
   "qwen/qwen3-235b-a22b-07-25",
-  "qwen/qwen3-235b-a22b-thinking-2507",
   "qwen/qwen3-30b-a3b-04-28",
   "qwen/qwen3-30b-a3b-instruct-2507",
   "qwen/qwen3-32b-04-28",
